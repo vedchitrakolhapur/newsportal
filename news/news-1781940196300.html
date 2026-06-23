@@ -29,24 +29,20 @@
         
         .featured-image { width: 100%; max-height: 450px; object-fit: cover; border-radius: 8px; margin-bottom: 25px; box-shadow: 0 4px 12px rgba(0,0,0,0.08); }
         
-         
         .article-body { font-size: 17px; color: #333; word-wrap: break-word; overflow-wrap: break-word;}
         .article-body p { margin-bottom: 15px; text-align: justify; }
         .article-body img { max-width: 100%; height: auto; border-radius: 6px; margin: 15px 0; display: block; }
         .article-body ul, .article-body ol { margin-bottom: 15px; padding-left: 20px; }
         .article-body li { margin-bottom: 8px; }
         
-         
         .inserted-ad { text-align: center; margin: 25px 0; padding: 10px; background: #fffcf7; border: 1px dashed #d35400; border-radius: 6px; }
         .inserted-ad span { display: block; font-size: 10px; color: #b8b8b8; text-transform: uppercase; margin-bottom: 5px; font-weight: bold;}
         .inserted-ad img { max-width: 100%; height: auto; border-radius: 4px; display: block; margin: 0 auto; }
         
-         
         .share-section { margin-top: 30px; padding-top: 20px; border-top: 1px solid #eee; display: flex; align-items: center; gap: 12px; }
         .share-btn-wa { background: #25D366; color: white; border: none; padding: 10px 20px; border-radius: 6px; font-weight: bold; cursor: pointer; text-decoration: none; display: inline-flex; align-items: center; gap: 8px; font-size: 15px; box-shadow: 0 4px 10px rgba(37,211,102,0.3); transition: 0.2s;}
         .share-btn-wa:hover { opacity: 0.9; transform: translateY(-2px); }
 
-         
         .modal-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.7); z-index: 5000; display: none; align-items: center; justify-content: center; padding: 20px; }
         .modal-content { background: white; padding: 10px; border-radius: 8px; position: relative; max-width: 450px; width: 100%; text-align: center; box-shadow: 0 5px 25px rgba(0,0,0,0.2); animation: popIn 0.3s ease; }
         .modal-content img { max-width: 100%; height: auto; border-radius: 6px; display: block; margin: 0 auto;}
@@ -73,7 +69,7 @@
             <h1>हडपसर-भोसरीपेक्षा कमी लोकसंख्या असलेला देश FIFA World Cup गाजवतोय, मग 150 कोटींचा महासत्ता बनू पाहणारा भारत कुठेय?</h1>
             
             <div class="meta-info">
-                <div><i class="far fa-calendar-alt"></i> </div>
+                <div><i class="far fa-calendar-alt"></i> 20/6/2026, 12:53:16</div>
                 <div><i class="far fa-user"></i> प्रतिनिधी</div>
             </div>
             
@@ -110,7 +106,6 @@
                     let displayContainer = document.getElementById('processedArticle');
                     let paragraphElements = displayContainer.querySelectorAll('p');
                     
-                    
                     Object.keys(adsConfig).forEach(function(key) {
                         if (key && key.startsWith('Paragraph_')) {
                             let adData = adsConfig[key];
@@ -125,17 +120,13 @@
                                 let targetAttr = 'target="_blank"';
                                 
                                 if (linkUrl) {
-                                    
                                     if (/^\+?[0-9\s\-]{10,15}$/.test(linkUrl)) {
                                         linkUrl = 'tel:' + linkUrl.replace(/\s+/g, '');
                                     }
-                                    if (linkUrl.startsWith('tel:')) {
-                                        targetAttr = ''; 
-                                    }
+                                    if (linkUrl.startsWith('tel:')) targetAttr = ''; 
                                 }
 
-                                
-                                if (adData.imageOrCode.trim().startsWith('<')) {
+                                if (adData.imageOrCode && adData.imageOrCode.trim().startsWith('<')) {
                                     adContentHtml = adData.imageOrCode;
                                 } else {
                                     if (hasLink) {
@@ -151,11 +142,9 @@
                                     ${adContentHtml}
                                 </div>`;
                                 
-                                // ठरवलेल्या पॅराग्राफनंतर जाहिरात जोडणे
                                 if (paragraphElements.length >= targetParaNum) {
                                     paragraphElements[targetParaNum - 1].insertAdjacentHTML('afterend', adHtmlCode);
                                 } else if (paragraphElements.length > 0) {
-                                    
                                     displayContainer.insertAdjacentHTML('beforeend', adHtmlCode);
                                 }
                             }
@@ -163,23 +152,19 @@
                     });
                 }
             } catch (error) {
-                console.error("जाहिरात इन्सर्ट करताना त्रुटी आली, पण बातमी सुरक्षित आहे:", error);
+                console.error("जाहिरात इन्सर्ट करताना त्रुटी:", error);
             }
 
-            
             try {
                 let currentUrl = window.location.href;
                 let titleText = document.querySelector('h1').innerText;
                 let message = encodeURIComponent(`*${titleText}*\n\nसविस्तर बातमी वाचण्यासाठी येथे क्लिक करा:\n👇👇\n${currentUrl}`);
                 
                 let shareBtn = document.getElementById('waShareLink');
-                if(shareBtn) {
-                    shareBtn.href = `https:
-                }
+                if(shareBtn) shareBtn.href = `https://api.whatsapp.com/send?text=${message}`;
             } catch (e) {
                 console.error("WhatsApp Share link error:", e);
             }
-            
             
             let modal = document.getElementById('popupAdModal');
             if(modal) {
@@ -189,7 +174,6 @@
             }
         });
 
-        
         function closePopupAd() {
             let modal = document.getElementById('popupAdModal');
             if(modal) modal.style.display = 'none';
