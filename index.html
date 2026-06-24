@@ -17,7 +17,6 @@
         
         .container { max-width: 1100px; margin: 20px auto; padding: 0 15px; }
         
-         
         .news-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 20px; margin-top: 20px; }
         .news-card { background: white; border-radius: 8px; overflow: hidden; box-shadow: 0 2px 8px rgba(0,0,0,0.06); display: flex; flex-direction: column; transition: transform 0.2s; text-decoration: none; color: inherit;}
         .news-card:hover { transform: translateY(-3px); box-shadow: 0 4px 12px rgba(0,0,0,0.1); }
@@ -26,21 +25,30 @@
         .news-title { font-size: 18px; font-weight: 700; color: #111; margin-bottom: 10px; line-height: 1.4; }
         .news-date { font-size: 13px; color: #888; margin-top: auto; display: flex; align-items: center; gap: 5px; }
         
-         
         .ad-banner-top { text-align: center; margin: 10px 0 25px 0; padding: 10px; background: #fff; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.05); }
         .ad-banner-top img { max-width: 100%; height: auto; border-radius: 4px; display: block; margin: 0 auto; }
         
-         
         .modal-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.7); z-index: 5000; display: none; align-items: center; justify-content: center; padding: 20px; }
         .modal-content { background: white; padding: 10px; border-radius: 8px; position: relative; max-width: 450px; width: 100%; text-align: center; box-shadow: 0 5px 25px rgba(0,0,0,0.2); animation: popIn 0.3s ease; }
         .modal-content img { max-width: 100%; height: auto; border-radius: 6px; display: block; margin: 0 auto;}
         .modal-close { position: absolute; top: -12px; right: -12px; background: #ff9933; color: white; border: none; width: 30px; height: 30px; border-radius: 50%; font-size: 18px; font-weight: bold; cursor: pointer; display: flex; align-items: center; justify-content: center; box-shadow: 0 2px 5px rgba(0,0,0,0.2); z-index: 5001;}
         
+         
+        .poll-box { background: linear-gradient(145deg, #ffffff, #f4f8fb); border-radius: 12px; padding: 20px; margin: 25px 0; box-shadow: 0 4px 15px rgba(0,0,0,0.06); border: 1px solid #e1e8ed; position: relative; overflow: hidden; max-width: 600px;}
+        .poll-box::before { content: ''; position: absolute; top: 0; left: 0; width: 5px; height: 100%; background: #ff9933; }
+        .poll-header { color: #000080; font-size: 16px; font-weight: 700; margin-bottom: 10px; display: flex; align-items: center; gap: 8px; text-transform: uppercase; letter-spacing: 1px;}
+        .poll-question { font-size: 20px; color: #111; margin-bottom: 20px; font-weight: 700; line-height: 1.4;}
+        .poll-opt-btn { display: block; width: 100%; padding: 12px 18px; margin-bottom: 12px; background: white; border: 2px solid #e1e8ed; border-radius: 8px; text-align: left; font-size: 16px; font-weight: 600; cursor: pointer; transition: 0.2s; color: #333; position: relative; overflow: hidden;}
+        .poll-opt-btn:hover { border-color: #000080; background: #f8f9fa; transform: translateY(-2px); box-shadow: 0 4px 8px rgba(0,0,0,0.05);}
+        .poll-result-row { margin-bottom: 15px; }
+        .poll-result-label { display: flex; justify-content: space-between; font-size: 15px; font-weight: 600; margin-bottom: 6px; color: #333; }
+        .poll-bar-bg { background: #e9ecef; border-radius: 20px; height: 12px; overflow: hidden; box-shadow: inset 0 1px 2px rgba(0,0,0,0.1);}
+        .poll-bar-fill { background: linear-gradient(90deg, #000080, #0040ff); height: 100%; width: 0%; transition: width 1s ease-in-out; border-radius: 20px; }
+        .poll-footer { margin-top: 15px; font-size: 13px; color: #888; text-align: right; }
+        .poll-loader { display: none; text-align: center; padding: 20px; color: #000080; font-weight: bold; }
+        
         @keyframes popIn { from { opacity: 0; transform: scale(0.9); } to { opacity: 1; transform: scale(1); } }
-        @media (max-width: 600px) {
-            .logo h1 { font-size: 20px; }
-            .news-grid { grid-template-columns: 1fr; }
-        }
+        @media (max-width: 600px) { .logo h1 { font-size: 20px; } .news-grid { grid-template-columns: 1fr; } }
     </style>
 </head>
 <body>
@@ -57,10 +65,13 @@
     <div class="container">
         
                     <div class="ad-banner-top">
-                                                            <a href="#ZautoescZ" ZautoescZ>
-                            <img src="https://vedchitrakolhapur.github.io/newsportal/assets/images/img_1782213050694.webp" alt="जाहिरात">
-                        </a>
-                                                </div>
+                                    <a href="#ZautoescZ" ZautoescZ>
+                        <img src="https://vedchitrakolhapur.github.io/newsportal/assets/images/img_1782213050694.webp" alt="जाहिरात">
+                    </a>
+                            </div>
+        
+                    <div id="homePollContainer" class="poll-box">
+                </div>
         
         <h2 style="border-left: 5px solid #000080; padding-left: 10px; margin-bottom: 20px; font-size: 22px; color: #000080;">🔥 मुख्य बातम्या</h2>
 
@@ -92,19 +103,109 @@
     
     <script>
         
+        
+        const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbyqrQGYH0o54fguVyumk-x2h9KyL5ogyRDRRcku5yDPjv4nHkBe2Pm49ofuUsNJNTsK/exec"; 
+        
         document.getElementById('currentDate').innerText = new Date().toLocaleDateString('mr-IN', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' });
 
-        
         window.onload = function() {
             let modal = document.getElementById('popupAdModal');
-            if(modal) {
-                setTimeout(() => { modal.style.display = 'flex'; }, 1500); 
-            }
+            if(modal) { setTimeout(() => { modal.style.display = 'flex'; }, 1500); }
+            renderPollSystem();
         };
 
         function closePopupAd() {
             let modal = document.getElementById('popupAdModal');
             if(modal) modal.style.display = 'none';
+        }
+
+        
+        function renderPollSystem() {
+            let container = document.getElementById('homePollContainer');
+            if(!container) return;
+
+            try {
+                let pollRaw = {"isActive":"Yes","question":"यंदा आजऱ्यात पाऊस कसा राहील ?","options":"[\"दरवर्षी सारखा\",\"मध्यम\",\"कमी पाऊस पडेल\",\"सांगता नाही येत\"]","showHome":"Yes","showArticle":"Yes","paraNum":4,"votes":{}};
+                if(!pollRaw.isActive || pollRaw.isActive !== 'Yes') return;
+
+                let question = pollRaw.question;
+                let options = JSON.parse(pollRaw.options || "[]");
+                let votesObj = pollRaw.votes || {};
+                
+                
+                let pollKey = "voted_" + encodeURIComponent(question.substring(0,20));
+                let hasVoted = localStorage.getItem(pollKey);
+
+                if(hasVoted) {
+                    showPollResults(container, question, options, votesObj);
+                } else {
+                    showPollOptions(container, question, options, pollKey);
+                }
+            } catch(e) { console.error("Poll rendering error:", e); }
+        }
+
+        function showPollOptions(container, question, options, pollKey) {
+            let html = `<div class="poll-header"><i class="fas fa-poll-h"></i> आजचा पोल</div>`;
+            html += `<div class="poll-question">${question}</div>`;
+            html += `<div id="pollOptionsArea">`;
+            options.forEach((opt, idx) => {
+                html += `<button class="poll-opt-btn" onclick="submitVote('${opt}', ${idx}, '${pollKey}')">${opt}</button>`;
+            });
+            html += `</div>`;
+            html += `<div id="pollLoader" class="poll-loader"><i class="fas fa-spinner fa-spin"></i> तुमची नोंद होत आहे...</div>`;
+            container.innerHTML = html;
+        }
+
+        async function submitVote(optionText, optIdx, pollKey) {
+            document.getElementById('pollOptionsArea').style.display = 'none';
+            document.getElementById('pollLoader').style.display = 'block';
+
+            try {
+                let response = await fetch(SCRIPT_URL + "?action=vote&optIdx=" + optIdx);
+                let result = await response.json();
+                
+                if(result.status === "success") {
+                    localStorage.setItem(pollKey, "true"); // 'Voted' खूण साठवली
+                    let updatedPoll = result.poll;
+                    showPollResults(document.getElementById('homePollContainer'), updatedPoll.question, JSON.parse(updatedPoll.options), updatedPoll.votes);
+                } else {
+                    alert("तांत्रिक अडचणीमुळे मत नोंदवले गेले नाही. पुन्हा प्रयत्न करा.");
+                    document.getElementById('pollOptionsArea').style.display = 'block';
+                    document.getElementById('pollLoader').style.display = 'none';
+                }
+            } catch(e) {
+                console.error(e);
+                alert("इंटरनेट कनेक्शन तपासा किंवा काही वेळाने प्रयत्न करा.");
+                document.getElementById('pollOptionsArea').style.display = 'block';
+                document.getElementById('pollLoader').style.display = 'none';
+            }
+        }
+
+        function showPollResults(container, question, options, votesObj) {
+            let totalVotes = 0;
+            options.forEach((_, idx) => { totalVotes += (votesObj[idx] || 0); });
+
+            let html = `<div class="poll-header"><i class="fas fa-poll-h"></i> आजचा पोल - निकाल</div>`;
+            html += `<div class="poll-question">${question}</div>`;
+            
+            options.forEach((opt, idx) => {
+                let vCount = votesObj[idx] || 0;
+                let percent = totalVotes === 0 ? 0 : Math.round((vCount / totalVotes) * 100);
+                
+                html += `
+                <div class="poll-result-row">
+                    <div class="poll-result-label">
+                        <span>${opt}</span>
+                        <span>${percent}%</span>
+                    </div>
+                    <div class="poll-bar-bg">
+                        <div class="poll-bar-fill" style="width: ${percent}%;"></div>
+                    </div>
+                </div>`;
+            });
+
+            html += `<div class="poll-footer">एकूण मते: ${totalVotes} | तुमचं मत नोंदवलं गेलं आहे.</div>`;
+            container.innerHTML = html;
         }
     </script>
 </body>
