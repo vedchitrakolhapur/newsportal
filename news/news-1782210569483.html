@@ -47,6 +47,7 @@
         .modal-content img { max-width: 100%; height: auto; border-radius: 6px; display: block; margin: 0 auto;}
         .modal-close { position: absolute; top: -12px; right: -12px; background: #ff9933; color: white; border: none; width: 30px; height: 30px; border-radius: 50%; font-size: 18px; font-weight: bold; cursor: pointer; display: flex; align-items: center; justify-content: center; z-index: 5001;}
         
+         
         .poll-box { background: linear-gradient(145deg, #ffffff, #f4f8fb); border-radius: 12px; padding: 20px; margin: 25px 0; box-shadow: 0 4px 15px rgba(0,0,0,0.06); border: 1px solid #e1e8ed; position: relative; overflow: hidden;}
         .poll-box::before { content: ''; position: absolute; top: 0; left: 0; width: 5px; height: 100%; background: #ff9933; }
         .poll-header { color: #000080; font-size: 16px; font-weight: 700; margin-bottom: 10px; display: flex; align-items: center; gap: 8px; text-transform: uppercase; letter-spacing: 1px;}
@@ -101,10 +102,10 @@
         const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbyqrQGYH0o54fguVyumk-x2h9KyL5ogyRDRRcku5yDPjv4nHkBe2Pm49ofuUsNJNTsK/exec";
 
         document.addEventListener("DOMContentLoaded", function() {
+            
             setTimeout(function() {
                 try {
-                    
-                    let adsConfig = {"Footer_Ad":{"imageOrCode":"","link":"","isActive":"No"},"Popup_Ad":{"imageOrCode":"","link":"","isActive":"No"},"Paragraph_7_InArticleAd_2":{"imageOrCode":"https://vedchitrakolhapur.github.io/newsportal/assets/images/img_1782281444739.webp","link":"","isActive":"Yes"},"Paragraph_3_InArticleAd_1":{"imageOrCode":"https://vedchitrakolhapur.github.io/newsportal/assets/images/img_1782281429010.webp","link":"","isActive":"Yes"}};
+                    let adsConfig = {"Footer_Ad":{"imageOrCode":"","link":"","isActive":"No"},"Popup_Ad":{"imageOrCode":"","link":"","isActive":"No"},"Paragraph_7_InArticleAd_1":{"imageOrCode":"https://vedchitrakolhapur.github.io/newsportal/assets/images/img_1782281444739.webp","link":"","isActive":"Yes"},"Paragraph_3_InArticleAd_2":{"imageOrCode":"https://vedchitrakolhapur.github.io/newsportal/assets/images/img_1782281429010.webp","link":"","isActive":"Yes"}};
                     
                     if (adsConfig && typeof adsConfig === 'object') {
                         let displayContainer = document.getElementById('processedArticle');
