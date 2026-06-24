@@ -146,7 +146,7 @@
 
                 // Poll Injection Logic
                 try {
-                    let pollRaw = {"isActive":"Yes","question":"यंदा आजऱ्यात पाऊस कसा राहील ?","options":"[\"दरवर्षी सारखा\",\"मध्यम\",\"कमी पाऊस पडेल\",\"सांगता नाही येत\"]","showHome":"Yes","showArticle":"Yes","paraNum":5,"votes":{"0":1,"1":2}};
+                    let pollRaw = {"isActive":"Yes","question":"यंदा आजऱ्यात पाऊस कसा राहील ?","options":"[\"दरवर्षी सारखा\",\"मध्यम पाऊस पडेल\",\"कमी पाऊस पडेल\",\"सांगता नाही येत\"]","showHome":"Yes","showArticle":"Yes","paraNum":5,"votes":{"0":1,"1":2}};
                     if(pollRaw && pollRaw.isActive === 'Yes' && pollRaw.showArticle === 'Yes') {
                         let displayContainer = document.getElementById('processedArticle');
                         let paragraphElements = displayContainer.querySelectorAll('p');
