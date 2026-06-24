@@ -75,7 +75,7 @@
         <div class="news-box">
             <h1>वीन बातमी टाकून पाहणे (The Ultimate Test)</h1>
             <div class="meta-info">
-                <div><i class="far fa-calendar-alt"></i> </div>
+                <div><i class="far fa-calendar-alt"></i> 23/6/2026, 15:59:29</div>
                 <div><i class="far fa-user"></i> प्रतिनिधी</div>
             </div>
                             <img src="https://vedchitrakolhapur.github.io/newsportal/assets/images/img_1782210562146.webp" class="featured-image" alt="Featured Image">
@@ -84,8 +84,22 @@
                 <p>सर्वात आधी आपण हे पाहूया की तुमचा 'NewsTemplate' खरोखर अपडेट झाला आहे का. १. डॅशबोर्ड उघडा आणि <strong>"नवीन बातमी जोडा"</strong> वर क्लिक करा. २. एक डमी बातमी (उदा. शीर्षक: "Test News") टाका आणि पब्लिश करा. ३. पब्लिश झाल्यावर त्या <strong>नवीन बातमीची लिंक</strong> उघडून पाहा.</p><p><br></p><ul><li><strong>जर नवीन बातमीवर जाहिरात दिसली:</strong> तर समजून जा की तुमचा कोड एकदम बरोबर आहे. फक्त GitHub जुन्या फाईल्स एकाच वेळी अपडेट करू देत नाहीये. (अशा वेळी तुम्हाला महत्त्वाच्या जुन्या बातम्या एक-एक करून 'Edit -&gt; Publish' कराव्या लागतील).</li><li><strong>जर नवीन बातमीवरही जाहिरात दिसली नाही:</strong> तर मात्र तुमचा Google Apps Script मधील <code><strong>NewsTemplate.html</strong></code> अद्याप जुनाच आहे. (त्यासाठी खालील स्टेप करा).</li></ul><p><br></p>            </div>
         </div>
         
+                    <div class="inserted-ad" style="background: white; border-color: #eee;">
+                <span>जाहिरात</span>
+                                    <a href="#" ZautoescZ>
+                        <img src="https://vedchitrakolhapur.github.io/newsportal/assets/images/img_1782285039051.webp" alt="Footer Advertisement">
+                    </a>
+                            </div>
             </div>
 
+            <div id="popupAdModal" class="modal-overlay">
+            <div class="modal-content">
+                <button class="modal-close" onclick="closePopupAd()">&times;</button>
+                                    <a href="#" ZautoescZ>
+                        <img src="https://vedchitrakolhapur.github.io/newsportal/assets/images/img_1782284990248.webp" alt="Popup Advertisement">
+                    </a>
+                            </div>
+        </div>
     
     <script>
         const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbyqrQGYH0o54fguVyumk-x2h9KyL5ogyRDRRcku5yDPjv4nHkBe2Pm49ofuUsNJNTsK/exec";
@@ -93,7 +107,7 @@
         document.addEventListener("DOMContentLoaded", function() {
             setTimeout(function() {
                 try {
-                    let adsConfig = {"Footer_Ad":{"imageOrCode":"","link":"","isActive":"No"},"Popup_Ad":{"imageOrCode":"","link":"","isActive":"No"},"Paragraph_7_InArticleAd_1":{"imageOrCode":"https://vedchitrakolhapur.github.io/newsportal/assets/images/img_1782281444739.webp","link":"","isActive":"Yes"},"Paragraph_3_InArticleAd_2":{"imageOrCode":"https://vedchitrakolhapur.github.io/newsportal/assets/images/img_1782281429010.webp","link":"","isActive":"Yes"}};
+                    let adsConfig = {"Footer_Ad":{"imageOrCode":"https://vedchitrakolhapur.github.io/newsportal/assets/images/img_1782285039051.webp","link":"","isActive":"Yes"},"Paragraph_3_InArticleAd_2":{"imageOrCode":"https://vedchitrakolhapur.github.io/newsportal/assets/images/img_1782285012134.webp","link":"","isActive":"Yes"},"Popup_Ad":{"imageOrCode":"https://vedchitrakolhapur.github.io/newsportal/assets/images/img_1782284990248.webp","link":"","isActive":"Yes"},"Paragraph_7_InArticleAd_1":{"imageOrCode":"https://vedchitrakolhapur.github.io/newsportal/assets/images/img_1782285024222.webp","link":"","isActive":"Yes"}};
                     
                     if (adsConfig && typeof adsConfig === 'object') {
                         let displayContainer = document.getElementById('processedArticle');
