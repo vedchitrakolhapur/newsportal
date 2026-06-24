@@ -35,25 +35,18 @@
         .article-body ul, .article-body ol { margin-bottom: 15px; padding-left: 20px; }
         .article-body li { margin-bottom: 8px; }
         
-         
         .inserted-ad { text-align: center; margin: 25px 0; padding: 10px; background: #fffcf7; border: 1px dashed #d35400; border-radius: 6px; }
         .inserted-ad span { display: block; font-size: 10px; color: #b8b8b8; text-transform: uppercase; margin-bottom: 5px; font-weight: bold;}
         .inserted-ad img { max-width: 100%; height: auto; border-radius: 4px; display: block; margin: 0 auto; }
         
-         
         .share-section { margin-top: 30px; padding-top: 20px; border-top: 1px solid #eee; display: flex; align-items: center; gap: 12px; }
         .share-btn-wa { background: #25D366; color: white; border: none; padding: 10px 20px; border-radius: 6px; font-weight: bold; cursor: pointer; text-decoration: none; display: inline-flex; align-items: center; gap: 8px; font-size: 15px; box-shadow: 0 4px 10px rgba(37,211,102,0.3); transition: 0.2s;}
-        .share-btn-wa:hover { opacity: 0.9; transform: translateY(-2px); }
-
-         
+        
         .modal-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.7); z-index: 5000; display: none; align-items: center; justify-content: center; padding: 20px; }
         .modal-content { background: white; padding: 10px; border-radius: 8px; position: relative; max-width: 450px; width: 100%; text-align: center; box-shadow: 0 5px 25px rgba(0,0,0,0.2); animation: popIn 0.3s ease; }
         .modal-content img { max-width: 100%; height: auto; border-radius: 6px; display: block; margin: 0 auto;}
-        .modal-close { position: absolute; top: -12px; right: -12px; background: #ff9933; color: white; border: none; width: 30px; height: 30px; border-radius: 50%; font-size: 18px; font-weight: bold; cursor: pointer; display: flex; align-items: center; justify-content: center; box-shadow: 0 2px 5px rgba(0,0,0,0.2); z-index: 5001;}
+        .modal-close { position: absolute; top: -12px; right: -12px; background: #ff9933; color: white; border: none; width: 30px; height: 30px; border-radius: 50%; font-size: 18px; font-weight: bold; cursor: pointer; display: flex; align-items: center; justify-content: center; z-index: 5001;}
         
-        @keyframes popIn { from { opacity: 0; transform: scale(0.9); } to { opacity: 1; transform: scale(1); } }
-        
-         
         .poll-box { background: linear-gradient(145deg, #ffffff, #f4f8fb); border-radius: 12px; padding: 20px; margin: 25px 0; box-shadow: 0 4px 15px rgba(0,0,0,0.06); border: 1px solid #e1e8ed; position: relative; overflow: hidden;}
         .poll-box::before { content: ''; position: absolute; top: 0; left: 0; width: 5px; height: 100%; background: #ff9933; }
         .poll-header { color: #000080; font-size: 16px; font-weight: 700; margin-bottom: 10px; display: flex; align-items: center; gap: 8px; text-transform: uppercase; letter-spacing: 1px;}
@@ -84,12 +77,10 @@
     <div class="container">
         <div class="news-box">
             <h1>वीन बातमी टाकून पाहणे (The Ultimate Test)</h1>
-            
             <div class="meta-info">
                 <div><i class="far fa-calendar-alt"></i> 23/6/2026, 15:59:29</div>
                 <div><i class="far fa-user"></i> प्रतिनिधी</div>
             </div>
-            
                             <img src="https://vedchitrakolhapur.github.io/newsportal/assets/images/img_1782210562146.webp" class="featured-image" alt="Featured Image">
                         
             <div id="processedArticle" class="article-body">
@@ -110,10 +101,11 @@
         const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbyqrQGYH0o54fguVyumk-x2h9KyL5ogyRDRRcku5yDPjv4nHkBe2Pm49ofuUsNJNTsK/exec";
 
         document.addEventListener("DOMContentLoaded", function() {
-            
             setTimeout(function() {
                 try {
+                    
                     let adsConfig = {"Popup_Ad":{"imageOrCode":"","link":"","isActive":"No"},"Footer_Ad":{"imageOrCode":"","link":"","isActive":"No"}};
+                    
                     if (adsConfig && typeof adsConfig === 'object') {
                         let displayContainer = document.getElementById('processedArticle');
                         let paragraphElements = displayContainer.querySelectorAll('p');
@@ -174,12 +166,16 @@
                 } catch (e) { console.error("Poll inject error:", e); }
             }, 800);
 
+            
             try {
                 let currentUrl = window.location.href;
                 let titleText = document.querySelector('h1').innerText;
                 let message = encodeURIComponent(`*${titleText}*\n\nसविस्तर बातमी वाचण्यासाठी येथे क्लिक करा:\n👇👇\n${currentUrl}`);
+                
                 let shareBtn = document.getElementById('waShareLink');
-                if(shareBtn) shareBtn.href = `https:
+                if(shareBtn) {
+                    shareBtn.href = `https:
+                }
             } catch (e) {
                 console.error("WhatsApp Share link error:", e);
             }
@@ -195,7 +191,6 @@
             if(modal) modal.style.display = 'none';
         }
 
-        
         function setupAndRenderPoll(pollRaw, container) {
             let question = pollRaw.question;
             let options = JSON.parse(pollRaw.options || "[]");
