@@ -76,7 +76,7 @@
         <div class="news-box">
             <h1>वीन बातमी टाकून पाहणे (The Ultimate Test)</h1>
             <div class="meta-info">
-                <div><i class="far fa-calendar-alt"></i> </div>
+                <div><i class="far fa-calendar-alt"></i> 23/6/2026, 15:59:29</div>
                 <div><i class="far fa-user"></i> प्रतिनिधी</div>
             </div>
                             <img src="https://vedchitrakolhapur.github.io/newsportal/assets/images/img_1782210562146.webp" class="featured-image" alt="Featured Image">
@@ -100,6 +100,14 @@
                             </div>
             </div>
 
+            <div id="popupAdModal" class="modal-overlay">
+            <div class="modal-content">
+                <button class="modal-close" onclick="closePopupAd()">&times;</button>
+                                    <a href="#" ZautoescZ>
+                        <img src="https://vedchitrakolhapur.github.io/newsportal/assets/images/img_1782125461970.webp" alt="Popup Advertisement">
+                    </a>
+                            </div>
+        </div>
     
     <script>
         
@@ -109,7 +117,7 @@
         document.addEventListener("DOMContentLoaded", function() {
             
             try {
-                let adsConfig = {"Footer_Ad":{"imageOrCode":"https://vedchitrakolhapur.github.io/newsportal/assets/images/img_1782213050694.webp","link":"tel:7498663848","isActive":"Yes"},"Paragraph_5_InArticleAd_2":{"imageOrCode":"https://vedchitrakolhapur.github.io/newsportal/assets/images/img_1782213018067.webp","link":"","isActive":"Yes"},"Paragraph_3_InArticleAd_1":{"imageOrCode":"https://vedchitrakolhapur.github.io/newsportal/assets/images/img_1782125472057.webp","link":"","isActive":"Yes"},"Popup_Ad":{"imageOrCode":"https://vedchitrakolhapur.github.io/newsportal/assets/images/img_1782125461970.webp","link":"","isActive":"No"}};
+                let adsConfig = {"Footer_Ad":{"imageOrCode":"https://vedchitrakolhapur.github.io/newsportal/assets/images/img_1782213050694.webp","link":"tel:7498663848","isActive":"Yes"},"Popup_Ad":{"imageOrCode":"https://vedchitrakolhapur.github.io/newsportal/assets/images/img_1782125461970.webp","link":"","isActive":"Yes"},"Paragraph_3_InArticleAd_2":{"imageOrCode":"https://vedchitrakolhapur.github.io/newsportal/assets/images/img_1782125472057.webp","link":"","isActive":"Yes"},"Paragraph_5_InArticleAd_1":{"imageOrCode":"https://vedchitrakolhapur.github.io/newsportal/assets/images/img_1782213018067.webp","link":"","isActive":"Yes"}};
                 if (adsConfig && typeof adsConfig === 'object') {
                     let displayContainer = document.getElementById('processedArticle');
                     let paragraphElements = displayContainer.querySelectorAll('p');
