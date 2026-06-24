@@ -39,15 +39,11 @@
         .inserted-ad span { display: block; font-size: 10px; color: #b8b8b8; text-transform: uppercase; margin-bottom: 5px; font-weight: bold;}
         .inserted-ad img { max-width: 100%; height: auto; border-radius: 4px; display: block; margin: 0 auto; }
         
-        .share-section { margin-top: 30px; padding-top: 20px; border-top: 1px solid #eee; display: flex; align-items: center; gap: 12px; }
-        .share-btn-wa { background: #25D366; color: white; border: none; padding: 10px 20px; border-radius: 6px; font-weight: bold; cursor: pointer; text-decoration: none; display: inline-flex; align-items: center; gap: 8px; font-size: 15px; box-shadow: 0 4px 10px rgba(37,211,102,0.3); transition: 0.2s;}
-        
         .modal-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.7); z-index: 5000; display: none; align-items: center; justify-content: center; padding: 20px; }
         .modal-content { background: white; padding: 10px; border-radius: 8px; position: relative; max-width: 450px; width: 100%; text-align: center; box-shadow: 0 5px 25px rgba(0,0,0,0.2); animation: popIn 0.3s ease; }
         .modal-content img { max-width: 100%; height: auto; border-radius: 6px; display: block; margin: 0 auto;}
         .modal-close { position: absolute; top: -12px; right: -12px; background: #ff9933; color: white; border: none; width: 30px; height: 30px; border-radius: 50%; font-size: 18px; font-weight: bold; cursor: pointer; display: flex; align-items: center; justify-content: center; z-index: 5001;}
         
-         
         .poll-box { background: linear-gradient(145deg, #ffffff, #f4f8fb); border-radius: 12px; padding: 20px; margin: 25px 0; box-shadow: 0 4px 15px rgba(0,0,0,0.06); border: 1px solid #e1e8ed; position: relative; overflow: hidden;}
         .poll-box::before { content: ''; position: absolute; top: 0; left: 0; width: 5px; height: 100%; background: #ff9933; }
         .poll-header { color: #000080; font-size: 16px; font-weight: 700; margin-bottom: 10px; display: flex; align-items: center; gap: 8px; text-transform: uppercase; letter-spacing: 1px;}
@@ -86,13 +82,6 @@
                         
             <div id="processedArticle" class="article-body">
                 <p>यजमान <strong>अमेरिकेने</strong> (USA) सिॲटल स्टेडियमवर (Seattle Stadium) झालेल्या सामन्यात <strong>ऑस्ट्रेलियावर २-० अशी मात करत</strong> फिफा विश्वचषक २०२६ च्या बाद फेरीत (Round of 32) धडक मारली आहे. सलग दुसऱ्या विजयासह बाद फेरीत प्रवेश करणाऱ्या अमेरिकेने <strong>९६ वर्षांनंतर (१९३० नंतर)</strong> पुरुषांच्या विश्वचषकात पहिल्या दोन सामन्यांत सलग विजयाची ऐतिहासिक कामगिरी केली आहे. </p><p><br></p><p><strong>या महत्त्वपूर्ण सामन्यातील ठळक बाबी खालीलप्रमाणे आहेत:</strong></p><ul><li><strong>सामन्याचा निकाल:</strong> अमेरिकेने ऑस्ट्रेलियाविरुद्धच्या 'ग्रुप डी' (Group D) सामन्यात २-० असा विजय मिळवला.</li><li><strong>गोल करणारे खेळाडू:</strong> पहिल्या हाफमध्ये ऑस्ट्रेलियाच्या कॅमेरॉन बर्गेसने (Cameron Burgess) केलेला <strong>स्वयं-गोल</strong> (Own Goal) आणि <strong>ॲलेक्स फ्रीमनचा</strong> (Alex Freeman) हेडर गोल, या कामगिरीमुळे अमेरिकेने सामन्यावर पूर्ण नियंत्रण मिळवले.</li><li><strong>ऐतिहासिक विक्रम:</strong> १९३० च्या पहिल्या फिफा विश्वचषकानंतर पहिल्यांदाच अमेरिकेच्या संघाने स्पर्धेतील सलग सुरुवातीचे दोन सामने जिंकले आहेत.</li><li><strong>पुढील फेरी:</strong> या सलग दुसऱ्या विजयामुळे अमेरिकेने ६ गुणांसह थेट बाद फेरी गाठली आहे. [<a href="https://timesofindia.indiatimes.com/sports/football/fifa-world-cup/usa-vs-australia-fifa-world-cup-2026-match-result-usmnt-break-96-year-record-by-securing-back-to-back-wins/articleshow/131866852.cms" target="_blank">1</a>, <a href="https://www.news18.com/sports/football/fifa-world-cup-2026-pochettinos-usa-secure-second-win-on-the-trot-against-aussies-ws-l-10161954.html" target="_blank">2</a>]</li></ul><p>तुम्हाला आगामी फिफा विश्वचषक सामन्यांचे वेळापत्रक, इतर संघांचे गुणतक्ता (Points Table) किंवा अमेरिकेच्या <strong>पुढील सामन्यांची माहिती</strong> हवी आहे का? </p><p><em>AI responses may include mistakes.</em></p><p><br></p>            </div>
-            
-            <div class="share-section">
-                <span style="font-weight: bold; color:#555;">बातमी शेअर करा:</span>
-                <a id="waShareLink" href="#" target="_blank" class="share-btn-wa">
-                    <i class="fab fa-whatsapp" style="font-size: 18px;"></i> WhatsApp
-                </a>
-            </div>
         </div>
         
             </div>
@@ -102,7 +91,6 @@
         const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbyqrQGYH0o54fguVyumk-x2h9KyL5ogyRDRRcku5yDPjv4nHkBe2Pm49ofuUsNJNTsK/exec";
 
         document.addEventListener("DOMContentLoaded", function() {
-            
             setTimeout(function() {
                 try {
                     let adsConfig = {"Footer_Ad":{"imageOrCode":"","link":"","isActive":"No"},"Popup_Ad":{"imageOrCode":"","link":"","isActive":"No"},"Paragraph_7_InArticleAd_1":{"imageOrCode":"https://vedchitrakolhapur.github.io/newsportal/assets/images/img_1782281444739.webp","link":"","isActive":"Yes"},"Paragraph_3_InArticleAd_2":{"imageOrCode":"https://vedchitrakolhapur.github.io/newsportal/assets/images/img_1782281429010.webp","link":"","isActive":"Yes"}};
@@ -166,20 +154,6 @@
                     }
                 } catch (e) { console.error("Poll inject error:", e); }
             }, 800);
-
-            
-            try {
-                let currentUrl = window.location.href;
-                let titleText = document.querySelector('h1').innerText;
-                let message = encodeURIComponent(`*${titleText}*\n\nसविस्तर बातमी वाचण्यासाठी येथे क्लिक करा:\n👇👇\n${currentUrl}`);
-                
-                let shareBtn = document.getElementById('waShareLink');
-                if(shareBtn) {
-                    shareBtn.href = `https:
-                }
-            } catch (e) {
-                console.error("WhatsApp Share link error:", e);
-            }
             
             let modal = document.getElementById('popupAdModal');
             if(modal) {
