@@ -25,18 +25,24 @@
         .live-banner p { font-size: 16px; opacity: 0.9; }
         
          
+        .seats-counter-bar { display: flex; gap: 15px; justify-content: center; margin-top: 12px; flex-wrap: wrap; }
+        .seat-badge { background: rgba(255,255,255,0.2); padding: 4px 15px; border-radius: 20px; font-size: 15px; font-weight: bold; border: 1px solid rgba(255,255,255,0.3); }
+
+         
         .refresh-bar { background: white; border-radius: 8px; padding: 15px; margin-bottom: 25px; display: flex; justify-content: space-between; align-items: center; box-shadow: 0 2px 8px rgba(0,0,0,0.05); border: 1px solid #eee; }
         .refresh-btn { background: #28a745; color: white; border: none; padding: 10px 20px; border-radius: 6px; font-size: 16px; font-weight: 700; cursor: pointer; display: inline-flex; align-items: center; gap: 8px; transition: 0.2s; }
         .refresh-btn:hover { background: #218838; }
         
          
-        .summary-box { background: white; border-radius: 10px; padding: 20px; margin-bottom: 25px; box-shadow: 0 3px 12px rgba(0,0,0,0.05); border: 1px solid #e1e8ed; }
+        .summary-box { background: white; border-radius: 10px; padding: 20px; margin-bottom: 25px; box-shadow: 0 3px 12 rgba(0,0,0,0.05); border: 1px solid #e1e8ed; }
         .summary-title { font-size: 18px; font-weight: 700; color: #000080; margin-bottom: 15px; text-transform: uppercase; letter-spacing: 1px; border-bottom: 2px solid #f0f2f5; padding-bottom: 10px; display:flex; align-items:center; gap:8px;}
-        .party-summary-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 15px; }
-        .party-summary-card { background: #f8f9fa; border-radius: 8px; padding: 15px; border-left: 4px solid #ff9933; display: flex; flex-direction: column; gap: 5px; }
+        .party-summary-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 15px; }
+        .party-summary-card { background: #f8f9fa; border-radius: 8px; padding: 12px 15px; border-left: 4px solid #000080; display: flex; align-items: center; gap: 12px; justify-content: space-between; }
+        .party-summary-info { display: flex; align-items: center; gap: 10px; }
+        .party-summary-logo { width: 36px; height: 36px; object-fit: contain; border-radius: 4px; background: white; border: 1px solid #e1e8ed; padding: 2px; }
         .party-name { font-size: 16px; font-weight: 700; color: #333; }
-        .party-stats { font-size: 14px; color: #666; display: flex; justify-content: space-between; }
-        .party-stats span { font-weight: 600; color: #000080; }
+        .party-scores { text-align: right; font-size: 14px; font-weight: 600; color: #555; }
+        .party-scores span { color: #000080; font-weight: 700; }
 
          
         .list-card { background: white; border-radius: 10px; padding: 20px; margin-bottom: 20px; box-shadow: 0 3px 12px rgba(0,0,0,0.05); border: 1px solid #e1e8ed; }
@@ -48,15 +54,23 @@
         .cand-row.winner { border-left: 4px solid #ff9933; background: #fffaf5; }
         
         .cand-info { display: flex; align-items: center; gap: 12px; flex: 1; min-width: 200px; }
-        .cand-logo { width: 32px; height: 32px; object-fit: contain; border-radius: 4px; background: #fff; padding: 2px; border: 1px solid #ddd; }
-        .cand-name { font-size: 16px; font-weight: 700; color: #222; }
-        .cand-party { font-size: 13px; color: #666; background: #eee; padding: 2px 8px; border-radius: 12px; font-weight: 600; display: inline-block; }
+        .cand-logo { width: 35px; height: 35px; object-fit: cover; border-radius: 50%; background: #fff; padding: 2px; border: 1px solid #ddd; }
+        .cand-name { font-size: 17px; font-weight: 700; color: #222; }
+        .cand-party { font-size: 13px; color: #666; background: #eee; padding: 2px 8px; border-radius: 12px; font-weight: 600; display: inline-block; margin-left: 5px; }
         
-        .cand-update { font-size: 14px; font-weight: 600; text-align: right; min-width: 180px; }
-        .lead-text { color: #28a745; }
-        .win-text { color: #e67e22; text-transform: uppercase; }
-        .loose-text { color: #888; font-weight: normal; }
+        .cand-update { font-size: 15px; font-weight: 600; text-align: right; min-width: 180px; }
+        .lead-text { color: #28a745; font-weight: 700; }
+        .win-text { color: #e67e22; font-weight: 700; text-transform: uppercase; }
+        .loose-text { color: #dc3545; font-weight: 600; }
+        .pending-text { color: #777; font-weight: normal; }
+        
+         
+        .modal-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.7); z-index: 5000; display: none; align-items: center; justify-content: center; padding: 20px; }
+        .modal-content { background: white; padding: 10px; border-radius: 8px; position: relative; max-width: 450px; width: 100%; text-align: center; box-shadow: 0 5px 25px rgba(0,0,0,0.2); animation: popIn 0.3s ease; }
+        .modal-content img { max-width: 100%; height: auto; border-radius: 6px; display: block; margin: 0 auto;}
+        .modal-close { position: absolute; top: -12px; right: -12px; background: #ff9933; color: white; border: none; width: 30px; height: 30px; border-radius: 50%; font-size: 18px; font-weight: bold; cursor: pointer; display: flex; align-items: center; justify-content: center; z-index: 5001;}
 
+        @keyframes popIn { from { opacity: 0; transform: scale(0.9); } to { opacity: 1; transform: scale(1); } }
         @media (max-width: 600px) {
             .live-banner h1 { font-size: 22px; }
             .refresh-bar { flex-direction: column; gap: 10px; text-align: center; }
@@ -76,11 +90,14 @@
         
         <div class="live-banner">
             <h1><i class="fas fa-broadcast-tower"></i> आजरा नगरपंचयात निवडणूक 2026</h1>
-            <p>फेरीनिहाय अद्ययावत आकडेवारी</p>
-        </div>
+            <p>थेट फेरीनिहाय अद्ययावत आकडेवारी</p>
+            
+                            <div class="seats-counter-bar">
+                    <div class="seat-badge">एकूण जागा: 2</div>                                    </div>
+                    </div>
 
         <div class="refresh-bar">
-            <div style="font-size: 15px; color: #555;">शेवटचे अद्यतन: <strong>काही सेकंदांपूर्वी</strong></div>
+            <div style="font-size: 15px; color: #555;">शेवटचे अद्यतन: <strong>आत्ताच</strong></div>
             <button class="refresh-btn" onclick="location.reload();"><i class="fas fa-sync-alt"></i> रिफ्रेश (Refresh)</button>
         </div>
 
@@ -88,39 +105,43 @@
                 <div class="summary-title"><i class="fas fa-chart-pie"></i> पक्ष / पॅनल स्थिती सारांश</div>
                 <div class="party-summary-grid">
                                             <div class="party-summary-card">
-                            <div class="party-name">श्री देव विकास आघाडी</div>
-                            <div class="party-stats">
-                                आघाडी (Lead): <span>0</span>
+                            <div class="party-summary-info">
+                                                                    <img src="https://vedchitrakolhapur.github.io/newsportal/assets/images/img_1782450561513.webp" class="party-summary-logo" alt="Logo">
+                                                                <div class="party-name">श्री देव विकास आघाडी</div>
                             </div>
-                            <div class="party-stats">
-                                विजयी (Won): <span>0</span>
-                            </div>
-                        </div>
-                                            <div class="party-summary-card">
-                            <div class="party-name">सत्तारूढ आघाडी</div>
-                            <div class="party-stats">
-                                आघाडी (Lead): <span>0</span>
-                            </div>
-                            <div class="party-stats">
-                                विजयी (Won): <span>0</span>
+                            <div class="party-scores">
+                                विजयी: <span>1</span><br>
+                                आघाडी: <span>0</span>
                             </div>
                         </div>
                                             <div class="party-summary-card">
-                            <div class="party-name">अन्याय निवारण आघाडी</div>
-                            <div class="party-stats">
-                                आघाडी (Lead): <span>2</span>
+                            <div class="party-summary-info">
+                                                                    <img src="https://vedchitrakolhapur.github.io/newsportal/assets/images/img_1782450623162.webp" class="party-summary-logo" alt="Logo">
+                                                                <div class="party-name">अन्याय निवारण आघाडी</div>
                             </div>
-                            <div class="party-stats">
-                                विजयी (Won): <span>1</span>
+                            <div class="party-scores">
+                                विजयी: <span>0</span><br>
+                                आघाडी: <span>1</span>
                             </div>
                         </div>
                                             <div class="party-summary-card">
-                            <div class="party-name">अपक्ष</div>
-                            <div class="party-stats">
-                                आघाडी (Lead): <span>0</span>
+                            <div class="party-summary-info">
+                                                                    <img src="https://vedchitrakolhapur.github.io/newsportal/assets/images/img_1782450593298.webp" class="party-summary-logo" alt="Logo">
+                                                                <div class="party-name">सत्तारूढ आघाडी</div>
                             </div>
-                            <div class="party-stats">
-                                विजयी (Won): <span>0</span>
+                            <div class="party-scores">
+                                विजयी: <span>0</span><br>
+                                आघाडी: <span>0</span>
+                            </div>
+                        </div>
+                                            <div class="party-summary-card">
+                            <div class="party-summary-info">
+                                                                    <div class="party-summary-logo" style="display:flex; align-items:center; justify-content:center;"><i class="fas fa-flag text-muted"></i></div>
+                                                                <div class="party-name">अपक्ष</div>
+                            </div>
+                            <div class="party-scores">
+                                विजयी: <span>0</span><br>
+                                आघाडी: <span>0</span>
                             </div>
                         </div>
                                     </div>
@@ -130,38 +151,12 @@
                     <div class="list-title"><i class="fas fa-map-marker-alt"></i> वॉर्ड क्रमांक 1</div>
                     
                     <div class="candidates-area">
-                                                                                    <div class="cand-row ">
+                                                        <div class="cand-row leading">
                                     <div class="cand-info">
-                                                                                    <img src="https://vedchitrakolhapur.github.io/newsportal/assets/images/img_1782450561513.webp" class="cand-logo" alt="Logo">
+                                                                                    <div class="cand-logo" style="display:flex; align-items:center; justify-content:center; background:#eee;"><i class="fas fa-user" style="color:#ccc;"></i></div>
                                                                                 <div>
-                                            <div class="cand-name">राहुल पाटील</div>
-                                            <div class="cand-party">श्री देव विकास आघाडी</div>
-                                        </div>
-                                    </div>
-                                    
-                                    <div class="cand-update">
-                                                                                    <div class="loose-text">निकाल प्रतिक्षेत</div>
-                                                                            </div>
-                                </div>
-                                                            <div class="cand-row ">
-                                    <div class="cand-info">
-                                                                                    <img src="https://vedchitrakolhapur.github.io/newsportal/assets/images/img_1782450593298.webp" class="cand-logo" alt="Logo">
-                                                                                <div>
-                                            <div class="cand-name">अजय माने</div>
-                                            <div class="cand-party">सत्तारूढ आघाडी</div>
-                                        </div>
-                                    </div>
-                                    
-                                    <div class="cand-update">
-                                                                                    <div class="loose-text">निकाल प्रतिक्षेत</div>
-                                                                            </div>
-                                </div>
-                                                            <div class="cand-row leading">
-                                    <div class="cand-info">
-                                                                                    <img src="https://vedchitrakolhapur.github.io/newsportal/assets/images/img_1782450623162.webp" class="cand-logo" alt="Logo">
-                                                                                <div>
-                                            <div class="cand-name">गोविंद प्रभू</div>
-                                            <div class="cand-party">अन्याय निवारण आघाडी</div>
+                                            <span class="cand-name">गोविंद प्रभू</span>
+                                            <span class="cand-party">अन्याय निवारण आघाडी</span>
                                         </div>
                                     </div>
                                     
@@ -172,27 +167,55 @@
                                 </div>
                                                             <div class="cand-row ">
                                     <div class="cand-info">
+                                                                                    <div class="cand-logo" style="display:flex; align-items:center; justify-content:center; background:#eee;"><i class="fas fa-user" style="color:#ccc;"></i></div>
                                                                                 <div>
-                                            <div class="cand-name">रामदास यादव</div>
-                                            <div class="cand-party">अपक्ष</div>
+                                            <span class="cand-name">राहुल पाटील</span>
+                                            <span class="cand-party">श्री देव विकास आघाडी</span>
                                         </div>
                                     </div>
                                     
                                     <div class="cand-update">
-                                                                                    <div class="loose-text">निकाल प्रतिक्षेत</div>
-                                                                            </div>
+                                                                                                                                    <div class="loose-text"><i class="fas fa-arrow-down"></i> पिछाडीवर</div>
+                                                                                                                        </div>
                                 </div>
                                                             <div class="cand-row ">
                                     <div class="cand-info">
+                                                                                    <div class="cand-logo" style="display:flex; align-items:center; justify-content:center; background:#eee;"><i class="fas fa-user" style="color:#ccc;"></i></div>
                                                                                 <div>
-                                            <div class="cand-name">जय देसाई</div>
-                                            <div class="cand-party">अपक्ष</div>
+                                            <span class="cand-name">अजय माने</span>
+                                            <span class="cand-party">सत्तारूढ आघाडी</span>
                                         </div>
                                     </div>
                                     
                                     <div class="cand-update">
-                                                                                    <div class="loose-text">निकाल प्रतिक्षेत</div>
-                                                                            </div>
+                                                                                                                                    <div class="loose-text"><i class="fas fa-arrow-down"></i> पिछाडीवर</div>
+                                                                                                                        </div>
+                                </div>
+                                                            <div class="cand-row ">
+                                    <div class="cand-info">
+                                                                                    <div class="cand-logo" style="display:flex; align-items:center; justify-content:center; background:#eee;"><i class="fas fa-user" style="color:#ccc;"></i></div>
+                                                                                <div>
+                                            <span class="cand-name">रामदास यादव</span>
+                                            <span class="cand-party">अपक्ष</span>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="cand-update">
+                                                                                                                                    <div class="loose-text"><i class="fas fa-arrow-down"></i> पिछाडीवर</div>
+                                                                                                                        </div>
+                                </div>
+                                                            <div class="cand-row ">
+                                    <div class="cand-info">
+                                                                                    <div class="cand-logo" style="display:flex; align-items:center; justify-content:center; background:#eee;"><i class="fas fa-user" style="color:#ccc;"></i></div>
+                                                                                <div>
+                                            <span class="cand-name">जय देसाई</span>
+                                            <span class="cand-party">अपक्ष</span>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="cand-update">
+                                                                                                                                    <div class="loose-text"><i class="fas fa-arrow-down"></i> पिछाडीवर</div>
+                                                                                                                        </div>
                                 </div>
                                                                         </div>
                 </div>
@@ -200,49 +223,120 @@
                     <div class="list-title"><i class="fas fa-map-marker-alt"></i> वॉर्ड क्रमांक 2</div>
                     
                     <div class="candidates-area">
-                                                                                    <div class="cand-row ">
+                                                        <div class="cand-row winner">
                                     <div class="cand-info">
-                                                                                    <img src="https://vedchitrakolhapur.github.io/newsportal/assets/images/img_1782450593298.webp" class="cand-logo" alt="Logo">
+                                                                                    <div class="cand-logo" style="display:flex; align-items:center; justify-content:center; background:#eee;"><i class="fas fa-user" style="color:#ccc;"></i></div>
                                                                                 <div>
-                                            <div class="cand-name">संध्या कुंभार</div>
-                                            <div class="cand-party">सत्तारूढ आघाडी</div>
-                                        </div>
-                                    </div>
-                                    
-                                    <div class="cand-update">
-                                                                                    <div class="loose-text">निकाल प्रतिक्षेत</div>
-                                                                            </div>
-                                </div>
-                                                            <div class="cand-row winner">
-                                    <div class="cand-info">
-                                                                                    <img src="https://vedchitrakolhapur.github.io/newsportal/assets/images/img_1782450623162.webp" class="cand-logo" alt="Logo">
-                                                                                <div>
-                                            <div class="cand-name">दिशा भोसले</div>
-                                            <div class="cand-party">अन्याय निवारण आघाडी</div>
+                                            <span class="cand-name">अंकिता सुतार</span>
+                                            <span class="cand-party">श्री देव विकास आघाडी</span>
                                         </div>
                                     </div>
                                     
                                     <div class="cand-update">
                                                                                     <div class="win-text"><i class="fas fa-trophy"></i> विजयी</div>
+                                            <div style="font-size:12px; color:#666; font-weight:normal; margin-top:2px;"></div>
                                                                             </div>
                                 </div>
                                                             <div class="cand-row ">
                                     <div class="cand-info">
-                                                                                    <img src="https://vedchitrakolhapur.github.io/newsportal/assets/images/img_1782450561513.webp" class="cand-logo" alt="Logo">
+                                                                                    <div class="cand-logo" style="display:flex; align-items:center; justify-content:center; background:#eee;"><i class="fas fa-user" style="color:#ccc;"></i></div>
                                                                                 <div>
-                                            <div class="cand-name">अंकिता सुतार</div>
-                                            <div class="cand-party">श्री देव विकास आघाडी</div>
+                                            <span class="cand-name">संध्या कुंभार</span>
+                                            <span class="cand-party">सत्तारूढ आघाडी</span>
                                         </div>
                                     </div>
                                     
                                     <div class="cand-update">
-                                                                                    <div class="loose-text">निकाल प्रतिक्षेत</div>
-                                                                            </div>
+                                                                                                                                    <div class="loose-text"><i class="fas fa-arrow-down"></i> पिछाडीवर</div>
+                                                                                                                        </div>
+                                </div>
+                                                            <div class="cand-row ">
+                                    <div class="cand-info">
+                                                                                    <div class="cand-logo" style="display:flex; align-items:center; justify-content:center; background:#eee;"><i class="fas fa-user" style="color:#ccc;"></i></div>
+                                                                                <div>
+                                            <span class="cand-name">दिशा भोसले</span>
+                                            <span class="cand-party">अन्याय निवारण आघाडी</span>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="cand-update">
+                                                                                                                                    <div class="loose-text"><i class="fas fa-arrow-down"></i> पिछाडीवर</div>
+                                                                                                                        </div>
                                 </div>
                                                                         </div>
                 </div>
                     
     </div>
 
+    <div id="dynamicAdModal" class="modal-overlay">
+        <div class="modal-content">
+            <button class="modal-close" onclick="closeAdModal()">&times;</button>
+            <div id="adModalBody"></div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            try {
+                
+                let adsConfig = {"Paragraph_3_InArticleAd_1":{"imageOrCode":"https://vedchitrakolhapur.github.io/newsportal/assets/images/img_1782285012134.webp","link":"","isActive":"Yes"},"Popup_Ad":{"imageOrCode":"https://vedchitrakolhapur.github.io/newsportal/assets/images/img_1782284990248.webp","link":"","isActive":"Yes"},"Footer_Ad":{"imageOrCode":"https://vedchitrakolhapur.github.io/newsportal/assets/images/img_1782285039051.webp","link":"","isActive":"Yes"},"Paragraph_7_InArticleAd_2":{"imageOrCode":"https://vedchitrakolhapur.github.io/newsportal/assets/images/img_1782285024222.webp","link":"","isActive":"Yes"}};
+                
+                
+                let refreshCount = parseInt(localStorage.getItem('el_refresh_idx') || '0');
+                
+                
+                let inArticleAds = [];
+                Object.keys(adsConfig).forEach(function(key) {
+                    if (key && key.startsWith('Paragraph_') && adsConfig[key].isActive === 'Yes') {
+                        inArticleAds.push(adsConfig[key]);
+                    }
+                });
+
+                
+                let mainPopupAd = (adsConfig && adsConfig['Popup_Ad'] && adsConfig['Popup_Ad'].isActive === 'Yes') ? adsConfig['Popup_Ad'] : null;
+                
+                let selectedAd = null;
+
+                
+                if (refreshCount === 0 || inArticleAds.length === 0) {
+                    selectedAd = mainPopupAd;
+                } else {
+                    let adIndex = (refreshCount - 1) % inArticleAds.length;
+                    selectedAd = inArticleAds[adIndex];
+                    
+                    if((refreshCount - 1) >= inArticleAds.length) {
+                        selectedAd = mainPopupAd;
+                        localStorage.setItem('el_refresh_idx', '0');
+                    }
+                }
+
+                
+                if (selectedAd && selectedAd.imageOrCode) {
+                    let container = document.getElementById('adModalBody');
+                    if (selectedAd.imageOrCode.trim().startsWith('<')) {
+                        container.innerHTML = selectedAd.imageOrCode;
+                    } else {
+                        let linkUrl = selectedAd.link ? selectedAd.link.trim() : '#';
+                        let hasLink = selectedAd.link && selectedAd.link.trim() !== '';
+                        let targetAttr = linkUrl.startsWith('tel:') ? '' : 'target="_blank"';
+                        container.innerHTML = `<a href="${linkUrl}" ${hasLink ? targetAttr : 'style="cursor:default;" onclick="return false;"'}><img src="${selectedAd.imageOrCode}" alt="Advertisement"></a>`;
+                    }
+                    
+                    // पॉपअप ओपनिंग टाइमर
+                    setTimeout(function() {
+                        document.getElementById('dynamicAdModal').style.display = 'flex';
+                    }, 1000);
+                }
+
+                
+                localStorage.setItem('el_refresh_idx', (refreshCount + 1).toString());
+
+            } catch (e) { console.error("Ad rotation error:", e); }
+        });
+
+        function closeAdModal() {
+            document.getElementById('dynamicAdModal').style.display = 'none';
+        }
+    </script>
 </body>
 </html>
