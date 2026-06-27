@@ -64,9 +64,8 @@
         
          
         .cand-row { display: flex; justify-content: space-between; align-items: center; padding: 12px 15px; background: #f8f9fa; border-radius: 6px; margin-bottom: 10px; border: 1px solid #e9ecef; flex-wrap: wrap; gap: 10px; }
-        .cand-row.leading { border-left: 4px solid #28a745; background: #f4faf6; }
-        .cand-row.winner { border-left: 4px solid #28a745; background: #ebf7ee; }  
-        .cand-row.lost { border-left: 4px solid #dc3545; background: #fdf3f4; opacity: 0.85; }  
+        .cand-row.leading { border-left: 4px solid #0d47a1; background: #f1f7fc; }
+        .cand-row.winner { border-left: 4px solid #28a745; background: #f4faf6; }
         
         .cand-info { display: flex; align-items: center; gap: 12px; flex: 1; min-width: 200px; }
         .cand-logo { width: 35px; height: 35px; object-fit: cover; border-radius: 50%; background: #fff; padding: 2px; border: 1px solid #ddd; }
@@ -74,9 +73,9 @@
         .cand-party { font-size: 13px; color: #666; background: #eee; padding: 2px 8px; border-radius: 12px; font-weight: 600; display: inline-block; margin-left: 5px; }
         
         .cand-update { font-size: 15px; font-weight: 600; text-align: right; min-width: 180px; }
-        .lead-text { color: #28a745; font-weight: 700; }
-        .win-text { color: #28a745; font-weight: 700; text-transform: uppercase; }  
-        .loose-text { color: #dc3545; font-weight: 700; }  
+        .lead-text { color: #0d47a1; font-weight: 700; }
+        .win-text { color: #28a745; font-weight: 700; text-transform: uppercase; }
+        .loose-text { color: #dc3545; font-weight: 700; }
         .pending-text { color: #777; font-weight: normal; }
         
          
@@ -137,7 +136,7 @@
                                         </div>
                                     </td>
                                     <td style="text-align: center;">
-                                        <span class="badge-count badge-lead">0</span>
+                                        <span class="badge-count badge-lead">1</span>
                                     </td>
                                     <td style="text-align: center;">
                                         <span class="badge-count badge-win">1</span>
@@ -151,7 +150,7 @@
                                         </div>
                                     </td>
                                     <td style="text-align: center;">
-                                        <span class="badge-count badge-lead">2</span>
+                                        <span class="badge-count badge-lead">1</span>
                                     </td>
                                     <td style="text-align: center;">
                                         <span class="badge-count badge-win">0</span>
@@ -204,11 +203,11 @@
                                     </div>
                                     
                                     <div class="cand-update">
-                                                                                    <div class="win-text"><i class="fas fa-check-circle"></i> विजयी</div>
-                                            <div style="font-size:12px; color:#1b5e20; font-weight:normal; margin-top:2px;"></div>
+                                                                                    <div class="win-text"><i class="fas fa-trophy"></i> विजयी</div>
+                                            <div style="font-size:12px; color:#28a745; font-weight:normal; margin-top:2px;"></div>
                                                                             </div>
                                 </div>
-                                                            <div class="cand-row lost">
+                                                            <div class="cand-row leading">
                                     <div class="cand-info">
                                                                                     <div class="cand-logo" style="display:flex; align-items:center; justify-content:center; background:#eee;"><i class="fas fa-user" style="color:#ccc;"></i></div>
                                                                                 <div>
@@ -218,11 +217,11 @@
                                     </div>
                                     
                                     <div class="cand-update">
-                                                                                    <div class="loose-text"><i class="fas fa-times-circle"></i> पराभूत</div>
-                                            <div style="font-size:12px; color:#888; font-weight:normal; margin-top:2px;">300 मतानी</div>
+                                                                                    <div class="loose-text"><i class="fas fa-arrow-down"></i> पराभूत</div>
+                                            <div style="font-size:12px; color:#dc3545; font-weight:normal; margin-top:2px;">300 मतानी</div>
                                                                             </div>
                                 </div>
-                                                            <div class="cand-row lost">
+                                                            <div class="cand-row ">
                                     <div class="cand-info">
                                                                                     <div class="cand-logo" style="display:flex; align-items:center; justify-content:center; background:#eee;"><i class="fas fa-user" style="color:#ccc;"></i></div>
                                                                                 <div>
@@ -232,11 +231,11 @@
                                     </div>
                                     
                                     <div class="cand-update">
-                                                                                    <div class="loose-text"><i class="fas fa-times-circle"></i> पराभूत</div>
-                                            <div style="font-size:12px; color:#888; font-weight:normal; margin-top:2px;"></div>
+                                                                                    <div class="loose-text"><i class="fas fa-arrow-down"></i> पराभूत</div>
+                                            <div style="font-size:12px; color:#dc3545; font-weight:normal; margin-top:2px;"></div>
                                                                             </div>
                                 </div>
-                                                            <div class="cand-row lost">
+                                                            <div class="cand-row ">
                                     <div class="cand-info">
                                                                                     <div class="cand-logo" style="display:flex; align-items:center; justify-content:center; background:#eee;"><i class="fas fa-user" style="color:#ccc;"></i></div>
                                                                                 <div>
@@ -246,11 +245,11 @@
                                     </div>
                                     
                                     <div class="cand-update">
-                                                                                    <div class="loose-text"><i class="fas fa-times-circle"></i> पराभूत</div>
-                                            <div style="font-size:12px; color:#888; font-weight:normal; margin-top:2px;"></div>
+                                                                                    <div class="loose-text"><i class="fas fa-arrow-down"></i> पराभूत</div>
+                                            <div style="font-size:12px; color:#dc3545; font-weight:normal; margin-top:2px;"></div>
                                                                             </div>
                                 </div>
-                                                            <div class="cand-row lost">
+                                                            <div class="cand-row ">
                                     <div class="cand-info">
                                                                                     <div class="cand-logo" style="display:flex; align-items:center; justify-content:center; background:#eee;"><i class="fas fa-user" style="color:#ccc;"></i></div>
                                                                                 <div>
@@ -260,12 +259,11 @@
                                     </div>
                                     
                                     <div class="cand-update">
-                                                                                    <div class="loose-text"><i class="fas fa-times-circle"></i> पराभूत</div>
-                                            <div style="font-size:12px; color:#888; font-weight:normal; margin-top:2px;"></div>
+                                                                                    <div class="loose-text"><i class="fas fa-arrow-down"></i> पराभूत</div>
+                                            <div style="font-size:12px; color:#dc3545; font-weight:normal; margin-top:2px;"></div>
                                                                             </div>
                                 </div>
-                                                                        </div>
-                </div>
+                                                                    </div>
                             <div class="list-card">
                     <div class="list-title"><i class="fas fa-map-marker-alt"></i> वॉर्ड क्रमांक 2</div>
                     
@@ -274,14 +272,14 @@
                                     <div class="cand-info">
                                                                                     <div class="cand-logo" style="display:flex; align-items:center; justify-content:center; background:#eee;"><i class="fas fa-user" style="color:#ccc;"></i></div>
                                                                                 <div>
-                                            <span class="cand-name">दिशा भोसले</span>
-                                            <span class="cand-party">अन्याय निवारण आघाडी</span>
+                                            <span class="cand-name">अंकिता सुतार</span>
+                                            <span class="cand-party">श्री देव विकास आघाडी</span>
                                         </div>
                                     </div>
                                     
                                     <div class="cand-update">
                                                                                     <div class="lead-text"><i class="fas fa-arrow-up"></i> आघाडीवर</div>
-                                            <div style="font-size:12px; color:#444; font-weight:normal; margin-top:2px;"></div>
+                                            <div style="font-size:12px; color:#0d47a1; font-weight:normal; margin-top:2px;"></div>
                                                                             </div>
                                 </div>
                                                             <div class="cand-row ">
@@ -294,24 +292,25 @@
                                     </div>
                                     
                                     <div class="cand-update">
-                                                                                    <div class="pending-text">निकाल प्रतिक्षेत</div>
+                                                                                    <div class="loose-text"><i class="fas fa-arrow-down"></i> पिछाडीवर</div>
+                                            <div style="font-size:12px; color:#dc3545; font-weight:normal; margin-top:2px;"></div>
                                                                             </div>
                                 </div>
                                                             <div class="cand-row ">
                                     <div class="cand-info">
                                                                                     <div class="cand-logo" style="display:flex; align-items:center; justify-content:center; background:#eee;"><i class="fas fa-user" style="color:#ccc;"></i></div>
                                                                                 <div>
-                                            <span class="cand-name">अंकिता सुतार</span>
-                                            <span class="cand-party">श्री देव विकास आघाडी</span>
+                                            <span class="cand-name">दिशा भोसले</span>
+                                            <span class="cand-party">अन्याय निवारण आघाडी</span>
                                         </div>
                                     </div>
                                     
                                     <div class="cand-update">
-                                                                                    <div class="pending-text">निकाल प्रतिक्षेत</div>
+                                                                                    <div class="loose-text"><i class="fas fa-arrow-down"></i> पिछाडीवर</div>
+                                            <div style="font-size:12px; color:#dc3545; font-weight:normal; margin-top:2px;"></div>
                                                                             </div>
                                 </div>
-                                                                        </div>
-                </div>
+                                                                    </div>
                     
     </div>
 
@@ -325,7 +324,7 @@
     <script>
         document.addEventListener("DOMContentLoaded", function() {
             try {
-                let adsConfig = {"Paragraph_3_InArticleAd_1":{"imageOrCode":"https://vedchitrakolhapur.github.io/newsportal/assets/images/img_1782285012134.webp","link":"","isActive":"Yes"},"Popup_Ad":{"imageOrCode":"https://vedchitrakolhapur.github.io/newsportal/assets/images/img_1782284990248.webp","link":"","isActive":"Yes"},"Footer_Ad":{"imageOrCode":"https://vedchitrakolhapur.github.io/newsportal/assets/images/img_1782285039051.webp","link":"","isActive":"Yes"},"Paragraph_7_InArticleAd_2":{"imageOrCode":"https://vedchitrakolhapur.github.io/newsportal/assets/images/img_1782285024222.webp","link":"","isActive":"Yes"}};
+                let adsConfig = {"Paragraph_7_InArticleAd_2":{"imageOrCode":"https://vedchitrakolhapur.github.io/newsportal/assets/images/img_1782285024222.webp","link":"","isActive":"Yes"},"Popup_Ad":{"imageOrCode":"https://vedchitrakolhapur.github.io/newsportal/assets/images/img_1782284990248.webp","link":"","isActive":"Yes"},"Paragraph_3_InArticleAd_1":{"imageOrCode":"https://vedchitrakolhapur.github.io/newsportal/assets/images/img_1782285012134.webp","link":"","isActive":"Yes"},"Footer_Ad":{"imageOrCode":"https://vedchitrakolhapur.github.io/newsportal/assets/images/img_1782285039051.webp","link":"","isActive":"Yes"}};
                 let refreshCount = parseInt(localStorage.getItem('el_refresh_idx') || '0');
                 
                 let inArticleAds = [];
