@@ -60,59 +60,6 @@
             <p>28 जून 2026</p>
         </div>
     </header>
-	
-	<div class="view-counter-area" style="max-width:700px; margin: 10px auto 0 auto; padding: 0 12px; text-align: right;">
-        <div id="hitsBadgeContainer" style="display: inline-block; min-height: 28px; vertical-align: middle;">
-            <span style="font-size: 13px; color: #888; font-family: 'Mukta', sans-serif;">व्ह्यूज लोड होत आहेत...</span>
-        </div>
-    </div>
-
-    <script>
-    (function() {
-        try {
-            
-            var d = new Date();
-            
-            var day = d.getDate();
-            var month = d.getMonth() + 1;
-            var year = d.getFullYear();
-            
-            
-            
-            var pureEnglishKey = "vedchitra-bulletin-" + day + "-" + month + "-" + year;
-            
-            
-            var badgeImgUrl = "https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=" + encodeURIComponent(pureEnglishKey) + "&count_bg=%23000080&title_bg=%23555555&icon=&icon_color=%23FFFFFF&title=VIEWS&edge_flat=false";
-            
-            
-            var img = new Image();
-            img.src = badgeImgUrl;
-            img.alt = "Views Counter";
-            img.style.verticalAlign = "middle";
-            img.style.display = "block";
-            img.style.maxHeight = "28px";
-            
-            
-            img.onload = function() {
-                var container = document.getElementById("hitsBadgeContainer");
-                if (container) {
-                    container.innerHTML = "";
-                    container.appendChild(img);
-                }
-            };
-            
-            
-            img.onerror = function() {
-                var container = document.getElementById("hitsBadgeContainer");
-                if (container) {
-                    container.innerHTML = "<span style='font-size: 12px; color: #999;'><i class='fas fa-eye'></i> लाईव्ह वाचक ट्रॅक सुरू आहे</span>";
-                }
-            };
-        } catch (e) {
-            console.error("Counter Error: ", e);
-        }
-    })();
-    </script>
 
     <div class="container">
                         <div class="news-card congrats-card">
