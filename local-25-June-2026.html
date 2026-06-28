@@ -71,11 +71,18 @@
     (function() {
         try {
             
+            var d = new Date();
             
-            var pageDateKey = "marathi-news-hub-" + encodeURIComponent("25 जून 2026".replace(/\s+/g, '-'));
+            var day = d.getDate();
+            var month = d.getMonth() + 1;
+            var year = d.getFullYear();
             
             
-            var badgeImgUrl = "https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=" + pageDateKey + "&count_bg=%23000080&title_bg=%23555555&icon=&icon_color=%23FFFFFF&title=VIEWS&edge_flat=false";
+            
+            var pureEnglishKey = "vedchitra-bulletin-" + day + "-" + month + "-" + year;
+            
+            
+            var badgeImgUrl = "https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=" + encodeURIComponent(pureEnglishKey) + "&count_bg=%23000080&title_bg=%23555555&icon=&icon_color=%23FFFFFF&title=VIEWS&edge_flat=false";
             
             
             var img = new Image();
@@ -98,7 +105,7 @@
             img.onerror = function() {
                 var container = document.getElementById("hitsBadgeContainer");
                 if (container) {
-                    container.innerHTML = "<span style='font-size: 12px; color: #999;'><i class='fas fa-eye'></i> लाइव्ह वाचक ट्रॅक सुरू आहे</span>";
+                    container.innerHTML = "<span style='font-size: 12px; color: #999;'><i class='fas fa-eye'></i> लाईव्ह वाचक ट्रॅक सुरू आहे</span>";
                 }
             };
         } catch (e) {
