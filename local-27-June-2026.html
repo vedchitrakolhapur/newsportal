@@ -3,18 +3,67 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>27 जून 2026 च्या सर्व लोकल बातम्या घडामोडी | वृत्त पोर्टल</title>
+    
+    <title>27 जून 2026 च्या सर्व लोकल बातम्या घडामोडी | महाराष्ट्र LIVE</title>
+    <meta name="description" content="27 जून 2026 च्या भागातील संपूर्ण लोकल घडामोडी, निबंध वार्ता आणि अभिनंदन वार्ता बुलेटिन.">
+    <meta name="keywords" content="News, Maharashtra, Latest News">
+    
+        
+        
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Mukta:wght@400;600;700&amp;display=swap" rel="stylesheet">
+    
     <style>
         * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Mukta', sans-serif; }
-        body { background: #f4f6f9; color: #333; line-height: 1.8; }
-        header { background: #000080; color: white; padding: 15px; position: sticky; top: 0; z-index: 1000; box-shadow: 0 2px 5px rgba(0,0,0,0.1); display: flex; align-items: center; gap: 15px; }
-        .back-btn { font-size: 20px; color: white; text-decoration: none; width: 35px; height: 35px; border-radius: 50%; background: rgba(255,255,255,0.1); display: flex; align-items: center; justify-content: center; }
-        .header-title h1 { font-size: 20px; font-weight: 700; }
-        .header-title p { font-size: 13px; color: #ccc; }
+        body { background: #f4f6f9; color: #333; line-height: 1.8; display: flex; flex-direction: column; min-height: 100vh; }
         
-        .container { max-width: 700px; margin: 15px auto; padding: 0 12px; }
+         
+        header { background: #000080; color: white; padding: 12px 20px; position: sticky; top: 0; z-index: 1000; box-shadow: 0 2px 10px rgba(0,0,0,0.1); display: flex; align-items: center; justify-content: space-between; }
+        .header-left-box { display: flex; align-items: center; gap: 15px; }
+        
+        .back-btn { font-size: 20px; color: white; text-decoration: none; display: flex; align-items: center; justify-content: center; width: 35px; height: 35px; border-radius: 50%; background: rgba(255,255,255,0.15); transition: 0.2s;}
+        .back-btn:hover { background: rgba(255,255,255,0.3); }
+        
+         
+        .logo-area { display: flex; flex-direction: column; text-decoration: none; color: white; }
+        .site-logo-img { max-height: 45px; width: auto; object-fit: contain; display: block; }
+        .logo-text-fallback { font-size: 22px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; color: white; }
+        .logo-text-fallback span { color: #ff9933; }
+        .slogan-text-fallback { font-size: 11px; opacity: 0.85; margin-top: -2px; font-weight: 600; }
+        
+         
+        .seo-hidden-tags { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); border: 0; }
+        
+         
+        .menu-toggle-btn { background: rgba(255,255,255,0.15); border: none; color: white; width: 42px; height: 42px; border-radius: 8px; font-size: 20px; cursor: pointer; display: flex; align-items: center; justify-content: center; transition: 0.2s; }
+        .menu-toggle-btn:hover { background: rgba(255,255,255,0.3); }
+
+         
+        .nav-drawer-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.6); z-index: 5000; display: none; opacity: 0; transition: opacity 0.3s ease; }
+        .nav-drawer { position: fixed; top: 0; right: -300px; width: 300px; height: 100%; background: white; z-index: 5001; box-shadow: -5px 0 25px rgba(0,0,0,0.15); display: flex; flex-direction: column; transition: right 0.3s ease; }
+        .drawer-header { background: #000080; color: white; padding: 20px; display: flex; justify-content: space-between; align-items: center; }
+        .drawer-header h3 { font-size: 18px; font-weight: 700; }
+        .drawer-close-btn { background: none; border: none; color: white; font-size: 24px; cursor: pointer; opacity: 0.8; }
+        .drawer-close-btn:hover { opacity: 1; }
+        
+        .drawer-menu-links { list-style: none; padding: 15px 0; flex: 1; overflow-y: auto; }
+        .drawer-menu-links li a { display: flex; align-items: center; gap: 15px; padding: 12px 25px; color: #333; text-decoration: none; font-size: 16px; font-weight: 600; border-bottom: 1px solid #f0f2f5; transition: 0.2s; }
+        .drawer-menu-links li a:hover { background: #f8f9fa; color: #000080; padding-left: 30px; }
+        .drawer-menu-links li a i { width: 20px; color: #000080; font-size: 18px; }
+        
+         
+        .drawer-social-box { padding: 20px; background: #f8f9fa; border-top: 1px solid #eee; text-align: center; }
+        .drawer-social-box p { font-size: 13px; font-weight: 700; color: #666; margin-bottom: 10px; }
+        .drawer-social-icons { display: flex; justify-content: center; gap: 12px; }
+        .drawer-social-icons a { width: 38px; height: 38px; border-radius: 50%; background: #000080; color: white; display: flex; align-items: center; justify-content: center; text-decoration: none; font-size: 16px; transition: 0.2s; }
+        .drawer-social-icons a:hover { transform: translateY(-3px); opacity: 0.9; }
+        .drawer-social-icons a.fb-icon { background: #3b5998; }
+        .drawer-social-icons a.tw-icon { background: #1da1f2; }
+        .drawer-social-icons a.insta-icon { background: #e1306c; }
+        .drawer-social-icons a.yt-icon { background: #ff0000; }
+        
+        .container { max-width: 700px; margin: 15px auto; padding: 0 12px; flex: 1; }
+        .bulletin-date-title { font-size: 18px; font-weight: 700; color: #000080; margin: 5px 0 15px 0; background: white; display: inline-block; padding: 4px 12px; border-radius: 6px; box-shadow: 0 1px 3px rgba(0,0,0,0.05); }
         
          
         .news-card { background: white; border-radius: 12px; padding: 16px; margin-bottom: 16px; box-shadow: 0 2px 8px rgba(0,0,0,0.06); border-left: 5px solid #000080; }
@@ -45,27 +94,74 @@
         .ad-lbl { font-size: 10px; color: #999; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 5px; text-align: left; padding-left: 5px; }
 
          
-        .modal-overlay { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.7); z-index: 9999; justify-content: center; align-items: center; padding: 20px; }
-        .modal-content { background: white; padding: 10px; border-radius: 12px; position: relative; max-width: 95%; max-height: 90%; text-align: center; }
-        .modal-content img { max-width: 100%; max-height: 75vh; height: auto; border-radius: 6px; display: block; margin: 0 auto; }
-        .modal-close { position: absolute; top: -15px; right: -15px; width: 32px; height: 32px; background: #ff0000; color: white; border: 2px solid white; border-radius: 50%; font-size: 20px; font-weight: bold; cursor: pointer; display: flex; align-items: center; justify-content: center; box-shadow: 0 2px 5px rgba(0,0,0,0.2); }
+        .modal-overlay { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.7); z-index: 6000; justify-content: center; align-items: center; padding: 20px; }
+        .modal-content { background: white; padding: 10px; border-radius: 12px; position: relative; max-width: 450px; width: 100%; text-align: center; box-shadow: 0 5px 25px rgba(0,0,0,0.2); animation: popIn 0.3s ease; }
+        .modal-content img { max-width: 100%; height: auto; border-radius: 6px; display: block; margin: 0 auto; }
+        .modal-close { position: absolute; top: -12px; right: -12px; background: #ff9933; color: white; border: none; width: 30px; height: 30px; border-radius: 50%; font-size: 18px; font-weight: bold; cursor: pointer; display: flex; align-items: center; justify-content: center; box-shadow: 0 2px 5px rgba(0,0,0,0.2); z-index: 6001; }
+
+         
+        footer { background: #0b132b; color: #a0aec0; padding: 20px 15px; text-align: center; font-size: 15px; border-top: 3px solid #000080; margin-top: 40px; }
+        footer a { color: white; text-decoration: none; font-weight: 600; margin: 0 10px; transition: 0.2s; }
+        footer a:hover { color: #ff9933; text-decoration: underline; }
+        .footer-credits { margin-top: 10px; font-size: 13px; color: #718096; }
+        .footer-credits a { color: #718096; font-weight: normal; margin: 0; }
+        .footer-credits a:hover { color: white; }
+
+        @keyframes popIn { from { opacity: 0; transform: scale(0.9); } to { opacity: 1; transform: scale(1); } }
+        @media (max-width: 600px) {
+            .news-card { padding: 12px; }
+            .news-title { font-size: 17px; }
+            .logo-text-fallback { font-size: 18px; }
+            footer { font-size: 14px; }
+        }
     </style>
 </head>
 <body>
 
     <header>
-        <a href="/" class="back-btn"><i class="fas fa-arrow-left"></i></a>
-        <div class="header-title">
-            <h1>लोकल बुलेटिन 📰</h1>
-            <p>27 जून 2026</p>
+        <div class="header-container header-left-box">
+            <a href="index.html" class="back-btn"><i class="fas fa-arrow-left"></i></a>
+            
+            <a href="index.html" class="logo-area">
+                                    <div class="logo-text-fallback">
+                        महाराष्ट्र LIVE                    </div>
+                                            <div class="slogan-text-fallback">ताज्या घडामोडींचा वेगवान आढावा</div>
+                                                </a>
         </div>
+        
+        <button class="menu-toggle-btn" onclick="toggleNavDrawer(true)" aria-label="Open Menu">
+            <i class="fas fa-bars"></i>
+        </button>
     </header>
 
+    <div class="nav-drawer-overlay" id="navDrawerOverlay" onclick="toggleNavDrawer(false)"></div>
+    <nav class="nav-drawer" id="navDrawer">
+        <div class="drawer-header">
+            <h3>मेनु बार (Menu)</h3>
+            <button class="drawer-close-btn" onclick="toggleNavDrawer(false)">&times;</button>
+        </div>
+        <ul class="drawer-menu-links">
+            <li><a href="index.html"><i class="fas fa-home"></i> होमपेज (Home)</a></li>
+            <li><a href="about.html"><i class="fas fa-info-circle"></i> आमच्याबद्दल (About Us)</a></li>
+            <li><a href="contact.html"><i class="fas fa-address-book"></i> संपर्क साधा (Contact)</a></li>
+            <li><a href="privacy.html"><i class="fas fa-user-shield"></i> Privacy Policy</a></li>
+            <li><a href="toc.html"><i class="fas fa-file-contract"></i> Terms & Conditions</a></li>
+        </ul>
+        
+                    <div class="drawer-social-box">
+                <p>आमच्याशी जोडून रहा</p>
+                <div class="drawer-social-icons">
+                    <a href="https://fb.com" target="_blank" class="fb-icon"><i class="fab fa-facebook-f"></i></a>                                                            <a href="https://youtube.com" target="_blank" class="yt-icon"><i class="fab fa-youtube"></i></a>                </div>
+            </div>
+            </nav>
+
     <div class="container">
+        <div class="bulletin-date-title"><i class="far fa-calendar-alt"></i> लोकल बुलेटिन: 27 जून 2026</div>
+        
                         <div class="news-card">
                     <div class="news-meta">
                         <span class="badge badge-local">लोकल न्यूज</span>
-                        <span class="time-text"><i class="far fa-clock"></i> </span>
+                        <span class="time-text"><i class="far fa-clock"></i>  16:59:09</span>
                     </div>
                     
                     <div class="news-title">अपडेटेड आहे! यामध्ये आपण आधीच सुचवलेले सर्व बदल (</div>
@@ -79,12 +175,18 @@
                     
                     <div class="card-bottom">
                         <span class="time-text"><i class="fas fa-map-marker-alt"></i> मुख्य बातमी</span>
-                        <a href="https://api.whatsapp.com/send?text=*%25E0%25A4%2585%25E0%25A4%25AA%25E0%25A4%25A1%25E0%25A5%2587%25E0%25A4%259F%25E0%25A5%2587%25E0%25A4%25A1%2520%25E0%25A4%2586%25E0%25A4%25B9%25E0%25A5%2587%21%2520%25E0%25A4%25AF%25E0%25A4%25BE%25E0%25A4%25AE%25E0%25A4%25A7%25E0%25A5%258D%25E0%25A4%25AF%25E0%25A5%2587%2520%25E0%25A4%2586%25E0%25A4%25AA%25E0%25A4%25A3%2520%25E0%25A4%2586%25E0%25A4%25A7%25E0%25A5%2580%25E0%25A4%259A%2520%25E0%25A4%25B8%25E0%25A5%2581%25E0%25A4%259A%25E0%25A4%25B5%25E0%25A4%25B2%25E0%25A5%2587%25E0%25A4%25B2%25E0%25A5%2587%2520%25E0%25A4%25B8%25E0%25A4%25B0%25E0%25A5%258D%25E0%25A4%25B5%2520%25E0%25A4%25AC%25E0%25A4%25A6%25E0%25A4%25B2%2520%28*%n%nवाचा संपूर्ण लोकल बातमी येथे 👇%nhttps%253A%252F%252Fnewsportal%252Fnews-news-1782559749251.html" target="_blank" class="share-btn">
+                        <a href="https://api.whatsapp.com/send?text=*%25E0%25A4%2585%25E0%25A4%25AA%25E0%25A4%25A1%25E0%25A5%2587%25E0%25A4%259F%25E0%25A5%2587%25E0%25A4%25A1%2520%25E0%25A4%2586%25E0%25A4%25B9%25E0%25A5%2587%21%2520%25E0%25A4%25AF%25E0%25A4%25BE%25E0%25A4%25AE%25E0%25A4%25A7%25E0%25A5%258D%25E0%25A4%25AF%25E0%25A5%2587%2520%25E0%25A4%2586%25E0%25A4%25AA%25E0%25A4%25A3%2520%25E0%25A4%2586%25E0%25A4%25A7%25E0%25A5%2580%25E0%25A4%259A%2520%25E0%25A4%25B8%25E0%25A5%2581%25E0%25A4%259A%25E0%25A4%25B5%25E0%25A4%25B2%25E0%25A5%2587%25E0%25A4%25B2%25E0%25A5%2587%2520%25E0%25A4%25B8%25E0%25A4%25B0%25E0%25A5%258D%25E0%25A4%25B5%2520%25E0%25A4%25AC%25E0%25A4%25A6%25E0%25A4%25B2%2520%28*%0A%0Aवाचा संपूर्ण लोकल बातमी येथे 👇%0Anews%252Fnews-1782559749251.html" target="_blank" class="share-btn">
                             <i class="fab fa-whatsapp"></i> शेअर करा
                         </a>
                     </div>
                 </div>
 
+                                    <div class="inline-ad-box">
+                        <div class="ad-lbl">जाहिरात</div>
+                                                    <a href="#" target="_blank">
+                                <img src="https://vedchitrakolhapur.github.io/newsportal/assets/images/img_1782628837441.webp" alt="Advertisement">
+                            </a>
+                                            </div>
                 
             </div>
 
@@ -97,7 +199,34 @@
                             </div>
         </div>
     
+    <footer>
+        <div class="footer-links">
+            <a href="index.html">होमपेज</a> | 
+            <a href="about.html">आमच्याबद्दल</a> | 
+            <a href="contact.html">संपर्क साधा</a> | 
+            <a href="privacy.html">Privacy Policy</a> | 
+            <a href="toc.html">Terms of Service</a>
+        </div>
+        <div class="footer-credits">
+            &copy; 2026 महाराष्ट्र LIVE | Developed by <a href="https://mbiz.in" target="_blank">mbiz.in</a>
+        </div>
+    </footer>
+
     <script>
+        
+        window.toggleNavDrawer = function(open) {
+            let overlay = document.getElementById('navDrawerOverlay');
+            let drawer = document.getElementById('navDrawer');
+            if(open) {
+                overlay.style.display = 'block';
+                setTimeout(() => { overlay.style.opacity = '1'; drawer.style.right = '0'; }, 10);
+            } else {
+                drawer.style.right = '-300px';
+                overlay.style.opacity = '0';
+                setTimeout(() => { overlay.style.display = 'none'; }, 300);
+            }
+        };
+
         
         document.addEventListener("DOMContentLoaded", function() {
             let modal = document.getElementById('hubPopupModal');
