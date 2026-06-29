@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="mr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Privacy Policy | महाराष्ट्र LIVE</title>
+    <meta name="description" content="संपूर्ण बातमी सविस्तर वाचण्यासाठी येथे क्लिक करा...">
+    <meta name="keywords" content="News, Maharashtra, Latest News">
+    
+    <meta property="og:title" content="Privacy Policy">
+    <meta property="og:type" content="article">
+    <meta property="og:image" content="https://via.placeholder.com/800x400?text=News&#43;Portal">
+    <meta property="og:description" content="संपूर्ण बातमी सविस्तर वाचण्यासाठी येथे क्लिक करा...">
+    
+        
+        
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Mukta:wght@400;600;700&amp;display=swap" rel="stylesheet">
+    
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Mukta', sans-serif; }
+        body { background: #f4f6f9; color: #333; line-height: 1.8; display: flex; flex-direction: column; min-height: 100vh; }
+        
+         
+        header { background: #000080; color: white; padding: 12px 20px; position: sticky; top: 0; z-index: 1000; box-shadow: 0 2px 10px rgba(0,0,0,0.1); display: flex; align-items: center; justify-content: space-between; }
+        .header-left-box { display: flex; align-items: center; gap: 15px; }
+        
+        .back-btn { font-size: 20px; color: white; text-decoration: none; display: flex; align-items: center; justify-content: center; width: 35px; height: 35px; border-radius: 50%; background: rgba(255,255,255,0.15); transition: 0.2s;}
+        .back-btn:hover { background: rgba(255,255,255,0.3); }
+        
+         
+        .logo-area { display: flex; flex-direction: column; text-decoration: none; color: white; }
+        .site-logo-img { max-height: 45px; width: auto; object-fit: contain; display: block; }
+        .logo-text-fallback { font-size: 22px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; color: white; }
+        .logo-text-fallback span { color: #ff9933; }
+        .slogan-text-fallback { font-size: 11px; opacity: 0.85; margin-top: -2px; font-weight: 600; }
+        
+         
+        .seo-hidden-tags { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); border: 0; }
+        
+         
+        .menu-toggle-btn { background: rgba(255,255,255,0.15); border: none; color: white; width: 42px; height: 42px; border-radius: 8px; font-size: 20px; cursor: pointer; display: flex; align-items: center; justify-content: center; transition: 0.2s; }
+        .menu-toggle-btn:hover { background: rgba(255,255,255,0.3); }
+
+         
+        .nav-drawer-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.6); z-index: 5000; display: none; opacity: 0; transition: opacity 0.3s ease; }
+        .nav-drawer { position: fixed; top: 0; right: -300px; width: 300px; height: 100%; background: white; z-index: 5001; box-shadow: -5px 0 25px rgba(0,0,0,0.15); display: flex; flex-direction: column; transition: right 0.3s ease; }
+        .drawer-header { background: #000080; color: white; padding: 20px; display: flex; justify-content: space-between; align-items: center; }
+        .drawer-header h3 { font-size: 18px; font-weight: 700; }
+        .drawer-close-btn { background: none; border: none; color: white; font-size: 24px; cursor: pointer; opacity: 0.8; }
+        .drawer-close-btn:hover { opacity: 1; }
+        
+        .drawer-menu-links { list-style: none; padding: 15px 0; flex: 1; overflow-y: auto; }
+        .drawer-menu-links li a { display: flex; align-items: center; gap: 15px; padding: 12px 25px; color: #333; text-decoration: none; font-size: 16px; font-weight: 600; border-bottom: 1px solid #f0f2f5; transition: 0.2s; }
+        .drawer-menu-links li a:hover { background: #f8f9fa; color: #000080; padding-left: 30px; }
+        .drawer-menu-links li a i { width: 20px; color: #000080; font-size: 18px; }
+        
+         
+        .drawer-social-box { padding: 20px; background: #f8f9fa; border-top: 1px solid #eee; text-align: center; }
+        .drawer-social-box p { font-size: 13px; font-weight: 700; color: #666; margin-bottom: 10px; }
+        .drawer-social-icons { display: flex; justify-content: center; gap: 12px; }
+        .drawer-social-icons a { width: 38px; height: 38px; border-radius: 50%; background: #000080; color: white; display: flex; align-items: center; justify-content: center; text-decoration: none; font-size: 16px; transition: 0.2s; }
+        .drawer-social-icons a:hover { transform: translateY(-3px); opacity: 0.9; }
+        .drawer-social-icons a.fb-icon { background: #3b5998; }
+        .drawer-social-icons a.tw-icon { background: #1da1f2; }
+        .drawer-social-icons a.insta-icon { background: #e1306c; }
+        .drawer-social-icons a.yt-icon { background: #ff0000; }
+        
+        .container { max-width: 800px; margin: 20px auto; padding: 0 15px; flex: 1; }
+        .news-box { background: white; border-radius: 10px; padding: 25px; box-shadow: 0 3px 15px rgba(0,0,0,0.05); }
+        
+        h1 { font-size: 26px; font-weight: 700; color: #111; margin-bottom: 15px; line-height: 1.4; }
+        .meta-info { font-size: 14px; color: #777; margin-bottom: 20px; display: flex; gap: 15px; align-items: center; border-bottom: 1px solid #eee; padding-bottom: 12px; }
+        .meta-info i { color: #000080; }
+        
+        .featured-image { width: 100%; max-height: 450px; object-fit: cover; border-radius: 8px; margin-bottom: 25px; box-shadow: 0 4px 12px rgba(0,0,0,0.08); }
+        
+        .article-body { font-size: 17px; color: #333; word-wrap: break-word; overflow-wrap: break-word;}
+        .article-body p { margin-bottom: 15px; text-align: justify; }
+        .article-body img { max-width: 100%; height: auto; border-radius: 6px; margin: 15px 0; display: block; }
+        .article-body ul, .article-body ol { margin-bottom: 15px; padding-left: 20px; }
+        .article-body li { margin-bottom: 8px; }
+        
+        .inserted-ad { text-align: center; margin: 25px 0; padding: 10px; background: #fffcf7; border: 1px dashed #d35400; border-radius: 6px; }
+        .inserted-ad span { display: block; font-size: 10px; color: #b8b8b8; text-transform: uppercase; margin-bottom: 5px; font-weight: bold;}
+        .inserted-ad img { max-width: 100%; height: auto; border-radius: 4px; display: block; margin: 0 auto; }
+        
+        .modal-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.7); z-index: 6000; display: none; align-items: center; justify-content: center; padding: 20px; }
+        .modal-content { background: white; padding: 10px; border-radius: 8px; position: relative; max-width: 450px; width: 100%; text-align: center; box-shadow: 0 5px 25px rgba(0,0,0,0.2); animation: popIn 0.3s ease; }
+        .modal-content img { max-width: 100%; height: auto; border-radius: 6px; display: block; margin: 0 auto;}
+        .modal-close { position: absolute; top: -12px; right: -12px; background: #ff9933; color: white; border: none; width: 30px; height: 30px; border-radius: 50%; font-size: 18px; font-weight: bold; cursor: pointer; display: flex; align-items: center; justify-content: center; box-shadow: 0 2px 5px rgba(0,0,0,0.2); z-index: 6001;}
+        
+         
+        .poll-box { background: linear-gradient(145deg, #ffffff, #f4f8fb); border-radius: 12px; padding: 20px; margin: 25px 0; box-shadow: 0 4px 15px rgba(0,0,0,0.06); border: 1px solid #e1e8ed; position: relative; overflow: hidden;}
+        .poll-box::before { content: ''; position: absolute; top: 0; left: 0; width: 5px; height: 100%; background: #ff9933; }
+        .poll-header { color: #000080; font-size: 16px; font-weight: 700; margin-bottom: 10px; display: flex; align-items: center; gap: 8px; text-transform: uppercase; letter-spacing: 1px;}
+        .poll-question { font-size: 20px; color: #111; margin-bottom: 20px; font-weight: 700; line-height: 1.4;}
+        .poll-opt-btn { display: block; width: 100%; padding: 12px 18px; margin-bottom: 12px; background: white; border: 2px solid #e1e8ed; border-radius: 8px; text-align: left; font-size: 16px; font-weight: 600; cursor: pointer; transition: 0.2s; color: #333;}
+        .poll-opt-btn:hover { border-color: #000080; background: #f8f9fa; transform: translateY(-2px);}
+        .poll-result-row { margin-bottom: 15px; }
+        .poll-result-label { display: flex; justify-content: space-between; font-size: 15px; font-weight: 600; margin-bottom: 6px; color: #333; }
+        .poll-bar-bg { background: #e9ecef; border-radius: 20px; height: 12px; overflow: hidden; box-shadow: inset 0 1px 2px rgba(0,0,0,0.1);}
+        .poll-bar-fill { background: linear-gradient(90deg, #000080, #0040ff); height: 100%; width: 0%; transition: width 1s ease-in-out; border-radius: 20px; }
+        .poll-footer { margin-top: 15px; font-size: 13px; color: #888; text-align: right; }
+        .poll-loader { display: none; text-align: center; padding: 20px; color: #000080; font-weight: bold; }
+
+         
+        footer { background: #0b132b; color: #a0aec0; padding: 20px 15px; text-align: center; font-size: 15px; border-top: 3px solid #000080; margin-top: 40px; }
+        footer a { color: white; text-decoration: none; font-weight: 600; margin: 0 10px; transition: 0.2s; }
+        footer a:hover { color: #ff9933; text-decoration: underline; }
+        .footer-credits { margin-top: 10px; font-size: 13px; color: #718096; }
+        .footer-credits a { color: #718096; font-weight: normal; margin: 0; }
+        .footer-credits a:hover { color: white; }
+
+        @keyframes popIn { from { opacity: 0; transform: scale(0.9); } to { opacity: 1; transform: scale(1); } }
+        @media (max-width: 600px) {
+            h1 { font-size: 22px; }
+            .news-box { padding: 15px; }
+            .article-body { font-size: 16px; }
+            .logo-text-fallback { font-size: 18px; }
+            footer { font-size: 14px; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="header-container header-left-box">
+            <a href="../index.html" class="back-btn"><i class="fas fa-arrow-left"></i></a>
+            
+            <a href="../index.html" class="logo-area">
+                                    <div class="logo-text-fallback">
+                        महाराष्ट्र LIVE                    </div>
+                                            <div class="slogan-text-fallback">ताज्या घडामोडींचा वेगवान आढावा</div>
+                                                </a>
+        </div>
+        
+        <button class="menu-toggle-btn" onclick="toggleNavDrawer(true)" aria-label="Open Menu">
+            <i class="fas fa-bars"></i>
+        </button>
+    </header>
+
+    <div class="nav-drawer-overlay" id="navDrawerOverlay" onclick="toggleNavDrawer(false)"></div>
+    <nav class="nav-drawer" id="navDrawer">
+        <div class="drawer-header">
+            <h3>मेनु बार (Menu)</h3>
+            <button class="drawer-close-btn" onclick="toggleNavDrawer(false)">&times;</button>
+        </div>
+        <ul class="drawer-menu-links">
+            <li><a href="../index.html"><i class="fas fa-home"></i> होमपेज (Home)</a></li>
+            <li><a href="../about.html"><i class="fas fa-info-circle"></i> आमच्याबद्दल (About Us)</a></li>
+            <li><a href="../contact.html"><i class="fas fa-address-book"></i> संपर्क साधा (Contact)</a></li>
+            <li><a href="../privacy.html"><i class="fas fa-user-shield"></i> Privacy Policy</a></li>
+            <li><a href="../toc.html"><i class="fas fa-file-contract"></i> Terms & Conditions</a></li>
+        </ul>
+        
+            </nav>
+
+    <div class="container">
+        <div class="news-box">
+            <h1>Privacy Policy</h1>
+            <div class="meta-info">
+                <div><i class="far fa-calendar-alt"></i> </div>
+                <div><i class="far fa-user"></i> प्रतिनिधी</div>
+            </div>
+                        
+            <div id="processedArticle" class="article-body">
+                <h2>Privacy Policy</h2><p>येथे माहिती लिहा...</p>            </div>
+        </div>
+        
+            </div>
+
+            <div id="popupAdModal" class="modal-overlay">
+            <div class="modal-content">
+                <button class="modal-close" onclick="closePopupAd()">&times;</button>
+                                    <a href="#" ZautoescZ>
+                        <img src="https://vedchitrakolhapur.github.io/newsportal/assets/images/img_1782284990248.webp" alt="Popup Advertisement">
+                    </a>
+                            </div>
+        </div>
+    
+    <footer>
+        <div class="footer-links">
+            <a href="../index.html">होमपेज</a> | 
+            <a href="../about.html">आमच्याबद्दल</a> | 
+            <a href="../contact.html">संपर्क साधा</a> | 
+            <a href="../privacy.html">Privacy Policy</a> | 
+            <a href="../toc.html">Terms of Service</a>
+        </div>
+        <div class="footer-credits">
+            &copy; 2026 महाराष्ट्र LIVE | Developed by <a href="https://mbiz.in" target="_blank">mbiz.in</a>
+        </div>
+    </footer>
+
+    <script>
+        const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbyqrQGYH0o54fguVyumk-x2h9KyL5ogyRDRRcku5yDPjv4nHkBe2Pm49ofuUsNJNTsK/exec";
+
+        document.addEventListener("DOMContentLoaded", function() {
+             
+            window.toggleNavDrawer = function(open) {
+                let overlay = document.getElementById('navDrawerOverlay');
+                let drawer = document.getElementById('navDrawer');
+                if(open) {
+                    overlay.style.display = 'block';
+                    setTimeout(() => { overlay.style.opacity = '1'; drawer.style.right = '0'; }, 10);
+                } else {
+                    drawer.style.right = '-300px';
+                    overlay.style.opacity = '0';
+                    setTimeout(() => { overlay.style.display = 'none'; }, 300);
+                }
+            };
+
+            setTimeout(function() {
+                try {
+                    let adsConfig = {"Footer_Ad":{"imageOrCode":"https://vedchitrakolhapur.github.io/newsportal/assets/images/img_1782285039051.webp","link":"","isActive":"No"},"Paragraph_9_InArticleAd_4":{"imageOrCode":"https://vedchitrakolhapur.github.io/newsportal/assets/images/img_1782628837441.webp","link":"","isActive":"Yes"},"Paragraph_11_InArticleAd_1":{"imageOrCode":"https://vedchitrakolhapur.github.io/newsportal/assets/images/img_1782628857696.webp","link":"","isActive":"Yes"},"Popup_Ad":{"imageOrCode":"https://vedchitrakolhapur.github.io/newsportal/assets/images/img_1782284990248.webp","link":"","isActive":"Yes"},"Paragraph_3_InArticleAd_3":{"imageOrCode":"https://vedchitrakolhapur.github.io/newsportal/assets/images/img_1782285012134.webp","link":"","isActive":"Yes"},"Paragraph_7_InArticleAd_2":{"imageOrCode":"https://vedchitrakolhapur.github.io/newsportal/assets/images/img_1782285024222.webp","link":"","isActive":"Yes"}};
+                    
+                    if (adsConfig && typeof adsConfig === 'object') {
+                        let displayContainer = document.getElementById('processedArticle');
+                        let paragraphElements = displayContainer.querySelectorAll('p');
+                        
+                        Object.keys(adsConfig).forEach(function(key) {
+                            if (key && key.startsWith('Paragraph_')) {
+                                let adData = adsConfig[key];
+                                if (adData && adData.isActive === 'Yes') {
+                                    let targetParaNum = parseInt(key.split('_')[1]) || 3;
+                                    let adContentHtml = '';
+                                    let linkUrl = adData.link ? adData.link.trim() : '';
+                                    let targetAttr = 'target="_blank"';
+                                    
+                                    if (linkUrl && /^\+?[0-9\s\-]{10,15}$/.test(linkUrl)) linkUrl = 'tel:' + linkUrl.replace(/\s+/g, '');
+                                    if (linkUrl.startsWith('tel:')) targetAttr = ''; 
+
+                                    if (adData.imageOrCode && adData.imageOrCode.trim().startsWith('<')) {
+                                        adContentHtml = adData.imageOrCode;
+                                    } else {
+                                        let hasLink = linkUrl !== '';
+                                        adContentHtml = `<a href="${hasLink ? linkUrl : '#'}" ${hasLink ? targetAttr : 'style="cursor:default;" onclick="return false;"'}><img src="${adData.imageOrCode}" alt="In-Article Advertisement"></a>`;
+                                    }
+                                    
+                                    let adHtmlCode = `<div class="inserted-ad"><span>जाहिरात</span>${adContentHtml}</div>`;
+                                    
+                                    if (paragraphElements.length >= targetParaNum) {
+                                        paragraphElements[targetParaNum - 1].insertAdjacentHTML('afterend', adHtmlCode);
+                                    } else if (paragraphElements.length > 0) {
+                                        displayContainer.insertAdjacentHTML('beforeend', adHtmlCode);
+                                    }
+                                }
+                            }
+                        });
+                    }
+                } catch (error) {
+                    console.error("जाहिरात इन्सर्ट करताना त्रुटी:", error);
+                }
+
+                // Poll Injection Logic
+                try {
+                    let pollRaw = {"isActive":"No"};
+                    if(pollRaw && pollRaw.isActive === 'Yes' && pollRaw.showArticle === 'Yes') {
+                        let displayContainer = document.getElementById('processedArticle');
+                        let paragraphElements = displayContainer.querySelectorAll('p');
+                        let targetParaNum = parseInt(pollRaw.paraNum) || 4;
+                        
+                        let pollContainer = document.createElement('div');
+                        pollContainer.id = "articlePollContainer";
+                        pollContainer.className = "poll-box";
+                        
+                        if (paragraphElements.length >= targetParaNum) {
+                            paragraphElements[targetParaNum - 1].insertAdjacentElement('afterend', pollContainer);
+                        } else if (paragraphElements.length > 0) {
+                            displayContainer.insertAdjacentElement('beforeend', pollContainer);
+                        }
+                        setupAndRenderPoll(pollRaw, pollContainer);
+                    }
+                } catch (e) { console.error("Poll inject error:", e); }
+            }, 800);
+            
+            let modal = document.getElementById('popupAdModal');
+            if(modal) {
+                setTimeout(function() { modal.style.display = 'flex'; }, 1500);
+            }
+        });
+
+        function closePopupAd() {
+            let modal = document.getElementById('popupAdModal');
+            if(modal) modal.style.display = 'none';
+        }
+
+        function setupAndRenderPoll(pollRaw, container) {
+            let question = pollRaw.question;
+            let options = JSON.parse(pollRaw.options || "[]");
+            let votesObj = pollRaw.votes || {};
+            
+            let pollKey = "voted_" + encodeURIComponent(question.substring(0,20));
+            let hasVoted = localStorage.getItem(pollKey);
+
+            if(hasVoted) {
+                buildPollResultsView(container, question, options, votesObj);
+            } else {
+                buildPollOptionsView(container, question, options, pollKey);
+            }
+        }
+
+        function buildPollOptionsView(container, question, options, pollKey) {
+            let html = `<div class="poll-header"><i class="fas fa-poll-h"></i> आजचा पोल</div>`;
+            html += `<div class="poll-question">${question}</div>`;
+            html += `<div id="pollOptionsArea">`;
+            options.forEach((opt, idx) => {
+                html += `<button class="poll-opt-btn" onclick="sendVoteApi('${opt}', ${idx}, '${pollKey}')">${opt}</button>`;
+            });
+            html += `</div>`;
+            html += `<div id="pollLoader" class="poll-loader"><i class="fas fa-spinner fa-spin"></i> तुमची नोंद होत आहे...</div>`;
+            container.innerHTML = html;
+        }
+
+        async function sendVoteApi(optionText, optIdx, pollKey) {
+            document.getElementById('pollOptionsArea').style.display = 'none';
+            document.getElementById('pollLoader').style.display = 'block';
+
+            try {
+                let response = await fetch(SCRIPT_URL + "?action=vote&optIdx=" + optIdx);
+                let result = await response.json();
+                
+                if(result.status === "success") {
+                    localStorage.setItem(pollKey, "true"); 
+                    let updatedPoll = result.poll;
+                    buildPollResultsView(document.getElementById('articlePollContainer'), updatedPoll.question, JSON.parse(updatedPoll.options), updatedPoll.votes);
+                } else {
+                    alert("तांत्रिक अडचणीमुळे मत नोंदवले गेले नाही. पुन्हा प्रयत्न करा.");
+                    document.getElementById('pollOptionsArea').style.display = 'block';
+                    document.getElementById('pollLoader').style.display = 'none';
+                }
+            } catch(e) {
+                console.error(e);
+                alert("इंटरनेट कनेक्शन तपासा किंवा काही वेळाने प्रयत्न करा.");
+                document.getElementById('pollOptionsArea').style.display = 'block';
+                document.getElementById('pollLoader').style.display = 'none';
+            }
+        }
+
+        function buildPollResultsView(container, question, options, votesObj) {
+            let totalVotes = 0;
+            options.forEach((_, idx) => { totalVotes += (votesObj[idx] || 0); });
+
+            let html = `<div class="poll-header"><i class="fas fa-poll-h"></i> आजचा पोल - निकाल</div>`;
+            html += `<div class="poll-question">${question}</div>`;
+            
+            options.forEach((opt, idx) => {
+                let vCount = votesObj[idx] || 0;
+                let percent = totalVotes === 0 ? 0 : Math.round((vCount / totalVotes) * 100);
+                
+                html += `
+                <div class="poll-result-row">
+                    <div class="poll-result-label">
+                        <span>${opt}</span>
+                        <span>${percent}%</span>
+                    </div>
+                    <div class="poll-bar-bg">
+                        <div class="poll-bar-fill" style="width: ${percent}%;"></div>
+                    </div>
+                </div>`;
+            });
+
+            html += `<div class="poll-footer">एकूण मते: ${totalVotes} | तुमचं मत नोंदवलं गेलं आहे.</div>`;
+            container.innerHTML = html;
+        }
+    </script>
+</body>
+</html>
