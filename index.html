@@ -2,7 +2,7 @@
 <html lang="mr">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     
     <title>महाराष्ट्र LIVE | दैनिक वृत्त</title>
     <meta name="description" content="महाराष्ट्रातील ताज्या आणि महत्त्वाच्या बातम्या घडामोडी.">
@@ -15,116 +15,114 @@
     
     <style>
         * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Mukta', sans-serif; }
-        body { background: #f4f6f9; color: #333; line-height: 1.6; display: flex; flex-direction: column; min-height: 100vh; }
+        body { background: #f4f6f9; color: #333; line-height: 1.6; display: flex; flex-direction: column; min-height: 100vh; -webkit-text-size-adjust: 100%; }
         
          
-        header { background: #000080; color: white; padding: 12px 20px; position: sticky; top: 0; z-index: 1000; box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
-        .header-container { max-width: 1100px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; }
+        header { background: #000080; color: white; padding: 12px 15px; position: sticky; top: 0; z-index: 1000; box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
+        .header-container { max-width: 1100px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; width: 100%; }
         
          
-        .logo-area { display: flex; flex-direction: column; text-decoration: none; color: white; }
-        .site-logo-img { max-height: 50px; width: auto; object-fit: contain; display: block; }
-        .logo-text-fallback { font-size: 24px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; color: white; }
+        .logo-area { display: flex; flex-direction: column; text-decoration: none; color: white; min-width: 0; }
+        .site-logo-img { max-height: 45px; width: auto; object-fit: contain; display: block; }
+        .logo-text-fallback { font-size: 22px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; color: white; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
         .logo-text-fallback span { color: #ff9933; }
-        .slogan-text-fallback { font-size: 12px; opacity: 0.85; margin-top: -2px; font-weight: 600; }
+        .slogan-text-fallback { font-size: 11px; opacity: 0.85; margin-top: -2px; font-weight: 600; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
         
-         
         .seo-hidden-tags { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); border: 0; }
         
-         
-        .menu-toggle-btn { background: rgba(255,255,255,0.15); border: none; color: white; width: 42px; height: 42px; border-radius: 8px; font-size: 20px; cursor: pointer; display: flex; align-items: center; justify-content: center; transition: 0.2s; }
-        .menu-toggle-btn:hover { background: rgba(255,255,255,0.3); }
+        .menu-toggle-btn { background: rgba(255,255,255,0.15); border: none; color: white; width: 40px; height: 40px; border-radius: 8px; font-size: 18px; cursor: pointer; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
 
          
         .nav-drawer-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.6); z-index: 5000; display: none; opacity: 0; transition: opacity 0.3s ease; }
-        .nav-drawer { position: fixed; top: 0; right: -300px; width: 300px; height: 100%; background: white; z-index: 5001; box-shadow: -5px 0 25px rgba(0,0,0,0.15); display: flex; flex-direction: column; transition: right 0.3s ease; }
-        .drawer-header { background: #000080; color: white; padding: 20px; display: flex; justify-content: space-between; align-items: center; }
+        .nav-drawer { position: fixed; top: 0; right: -280px; width: 280px; height: 100%; background: white; z-index: 5001; box-shadow: -5px 0 25px rgba(0,0,0,0.15); display: flex; flex-direction: column; transition: right 0.3s ease; }
+        .drawer-header { background: #000080; color: white; padding: 15px; display: flex; justify-content: space-between; align-items: center; }
         .drawer-header h3 { font-size: 18px; font-weight: 700; }
-        .drawer-close-btn { background: none; border: none; color: white; font-size: 24px; cursor: pointer; opacity: 0.8; }
-        .drawer-close-btn:hover { opacity: 1; }
+        .drawer-close-btn { background: none; border: none; color: white; font-size: 24px; cursor: pointer; }
         
-        .drawer-menu-links { list-style: none; padding: 15px 0; flex: 1; overflow-y: auto; }
-        .drawer-menu-links li a { display: flex; align-items: center; gap: 15px; padding: 12px 25px; color: #333; text-decoration: none; font-size: 16px; font-weight: 600; border-bottom: 1px solid #f0f2f5; transition: 0.2s; }
-        .drawer-menu-links li a:hover { background: #f8f9fa; color: #000080; padding-left: 30px; }
-        .drawer-menu-links li a i { width: 20px; color: #000080; font-size: 18px; }
+        .drawer-menu-links { list-style: none; padding: 10px 0; flex: 1; overflow-y: auto; }
+        .drawer-menu-links li a { display: flex; align-items: center; gap: 12px; padding: 12px 20px; color: #333; text-decoration: none; font-size: 16px; font-weight: 600; border-bottom: 1px solid #f0f2f5; }
+        .drawer-menu-links li a i { width: 20px; color: #000080; }
         
-         
-        .drawer-social-box { padding: 20px; background: #f8f9fa; border-top: 1px solid #eee; text-align: center; }
-        .drawer-social-box p { font-size: 13px; font-weight: 700; color: #666; margin-bottom: 10px; }
-        .drawer-social-icons { display: flex; justify-content: center; gap: 12px; }
-        .drawer-social-icons a { width: 38px; height: 38px; border-radius: 50%; background: #000080; color: white; display: flex; align-items: center; justify-content: center; text-decoration: none; font-size: 16px; transition: 0.2s; }
-        .drawer-social-icons a:hover { transform: translateY(-3px); opacity: 0.9; }
+        .drawer-social-box { padding: 15px; background: #f8f9fa; border-top: 1px solid #eee; text-align: center; }
+        .drawer-social-box p { font-size: 13px; font-weight: 700; color: #666; margin-bottom: 8px; }
+        .drawer-social-icons { display: flex; justify-content: center; gap: 10px; }
+        .drawer-social-icons a { width: 35px; height: 35px; border-radius: 50%; background: #000080; color: white; display: flex; align-items: center; justify-content: center; text-decoration: none; font-size: 14px; }
         .drawer-social-icons a.fb-icon { background: #3b5998; }
         .drawer-social-icons a.tw-icon { background: #1da1f2; }
         .drawer-social-icons a.insta-icon { background: #e1306c; }
         .drawer-social-icons a.yt-icon { background: #ff0000; }
         
-        .container { max-width: 1100px; margin: 20px auto; padding: 0 15px; flex: 1; }
-        .live-date-bar { max-width: 1100px; margin: 0 auto 15px auto; font-size: 14px; font-weight: bold; color: #555; background: white; padding: 8px 15px; border-radius: 6px; box-shadow: 0 1px 3px rgba(0,0,0,0.05); display: inline-block; }
+        .container { max-width: 1100px; margin: 15px auto; padding: 0 12px; flex: 1; width: 100%; }
+        .live-date-bar { font-size: 13px; font-weight: bold; color: #555; background: white; padding: 6px 12px; border-radius: 6px; box-shadow: 0 1px 3px rgba(0,0,0,0.05); margin-bottom: 15px; display: inline-block; }
 
          
-        .local-slider-section { background: white; border-radius: 10px; padding: 15px; margin-bottom: 25px; box-shadow: 0 2px 8px rgba(0,0,0,0.05); border: 1px solid #e1e8ed; }
-        .slider-title { font-size: 16px; font-weight: 700; color: #000080; margin-bottom: 10px; display: flex; align-items: center; gap: 6px; text-transform: uppercase;}
-        .local-slider-wrapper { display: flex; gap: 12px; overflow-x: auto; padding-bottom: 8px; scroll-behavior: smooth; -webkit-overflow-scrolling: touch; }
-        .local-slider-wrapper::-webkit-scrollbar { height: 6px; }
+        .local-slider-section { background: white; border-radius: 10px; padding: 12px; margin-bottom: 20px; box-shadow: 0 2px 8px rgba(0,0,0,0.05); border: 1px solid #e1e8ed; }
+        .slider-title { font-size: 15px; font-weight: 700; color: #000080; margin-bottom: 10px; display: flex; align-items: center; gap: 6px; }
+        .local-slider-wrapper { display: flex; gap: 10px; overflow-x: auto; padding-bottom: 6px; scroll-behavior: smooth; -webkit-overflow-scrolling: touch; }
+        .local-slider-wrapper::-webkit-scrollbar { height: 4px; }
         .local-slider-wrapper::-webkit-scrollbar-thumb { background: #ccc; border-radius: 10px; }
-        .slider-item { flex: 0 0 auto; width: 260px; background: linear-gradient(135deg, #000080, #0040ff); color: white; padding: 14px; border-radius: 8px; text-decoration: none; box-shadow: 0 3px 6px rgba(0,0,128,0.15); transition: 0.2s; display: flex; flex-direction: column; justify-content: space-between; }
+        .slider-item { flex: 0 0 auto; width: 230px; background: linear-gradient(135deg, #000080, #0040ff); color: white; padding: 12px; border-radius: 8px; text-decoration: none; display: flex; flex-direction: column; justify-content: space-between; height: 75px; }
         .slider-item:nth-child(even) { background: linear-gradient(135deg, #ff9933, #e67e22); }
-        .slider-item:hover { transform: translateY(-2px); box-shadow: 0 5px 12px rgba(0,0,0,0.15); }
-        .slider-item-date { font-size: 15px; font-weight: 700; margin-bottom: 5px; }
-        .slider-item-click { font-size: 13px; opacity: 0.9; text-align: right; font-weight: bold; }
+        .slider-item-date { font-size: 14px; font-weight: 700; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+        .slider-item-click { font-size: 12px; opacity: 0.9; text-align: right; font-weight: bold; }
 
          
-        .election-live-banner { background: linear-gradient(135deg, #ff9933, #e67e22); color: white; border-radius: 10px; padding: 20px; margin-bottom: 25px; box-shadow: 0 4px 15px rgba(230,126,34,0.3); display: flex; justify-content: space-between; align-items: center; text-decoration: none; animation: pulse 2s infinite; }
-        .election-live-banner h3 { font-size: 22px; font-weight: 700; display: flex; align-items: center; gap: 10px; }
-        .election-live-banner .btn-live { background: white; color: #e67e22; padding: 10px 20px; border-radius: 20px; font-weight: 700; font-size: 16px; text-transform: uppercase; box-shadow: 0 2px 5px rgba(0,0,0,0.1); display: flex; align-items: center; gap: 8px; }
-        @keyframes pulse { 0% { transform: scale(0.99); } 50% { transform: scale(1.01); } 100% { transform: scale(0.99); } }
+        .election-live-banner { background: linear-gradient(135deg, #ff9933, #e67e22); color: white; border-radius: 10px; padding: 15px; margin-bottom: 20px; box-shadow: 0 4px 12px rgba(230,126,34,0.25); display: flex; justify-content: space-between; align-items: center; text-decoration: none; }
+        .election-live-banner h3 { font-size: 16px; font-weight: 700; display: flex; align-items: center; gap: 8px; }
+        .election-live-banner .btn-live { background: white; color: #e67e22; padding: 6px 14px; border-radius: 20px; font-weight: 700; font-size: 13px; display: flex; align-items: center; gap: 4px; flex-shrink: 0; }
         
          
-        .news-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 20px; margin-top: 20px; }
-        .news-card { background: white; border-radius: 8px; overflow: hidden; box-shadow: 0 2px 8px rgba(0,0,0,0.06); display: flex; flex-direction: column; transition: transform 0.2s; text-decoration: none; color: inherit;}
-        .news-card:hover { transform: translateY(-3px); box-shadow: 0 4px 12px rgba(0,0,0,0.1); }
-        .news-img { width: 100%; height: 180px; object-fit: cover; background: #eef1f6; }
-        .news-content { padding: 15px; flex: 1; display: flex; flex-direction: column; }
-        .news-title { font-size: 18px; font-weight: 700; color: #111; margin-bottom: 10px; line-height: 1.4; }
-        .news-date { font-size: 13px; color: #888; margin-top: auto; display: flex; align-items: center; gap: 5px; }
+        .category-section { margin-bottom: 30px; background: white; padding: 15px; border-radius: 8px; box-shadow: 0 2px 6px rgba(0,0,0,0.04); }
+        .category-header { border-left: 5px solid #000080; padding-left: 10px; margin-bottom: 15px; font-size: 20px; color: #000080; font-weight: 700; }
         
-        .ad-banner-top { text-align: center; margin: 10px 0 25px 0; padding: 10px; background: #fff; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.05); }
+        .news-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 15px; }
+        .news-card { background: #fff; border: 1px solid #eef1f6; border-radius: 8px; overflow: hidden; box-shadow: 0 1px 4px rgba(0,0,0,0.03); display: flex; flex-direction: column; transition: 0.2s; text-decoration: none; color: inherit;}
+        .news-img { width: 100%; height: 160px; object-fit: cover; background: #eef1f6; }
+        .news-content { padding: 12px; flex: 1; display: flex; flex-direction: column; }
+        .news-title { font-size: 16px; font-weight: 700; color: #111; margin-bottom: 8px; line-height: 1.4; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+        .news-date { font-size: 12px; color: #888; margin-top: auto; display: flex; align-items: center; gap: 4px; }
+        
+         
+        .pagination-area { display: flex; justify-content: center; align-items: center; gap: 10px; margin-top: 15px; padding-top: 10px; border-top: 1px dashed #eee; }
+        .pag-btn { background: #000080; color: white; border: none; padding: 6px 12px; border-radius: 4px; font-size: 13px; font-weight: bold; cursor: pointer; }
+        .pag-btn:disabled { background: #ccc; cursor: not-allowed; }
+        .pag-info { font-size: 13px; font-weight: bold; color: #555; }
+
+         
+        .ad-banner-top { text-align: center; margin: 15px 0; padding: 8px; background: #fff; border-radius: 8px; box-shadow: 0 1px 4px rgba(0,0,0,0.04); }
         .ad-banner-top img { max-width: 100%; height: auto; border-radius: 4px; display: block; margin: 0 auto; }
         
-        .modal-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.7); z-index: 6000; display: none; align-items: center; justify-content: center; padding: 20px; }
-        .modal-content { background: white; padding: 10px; border-radius: 8px; position: relative; max-width: 450px; width: 100%; text-align: center; box-shadow: 0 5px 25px rgba(0,0,0,0.2); animation: popIn 0.3s ease; }
-        .modal-content img { max-width: 100%; height: auto; border-radius: 6px; display: block; margin: 0 auto;}
-        .modal-close { position: absolute; top: -12px; right: -12px; background: #ff9933; color: white; border: none; width: 30px; height: 30px; border-radius: 50%; font-size: 18px; font-weight: bold; cursor: pointer; display: flex; align-items: center; justify-content: center; box-shadow: 0 2px 5px rgba(0,0,0,0.2); z-index: 6001;}
+         
+        .modal-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.7); z-index: 6000; display: none; align-items: center; justify-content: center; padding: 15px; }
+        .modal-content { background: white; padding: 8px; border-radius: 8px; position: relative; max-width: 400px; width: 100%; box-shadow: 0 5px 25px rgba(0,0,0,0.2); }
+        .modal-content img { max-width: 100%; height: auto; border-radius: 4px; display: block; margin: 0 auto;}
+        .modal-close { position: absolute; top: -10px; right: -10px; background: #ff9933; color: white; border: none; width: 28px; height: 28px; border-radius: 50%; font-size: 16px; font-weight: bold; display: flex; align-items: center; justify-content: center; box-shadow: 0 2px 5px rgba(0,0,0,0.2); z-index: 6001;}
         
          
-        .poll-box { background: linear-gradient(145deg, #ffffff, #f4f8fb); border-radius: 12px; padding: 20px; margin: 25px 0; box-shadow: 0 4px 15px rgba(0,0,0,0.06); border: 1px solid #e1e8ed; position: relative; overflow: hidden; max-width: 600px;}
-        .poll-box::before { content: ''; position: absolute; top: 0; left: 0; width: 5px; height: 100%; background: #ff9933; }
-        .poll-header { color: #000080; font-size: 16px; font-weight: 700; margin-bottom: 10px; display: flex; align-items: center; gap: 8px; text-transform: uppercase; letter-spacing: 1px;}
-        .poll-question { font-size: 20px; color: #111; margin-bottom: 20px; font-weight: 700; line-height: 1.4;}
-        .poll-opt-btn { display: block; width: 100%; padding: 12px 18px; margin-bottom: 12px; background: white; border: 2px solid #e1e8ed; border-radius: 8px; text-align: left; font-size: 16px; font-weight: 600; cursor: pointer; transition: 0.2s; color: #333; position: relative; overflow: hidden;}
-        .poll-opt-btn:hover { border-color: #000080; background: #f8f9fa; transform: translateY(-2px); box-shadow: 0 4px 8px rgba(0,0,0,0.05);}
-        .poll-result-row { margin-bottom: 15px; }
-        .poll-result-label { display: flex; justify-content: space-between; font-size: 15px; font-weight: 600; margin-bottom: 6px; color: #333; }
-        .poll-bar-bg { background: #e9ecef; border-radius: 20px; height: 12px; overflow: hidden; box-shadow: inset 0 1px 2px rgba(0,0,0,0.1);}
-        .poll-bar-fill { background: linear-gradient(90deg, #000080, #0040ff); height: 100%; width: 0%; transition: width 1s ease-in-out; border-radius: 20px; }
-        .poll-footer { margin-top: 15px; font-size: 13px; color: #888; text-align: right; }
-        .poll-loader { display: none; text-align: center; padding: 20px; color: #000080; font-weight: bold; }
+        .poll-box { background: linear-gradient(145deg, #ffffff, #f4f8fb); border-radius: 12px; padding: 15px; margin: 20px 0; box-shadow: 0 3px 10px rgba(0,0,0,0.05); border: 1px solid #e1e8ed; position: relative; overflow: hidden; }
+        .poll-box::before { content: ''; position: absolute; top: 0; left: 0; width: 4px; height: 100%; background: #ff9933; }
+        .poll-header { color: #000080; font-size: 14px; font-weight: 700; margin-bottom: 8px; display: flex; align-items: center; gap: 6px; text-transform: uppercase; }
+        .poll-question { font-size: 17px; color: #111; margin-bottom: 15px; font-weight: 700; line-height: 1.4;}
+        .poll-opt-btn { display: block; width: 100%; padding: 10px 15px; margin-bottom: 10px; background: white; border: 1px solid #e1e8ed; border-radius: 6px; text-align: left; font-size: 15px; font-weight: 600; cursor: pointer; transition: 0.2s; }
+        .poll-opt-btn:hover { border-color: #000080; background: #f8f9fa; }
+        .poll-result-row { margin-bottom: 12px; }
+        .poll-result-label { display: flex; justify-content: space-between; font-size: 14px; font-weight: 600; margin-bottom: 4px; }
+        .poll-bar-bg { background: #e9ecef; border-radius: 10px; height: 10px; overflow: hidden; }
+        .poll-bar-fill { background: linear-gradient(90deg, #000080, #0040ff); height: 100%; width: 0%; transition: width 1s ease-in-out; }
+        .poll-footer { margin-top: 10px; font-size: 12px; color: #888; text-align: right; }
+        .poll-loader { display: none; text-align: center; padding: 15px; color: #000080; font-weight: bold; }
         
          
-        footer { background: #0b132b; color: #a0aec0; padding: 20px 15px; text-align: center; font-size: 15px; border-top: 3px solid #000080; margin-top: 40px; }
-        footer a { color: white; text-decoration: none; font-weight: 600; margin: 0 10px; transition: 0.2s; }
-        footer a:hover { color: #ff9933; text-decoration: underline; }
-        .footer-credits { margin-top: 10px; font-size: 13px; color: #718096; }
+        footer { background: #0b132b; color: #a0aec0; padding: 20px 10px; text-align: center; font-size: 14px; border-top: 3px solid #000080; margin-top: auto; width: 100%; }
+        footer a { color: white; text-decoration: none; font-weight: 600; margin: 0 8px; }
+        .footer-credits { margin-top: 8px; font-size: 12px; color: #718096; }
         .footer-credits a { color: #718096; font-weight: normal; margin: 0; }
-        .footer-credits a:hover { color: white; }
 
-        @keyframes popIn { from { opacity: 0; transform: scale(0.9); } to { opacity: 1; transform: scale(1); } }
         @media (max-width: 600px) { 
-            .logo-text-fallback { font-size: 20px; } 
+            .header-container { padding: 0; }
             .news-grid { grid-template-columns: 1fr; } 
-            .election-live-banner { flex-direction: column; gap: 15px; text-align: center; }
-            footer { font-size: 14px; }
+            .election-live-banner { flex-direction: column; gap: 10px; text-align: center; }
+            .category-section { padding: 12px; }
         }
     </style>
 </head>
@@ -169,7 +167,7 @@
         
         <div class="live-date-bar" id="currentDate"></div>
         
-        <div class="local-slider-section">
+        <div class="local-slider-section" id="localSliderSection" style="display: none;">
             <div class="slider-title"><i class="fas fa-map-marked-alt"></i> तुमच्या भागातील संपूर्ण बातम्या एकाच क्लिकवर</div>
             <div class="local-slider-wrapper" id="localNewsSlider"></div>
         </div>
@@ -184,89 +182,15 @@
                 </div>
             </a>
         
-                    <div id="homePollContainer" class="poll-box"></div>
+        <div id="dynamicCategoriesContainer"></div>
         
-        <h2 style="border-left: 5px solid #000080; padding-left: 10px; margin-bottom: 20px; font-size: 22px; color: #000080;">🔥 मुख्य बातम्या</h2>
-
-        <div class="news-grid">
-                                                <a href="news/news-1782708993021.html" class="news-card">
-                                                    <img src="https://vedchitrakolhapur.github.io/newsportal/assets/images/img_1782708985507.webp" class="news-img" alt="News Image" loading="lazy">
-                                                <div class="news-content">
-                            <h3 class="news-title">सांगली उप प्रादेशिक परिवहन विभागाने (RTO) मंगळवारी अवैध आणि नियमबाह्य शालेय वाहतुकीविरोधात मोठी कारवाई केली</h3>
-                            <div class="news-date"><i class="far fa-calendar-alt"></i> 29/6/2026</div>
-                        </div>
-                    </a>
-                                    <a href="news/news-1782626819238.html" class="news-card">
-                                                    <img src="https://vedchitrakolhapur.github.io/newsportal/assets/images/img_1782626773023.webp" class="news-img" alt="News Image" loading="lazy">
-                                                <div class="news-content">
-                            <h3 class="news-title">रामचंद्र पाटील यांचे निधन</h3>
-                            <div class="news-date"><i class="far fa-calendar-alt"></i> 28/6/2026</div>
-                        </div>
-                    </a>
-                                    <a href="news/news-1782619637144.html" class="news-card">
-                                                    <img src="https://vedchitrakolhapur.github.io/newsportal/assets/images/img_1782619618582.webp" class="news-img" alt="News Image" loading="lazy">
-                                                <div class="news-content">
-                            <h3 class="news-title">स्वस्तिक पोवार वाढदिवस</h3>
-                            <div class="news-date"><i class="far fa-calendar-alt"></i> 28/6/2026</div>
-                        </div>
-                    </a>
-                                    <a href="news/news-1782619446693.html" class="news-card">
-                                                    <img src="https://vedchitrakolhapur.github.io/newsportal/assets/images/img_1782619434390.webp" class="news-img" alt="News Image" loading="lazy">
-                                                <div class="news-content">
-                            <h3 class="news-title">वाहतुकीच्या नियमांचे उल्लंघन करणाऱ्या 11 वाहनचालकांवर दंडात्मक कारवाई</h3>
-                            <div class="news-date"><i class="far fa-calendar-alt"></i> 28/6/2026</div>
-                        </div>
-                    </a>
-                                    <a href="news/news-1782559749251.html" class="news-card">
-                                                    <img src="https://vedchitrakolhapur.github.io/newsportal/assets/images/img_1782559741620.webp" class="news-img" alt="News Image" loading="lazy">
-                                                <div class="news-content">
-                            <h3 class="news-title">अपडेटेड आहे! यामध्ये आपण आधीच सुचवलेले सर्व बदल (</h3>
-                            <div class="news-date"><i class="far fa-calendar-alt"></i> 27/6/2026</div>
-                        </div>
-                    </a>
-                                    <a href="news/news-1782361782106.html" class="news-card">
-                                                    <img src="https://vedchitrakolhapur.github.io/newsportal/assets/images/img_1782361751409.webp" class="news-img" alt="News Image" loading="lazy">
-                                                <div class="news-content">
-                            <h3 class="news-title">सांगलीत नियमबाह्य शालेय वाहतुकीवर RTO चा दणका; 11 वाहनांवर कारवाई, तपासणी मोहीम होणार अधिक तीव्र</h3>
-                            <div class="news-date"><i class="far fa-calendar-alt"></i> 25/6/2026</div>
-                        </div>
-                    </a>
-                                    <a href="news/Published" class="news-card">
-                                                    <img src="https://vedchitrakolhapur.github.io/newsportal/assets/images/img_1782277777393.webp" class="news-img" alt="News Image" loading="lazy">
-                                                <div class="news-content">
-                            <h3 class="news-title">जुन्या बातम्यांवर पोल/जाहिरात लागू करा (Force Update)</h3>
-                            <div class="news-date"><i class="far fa-calendar-alt"></i> 24/6/2026</div>
-                        </div>
-                    </a>
-                                    <a href="news/Published" class="news-card">
-                                                    <img src="https://vedchitrakolhapur.github.io/newsportal/assets/images/img_1782210562146.webp" class="news-img" alt="News Image" loading="lazy">
-                                                <div class="news-content">
-                            <h3 class="news-title">वीन बातमी टाकून पाहणे (The Ultimate Test)</h3>
-                            <div class="news-date"><i class="far fa-calendar-alt"></i> 23/6/2026</div>
-                        </div>
-                    </a>
-                                    <a href="news/Published" class="news-card">
-                                                    <img src="https://vedchitrakolhapur.github.io/newsportal/assets/images/img_1781940186777.webp" class="news-img" alt="News Image" loading="lazy">
-                                                <div class="news-content">
-                            <h3 class="news-title">भोसरीपेक्षा कमी लोकसंख्या असलेला देश FIFA World Cup गाजवतोय, मग 150 कोटींचा महासत्ता बनू पाहणारा भारत कुठेय?</h3>
-                            <div class="news-date"><i class="far fa-calendar-alt"></i> 20/6/2026</div>
-                        </div>
-                    </a>
-                                    <a href="news/Published" class="news-card">
-                                                    <img src="https://vedchitrakolhapur.github.io/newsportal/assets/images/img_1781937611627.webp" class="news-img" alt="News Image" loading="lazy">
-                                                <div class="news-content">
-                            <h3 class="news-title">यजमान अमेरिका सलग दुसऱ्या विजयासह पुढील फेरीत; ९६ वर्षांनंतर पहिल्यांदाच असं घडलं</h3>
-                            <div class="news-date"><i class="far fa-calendar-alt"></i> 20/6/2026</div>
-                        </div>
-                    </a>
-                                    </div>
     </div>
 
             <div id="popupAdModal" class="modal-overlay">
             <div class="modal-content">
                 <button class="modal-close" onclick="closePopupAd()">&times;</button>
                                     <a href="#" ZautoescZ>
-                        <img src="https://vedchitrakolhapur.github.io/newsportal/assets/images/img_1782284990248.webp" alt="Popup Advertisement">
+                        <img src="https://vedchitrakolhapur.github.io/newsportal/assets/images/img_1782284990248.webp" alt="Popup Ad">
                     </a>
                             </div>
         </div>
@@ -289,11 +213,24 @@
         
         document.getElementById('currentDate').innerText = new Date().toLocaleDateString('mr-IN', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' });
 
+        
+        const masterNewsList = [{"News ID":"news-1782708993021","तारीख":"29/6/2026, 10:26:33","Title":"सांगली उप प्रादेशिक परिवहन विभागाने (RTO) मंगळवारी अवैध आणि नियमबाह्य शालेय वाहतुकीविरोधात मोठी कारवाई केली","Featured Image":"https://vedchitrakolhapur.github.io/newsportal/assets/images/img_1782708985507.webp","Content":"<p class=\"ql-align-justify\">सांगलीत नियमबाह्य शालेय वाहतुकीवर RTO चा दणका; 11 वाहनांवर कारवाई, तपासणी मोहीम होणार अधिक तीव्रसांगली: शालेय विद्यार्थ्यांच्या सुरक्षित प्रवासाला प्राधान्य देत, सांगली उप प्रादेशिक परिवहन विभागाने (RTO) मंगळवारी अवैध आणि नियमबाह्य शालेय वाहतुकीविरोधात मोठी कारवाई केली. क्षमतेपेक्षा जास्त विद्यार्थी भरणे आणि वाहतुकीच्या नियमांचे उल्लंघन करणाऱ्या 11 वाहनचालकांवर दंडात्मक कारवाई करण्यात आली आहे. या मोहिमेमुळे नियमबाह्य वाहतूक करणाऱ्यांचे धाबे दणाणले असून, ही तपासणी यापुढेही सुरूच राहणार असल्याचे उप प्रादेशिक परिवहन अधिकारी प्रसाद गाजरे यांनी स्पष्ट केले आहे.</p><p class=\"ql-align-justify\"><br></p><p class=\"ql-align-justify\"><strong>बातमीचा सविस्तर तपशील आणि महत्त्वाचे मुद्दे:</strong></p><p class=\"ql-align-justify\"><br></p><p class=\"ql-align-justify\">1. आरटीओची धडक मोहीम: शाळा सुरू झाल्यापासून अनेक वाहनांतून क्षमतेपेक्षा जास्त विद्यार्थ्यांची ने-आण केली जात असल्याच्या तक्रारी प्राप्त होत होत्या. याची गंभीर दखल घेत आरटीओच्या विशेष पथकाने मंगळवारी सांगलीत ठिकठिकाणी तपासणी नाके लावून वाहनांची झाडाझडती घेतली.</p><p class=\"ql-align-justify\"><br></p><p class=\"ql-align-justify\">2. कारवाईचे कारण: तपासणी दरम्यान वाहनांची अपुरी कागदपत्रे, सुरक्षा नियमांकडे दुर्लक्ष आणि रिक्षामध्ये किंवा व्हॅनमध्ये क्षमतेपेक्षा जास्त विद्यार्थी बसवल्याचे आढळून आले. अशा 11 दोषी वाहनचालकांवर जागेवरच दंड आकारण्यात आला.</p><p class=\"ql-align-justify\"><br></p><p class=\"ql-align-justify\">3. पालकांसाठी आवाहन: मुलांचा शाळाप्रवास सुरक्षित ठेवणे ही केवळ प्रशासनाचीच नाही, तर पालकांचीही जबाबदारी आहे. पालकांनी आपल्या पाल्याला ज्या वाहनातून शाळेत पाठवतात, त्या वाहनाला आरटीओचा 'स्कूल बस' म्हणून अधिकृत परवाना आहे का, याची खात्री करावी, असे आवाहन गाजरे यांनी केले आहे.</p><p class=\"ql-align-justify\"><br></p><p class=\"ql-align-justify\">4. शाळांना सूचना: प्रत्येक शाळेत मुख्याध्यापकांच्या अध्यक्षतेखाली 'शालेय परिवहन समिती' असणे बंधनकारक आहे. या समितीने दरमहा बैठक घेऊन वाहतूक व्यवस्थेचा आढावा घ्यावा. ज्या खाजगी वाहनांकडे अधिकृत परवाना नाही, त्यांना शाळेच्या आवारात प्रवेश देऊ नये, अशा सक्त सूचना आरटीओ प्रशासनाने दिल्या आहेत.</p><p class=\"ql-align-justify\"><br></p><p class=\"ql-align-justify\">5. महिला मदतनीस अनिवार्य: ज्या वाहनांमधून विद्यार्थिनी प्रवास करतात, त्यामध्ये नियमानुसार महिला मदतनीस असणे अनिवार्य आहे. या नियमाचे पालन न करणाऱ्यांविरुद्ध कठोर पावले उचलली जातील, असा इशाराही यावेळी देण्यात आला.</p><p><br></p>","Category":"लोकल न्यूज","Slug":"news-1782708993021.html","Status":"Published","rowIndex":2},{"News ID":"news-1782626819238","तारीख":"28/6/2026, 11:36:59","Title":"रामचंद्र पाटील यांचे निधन","Featured Image":"https://vedchitrakolhapur.github.io/newsportal/assets/images/img_1782626773023.webp","Content":"<p>यासाठी&nbsp;&nbsp;काय करावे तसेच&nbsp;कोठे बदल करायचा ते सांगा .&nbsp;<strong>मार्ग १ (Cloudflare Workers - ज्याला तुम्ही नाही म्हणालात):</strong> क्लाउडफ्लेअर कडून डेटा घेऊन थेट HTML मध्ये दाखवण्यासाठीWorkers चाच वापर करावा लागतो, कारण तो बॅकएंड कोड असतो.</p><p><br></p><p><strong>मार्ग १ (Cloudflare Workers - ज्याला तुम्ही नाही म्हणालात):</strong> क्लाउडफ्लेअर कडून डेटा घेऊन थेट HTML मध्ये दाखवण्यासाठीWorkers चाच वापर करावा लागतो, कारण तो बॅकएंड कोड असतो.<strong>मार्ग १ (Cloudflare Workers - ज्याला तुम्ही नाही म्हणालात):</strong> क्लाउडफ्लेअर कडून डेटा घेऊन थेट HTML मध्ये दाखवण्यासाठीWorkers चाच वापर करावा लागतो, कारण तो बॅकएंड कोड असतो.</p>","Category":"निधन वार्ता","Slug":"news-1782626819238.html","Status":"Published","rowIndex":3},{"News ID":"news-1782619637144","तारीख":"28/6/2026, 09:37:17","Title":"स्वस्तिक पोवार वाढदिवस","Featured Image":"https://vedchitrakolhapur.github.io/newsportal/assets/images/img_1782619618582.webp","Content":"<p>सांगलीत नियमबाह्य शालेय वाहतुकीवर RTO चा दणका; 11 वाहनांवर कारवाई, तपासणी मोहीम होणार अधिक तीव्रसांगली: शालेय विद्यार्थ्यांच्या सुरक्षित प्रवासाला प्राधान्य देत, सांगली उप प्रादेशिक परिवहन विभागाने (RTO) मंगळवारी अवैध आणि नियमबाह्य शालेय वाहतुकीविरोधात मोठी कारवाई केली. क्षमतेपेक्षा जास्त विद्यार्थी भरणे आणि वाहतुकीच्या नियमांचे उल्लंघन करणाऱ्या 11 वाहनचालकांवर दंडात्मक कारवाई करण्यात आली आहे. या मोहिमेमुळे नियमबाह्य वाहतूक करणाऱ्यांचे धाबे दणाणले असून, ही तपासणी यापुढेही सुरूच राहणार असल्याचे उप प्रादेशिक परिवहन अधिकारी प्रसाद गाजरे यांनी स्पष्ट केले आहे.</p><p><br></p><p><strong>बातमीचा सविस्तर तपशील आणि महत्त्वाचे मुद्दे:</strong></p><p><br></p><p>1. आरटीओची धडक मोहीम: शाळा सुरू झाल्यापासून अनेक वाहनांतून क्षमतेपेक्षा जास्त विद्यार्थ्यांची ने-आण केली जात असल्याच्या तक्रारी प्राप्त होत होत्या. याची गंभीर दखल घेत आरटीओच्या विशेष पथकाने मंगळवारी सांगलीत ठिकठिकाणी तपासणी नाके लावून वाहनांची झाडाझडती घेतली.</p><p><br></p><p>2. कारवाईचे कारण: तपासणी दरम्यान वाहनांची अपुरी कागदपत्रे, सुरक्षा नियमांकडे दुर्लक्ष आणि रिक्षामध्ये किंवा व्हॅनमध्ये क्षमतेपेक्षा जास्त विद्यार्थी बसवल्याचे आढळून आले. अशा 11 दोषी वाहनचालकांवर जागेवरच दंड आकारण्यात आला.</p><p><br></p><p>3. पालकांसाठी आवाहन: मुलांचा शाळाप्रवास सुरक्षित ठेवणे ही केवळ प्रशासनाचीच नाही, तर पालकांचीही जबाबदारी आहे. पालकांनी आपल्या पाल्याला ज्या वाहनातून शाळेत पाठवतात, त्या वाहनाला आरटीओचा 'स्कूल बस' म्हणून अधिकृत परवाना आहे का, याची खात्री करावी, असे आवाहन गाजरे यांनी केले आहे.</p><p><br></p><p>4. शाळांना सूचना: प्रत्येक शाळेत मुख्याध्यापकांच्या अध्यक्षतेखाली 'शालेय परिवहन समिती' असणे बंधनकारक आहे. या समितीने दरमहा बैठक घेऊन वाहतूक व्यवस्थेचा आढावा घ्यावा. ज्या खाजगी वाहनांकडे अधिकृत परवाना नाही, त्यांना शाळेच्या आवारात प्रवेश देऊ नये, अशा सक्त सूचना आरटीओ प्रशासनाने दिल्या आहेत.</p><p><br></p><p>5. महिला मदतनीस अनिवार्य: ज्या वाहनांमधून विद्यार्थिनी प्रवास करतात, त्यामध्ये नियमानुसार महिला मदतनीस असणे अनिवार्य आहे. या नियमाचे पालन न करणाऱ्यांविरुद्ध कठोर पावले उचलली जातील, असा इशाराही यावेळी देण्यात आला.</p>","Category":"अभिनंदन वार्ता","Slug":"news-1782619637144.html","Status":"Published","rowIndex":4},{"News ID":"news-1782619446693","तारीख":"28/6/2026, 09:34:06","Title":"वाहतुकीच्या नियमांचे उल्लंघन करणाऱ्या 11 वाहनचालकांवर दंडात्मक कारवाई","Featured Image":"https://vedchitrakolhapur.github.io/newsportal/assets/images/img_1782619434390.webp","Content":"<p>सांगली: शालेय विद्यार्थ्यांच्या सुरक्षित प्रवासाला प्राधान्य देत, सांगली उप प्रादेशिक परिवहन विभागाने (RTO) मंगळवारी अवैध आणि नियमबाह्य शालेय वाहतुकीविरोधात मोठी कारवाई केली. क्षमतेपेक्षा जास्त विद्यार्थी भरणे आणि वाहतुकीच्या नियमांचे उल्लंघन करणाऱ्या 11 वाहनचालकांवर दंडात्मक कारवाई करण्यात आली आहे. या मोहिमेमुळे नियमबाह्य वाहतूक करणाऱ्यांचे धाबे दणाणले असून, ही तपासणी यापुढेही सुरूच राहणार असल्याचे उप प्रादेशिक परिवहन अधिकारी प्रसाद गाजरे यांनी स्पष्ट केले आहे.</p><p><br></p><p><strong>बातमीचा सविस्तर तपशील आणि महत्त्वाचे मुद्दे:</strong></p><p><br></p><p>1. आरटीओची धडक मोहीम: शाळा सुरू झाल्यापासून अनेक वाहनांतून क्षमतेपेक्षा जास्त विद्यार्थ्यांची ने-आण केली जात असल्याच्या तक्रारी प्राप्त होत होत्या. याची गंभीर दखल घेत आरटीओच्या विशेष पथकाने मंगळवारी सांगलीत ठिकठिकाणी तपासणी नाके लावून वाहनांची झाडाझडती घेतली.</p><p><br></p><p>2. कारवाईचे कारण: तपासणी दरम्यान वाहनांची अपुरी कागदपत्रे, सुरक्षा नियमांकडे दुर्लक्ष आणि रिक्षामध्ये किंवा व्हॅनमध्ये क्षमतेपेक्षा जास्त विद्यार्थी बसवल्याचे आढळून आले. अशा 11 दोषी वाहनचालकांवर जागेवरच दंड आकारण्यात आला.</p><p><br></p><p>3. पालकांसाठी आवाहन: मुलांचा शाळाप्रवास सुरक्षित ठेवणे ही केवळ प्रशासनाचीच नाही, तर पालकांचीही जबाबदारी आहे. पालकांनी आपल्या पाल्याला ज्या वाहनातून शाळेत पाठवतात, त्या वाहनाला आरटीओचा 'स्कूल बस' म्हणून अधिकृत परवाना आहे का, याची खात्री करावी, असे आवाहन गाजरे यांनी केले आहे.</p><p><br></p><p>4. शाळांना सूचना: प्रत्येक शाळेत मुख्याध्यापकांच्या अध्यक्षतेखाली 'शालेय परिवहन समिती' असणे बंधनकारक आहे. या समितीने दरमहा बैठक घेऊन वाहतूक व्यवस्थेचा आढावा घ्यावा. ज्या खाजगी वाहनांकडे अधिकृत परवाना नाही, त्यांना शाळेच्या आवारात प्रवेश देऊ नये, अशा सक्त सूचना आरटीओ प्रशासनाने दिल्या आहेत.</p><p><br></p><p>5. महिला मदतनीस अनिवार्य: ज्या वाहनांमधून विद्यार्थिनी प्रवास करतात, त्यामध्ये नियमानुसार महिला मदतनीस असणे अनिवार्य आहे. या नियमाचे पालन न करणाऱ्यांविरुद्ध कठोर पावले उचलली जातील, असा इशाराही यावेळी देण्यात आला.</p>","Category":"लोकल न्यूज","Slug":"news-1782619446693.html","Status":"Published","rowIndex":5},{"News ID":"news-1782559749251","तारीख":"27/6/2026, 16:59:09","Title":"अपडेटेड आहे! यामध्ये आपण आधीच सुचवलेले सर्व बदल (","Featured Image":"https://vedchitrakolhapur.github.io/newsportal/assets/images/img_1782559741620.webp","Content":"<p>तुम्ही अपलोड केलेला <code><strong>IndexTemplate.html</strong></code> चा कोड पूर्णपणे योग्य आणि अपडेटेड आहे! यामध्ये आपण आधीच सुचवलेले सर्व बदल (उदा. ५ दिवसांचे आकर्षक मॅन्युअल स्लायडर, पोल सिस्टीम, आणि इलेक्शन बॅनरचे लॉजिक) व्यवस्थित समाविष्ट केलेले दिसत आहेत.</p><p>त्यामुळे या फाईलमध्ये <strong>सध्या कोणताही नवीन बदल करण्याची गरज नाही.</strong> फक्त एक गोष्ट लक्षात ठेवा—जेव्हा तुम्ही नवीन बातम्या पब्लिश कराल, तेव्हा तुमच्या कॅटेगरी फिल्टरच्या नियमांनुसार (आपण <code>Code.js</code> मध्ये केलेल्या बदलांनुसार):</p><p><br></p><ul><li><strong>लोकल न्यूज, निधन वार्ता आणि अभिनंदन वार्ता</strong> या कॅटेगरीच्या बातम्या आपोआप या स्लायडरमधील <code>local-*.html</code> या लिंकवर एकत्रित (Compile) होत राहतील.</li><li>तर <strong>महाराष्ट्र, देश-विदेश, क्रीडा, आणि मनोरंजन</strong> या कॅटेगरीच्या मुख्य बातम्या खालील <code>news-grid</code> मध्ये \"मुख्य बातम्या\" म्हणून दिसत राहतील.</li></ul><p>तुम्ही अपलोड केलेला <code><strong>IndexTemplate.html</strong></code> चा कोड पूर्णपणे योग्य आणि अपडेटेड आहे! यामध्ये आपण आधीच सुचवलेले सर्व बदल (उदा. ५ दिवसांचे आकर्षक मॅन्युअल स्लायडर, पोल सिस्टीम, आणि इलेक्शन बॅनरचे लॉजिक) व्यवस्थित समाविष्ट केलेले दिसत आहेत.</p><p>त्यामुळे या फाईलमध्ये <strong>सध्या कोणताही नवीन बदल करण्याची गरज नाही.</strong> फक्त एक गोष्ट लक्षात ठेवा—जेव्हा तुम्ही नवीन बातम्या पब्लिश कराल, तेव्हा तुमच्या कॅटेगरी फिल्टरच्या नियमांनुसार (आपण <code>Code.js</code> मध्ये केलेल्या बदलांनुसार):</p><p><br></p><ul><li><strong>लोकल न्यूज, निधन वार्ता आणि अभिनंदन वार्ता</strong> या कॅटेगरीच्या बातम्या आपोआप या स्लायडरमधील <code>local-*.html</code> या लिंकवर एकत्रित (Compile) होत राहतील.</li><li>तर <strong>महाराष्ट्र, देश-विदेश, क्रीडा, आणि मनोरंजन</strong> या कॅटेगरीच्या मुख्य बातम्या खालील <code>news-grid</code> मध्ये \"मुख्य बातम्या\" म्हणून दिसत राहतील.</li></ul><p><br></p>","Category":"लोकल न्यूज","Slug":"news-1782559749251.html","Status":"Published","rowIndex":6},{"News ID":"news-1782361782106","तारीख":"25/6/2026, 09:59:42","Title":"सांगलीत नियमबाह्य शालेय वाहतुकीवर RTO चा दणका; 11 वाहनांवर कारवाई, तपासणी मोहीम होणार अधिक तीव्र","Featured Image":"https://vedchitrakolhapur.github.io/newsportal/assets/images/img_1782361751409.webp","Content":"<p>सांगली: शालेय विद्यार्थ्यांच्या सुरक्षित प्रवासाला प्राधान्य देत, सांगली उप प्रादेशिक परिवहन विभागाने (RTO) मंगळवारी अवैध आणि नियमबाह्य शालेय वाहतुकीविरोधात मोठी कारवाई केली. क्षमतेपेक्षा जास्त विद्यार्थी भरणे आणि वाहतुकीच्या नियमांचे उल्लंघन करणाऱ्या 11 वाहनचालकांवर दंडात्मक कारवाई करण्यात आली आहे. या मोहिमेमुळे नियमबाह्य वाहतूक करणाऱ्यांचे धाबे दणाणले असून, ही तपासणी यापुढेही सुरूच राहणार असल्याचे उप प्रादेशिक परिवहन अधिकारी प्रसाद गाजरे यांनी स्पष्ट केले आहे.</p><p><br></p><p><strong>बातमीचा सविस्तर तपशील आणि महत्त्वाचे मुद्दे:</strong></p><p><br></p><p>1. आरटीओची धडक मोहीम: शाळा सुरू झाल्यापासून अनेक वाहनांतून क्षमतेपेक्षा जास्त विद्यार्थ्यांची ने-आण केली जात असल्याच्या तक्रारी प्राप्त होत होत्या. याची गंभीर दखल घेत आरटीओच्या विशेष पथकाने मंगळवारी सांगलीत ठिकठिकाणी तपासणी नाके लावून वाहनांची झाडाझडती घेतली.</p><p><br></p><p>2. कारवाईचे कारण: तपासणी दरम्यान वाहनांची अपुरी कागदपत्रे, सुरक्षा नियमांकडे दुर्लक्ष आणि रिक्षामध्ये किंवा व्हॅनमध्ये क्षमतेपेक्षा जास्त विद्यार्थी बसवल्याचे आढळून आले. अशा 11 दोषी वाहनचालकांवर जागेवरच दंड आकारण्यात आला.</p><p><br></p><p>3. पालकांसाठी आवाहन: मुलांचा शाळाप्रवास सुरक्षित ठेवणे ही केवळ प्रशासनाचीच नाही, तर पालकांचीही जबाबदारी आहे. पालकांनी आपल्या पाल्याला ज्या वाहनातून शाळेत पाठवतात, त्या वाहनाला आरटीओचा 'स्कूल बस' म्हणून अधिकृत परवाना आहे का, याची खात्री करावी, असे आवाहन गाजरे यांनी केले आहे.</p><p><br></p><p>4. शाळांना सूचना: प्रत्येक शाळेत मुख्याध्यापकांच्या अध्यक्षतेखाली 'शालेय परिवहन समिती' असणे बंधनकारक आहे. या समितीने दरमहा बैठक घेऊन वाहतूक व्यवस्थेचा आढावा घ्यावा. ज्या खाजगी वाहनांकडे अधिकृत परवाना नाही, त्यांना शाळेच्या आवारात प्रवेश देऊ नये, अशा सक्त सूचना आरटीओ प्रशासनाने दिल्या आहेत.</p><p><br></p><p>5. महिला मदतनीस अनिवार्य: ज्या वाहनांमधून विद्यार्थिनी प्रवास करतात, त्यामध्ये नियमानुसार महिला मदतनीस असणे अनिवार्य आहे. या नियमाचे पालन न करणाऱ्यांविरुद्ध कठोर पावले उचलली जातील, असा इशाराही यावेळी देण्यात आला.</p>","Category":"लोकल न्यूज","Slug":"news-1782361782106.html","Status":"","rowIndex":9},{"News ID":"news-1782277797785","तारीख":"24/6/2026, 10:39:57","Title":"जुन्या बातम्यांवर पोल/जाहिरात लागू करा (Force Update)","Featured Image":"https://vedchitrakolhapur.github.io/newsportal/assets/images/img_1782277777393.webp","Content":"<p>जर नवीन बातमीवर सर्व दिसत असेल, तर आता फक्त जुन्या बातम्या अपडेट करणे बाकी आहे. १. डॅशबोर्डमध्ये <strong>'Polls'</strong> टॅबच्या सर्वात खाली असलेले हिरवे <strong>\"पोल सेव्ह करा आणि पब्लिश करा\"</strong> हे बटण दाबा. २. स्क्रीनवर 'Loading...' दिसेल. (तुमच्या जुन्या ५० बातम्या असतील, तर प्रत्येकी १.५ सेकंद या वेगाने सिस्टीम त्या अपडेट करेल. त्यामुळे लोडर १-२ मिनिटे थांबू शकतो, त्याला तसाच राहू द्या). ३. \"सक्सेस\" चा मेसेज आल्यावर २-३ मिनिटे थांबा (GitHub ची कॅशे क्लिअर होण्यासाठी) आणि तुमची जुनी बातमी रिफ्रेश (Ctrl + F5) करून पाहा.</p><p><br></p><p><strong>थोडक्यात:</strong> एकदा का तुम्ही नवीन बातमी टाकून पाहिली आणि डॅशबोर्डवरून \"सेव्ह\" बटण दाबले, की सिस्टीम स्वतःहून सर्व जुन्या आणि नवीन पानांवर जाहिराती व पोल टाकण्याचे काम पूर्ण करेल.</p><p><br></p><p>कृपया 'नवीन बातमी' टाकून तपासा आणि मला सांगा की त्यावर पोल दिसत आहे का?</p>","Category":"news-1782277797785.html","Slug":"Published","Status":"","rowIndex":10},{"News ID":"news-1782210569483","तारीख":"23/6/2026, 15:59:29","Title":"वीन बातमी टाकून पाहणे (The Ultimate Test)","Featured Image":"https://vedchitrakolhapur.github.io/newsportal/assets/images/img_1782210562146.webp","Content":"<p>सर्वात आधी आपण हे पाहूया की तुमचा 'NewsTemplate' खरोखर अपडेट झाला आहे का. १. डॅशबोर्ड उघडा आणि <strong>\"नवीन बातमी जोडा\"</strong> वर क्लिक करा. २. एक डमी बातमी (उदा. शीर्षक: \"Test News\") टाका आणि पब्लिश करा. ३. पब्लिश झाल्यावर त्या <strong>नवीन बातमीची लिंक</strong> उघडून पाहा.</p><p><br></p><ul><li><strong>जर नवीन बातमीवर जाहिरात दिसली:</strong> तर समजून जा की तुमचा कोड एकदम बरोबर आहे. फक्त GitHub जुन्या फाईल्स एकाच वेळी अपडेट करू देत नाहीये. (अशा वेळी तुम्हाला महत्त्वाच्या जुन्या बातम्या एक-एक करून 'Edit -&gt; Publish' कराव्या लागतील).</li><li><strong>जर नवीन बातमीवरही जाहिरात दिसली नाही:</strong> तर मात्र तुमचा Google Apps Script मधील <code><strong>NewsTemplate.html</strong></code> अद्याप जुनाच आहे. (त्यासाठी खालील स्टेप करा).</li></ul><p><br></p>","Category":"news-1782210569483.html","Slug":"Published","Status":"","rowIndex":11},{"News ID":"news-1781940196300","तारीख":"20/6/2026, 12:53:16","Title":"भोसरीपेक्षा कमी लोकसंख्या असलेला देश FIFA World Cup गाजवतोय, मग 150 कोटींचा महासत्ता बनू पाहणारा भारत कुठेय?","Featured Image":"https://vedchitrakolhapur.github.io/newsportal/assets/images/img_1781940186777.webp","Content":"<p>जगातील सर्वाधिक लोकसंख्या असलेला देश म्हणून भारताची ओळख आहे. भारतात सध्या सुमारे 1.4 अब्ज (140 कोटी) लोक राहतात आणि आश्चर्य म्हणजे यातील तब्बल 10 कोटींहून अधिक लोक फुटबॉलचे कट्टर चाहते आहेत. मात्र, एवढी मोठी फॅन फॉलोव्हिंग आणि लोकसंख्या असूनही भारत आजपर्यंत फिफा (FIFA) वर्ल्ड कपसाठी पात्र ठरू शकलेला नाही. याउलट, जगाच्या नकाशावर अत्यंत लहान असलेल्या कुरासाओ (Curaçao) सारख्या देशाने क्रीडा विश्वाचे लक्ष वेधून घेतले असून भारताच्या क्रीडा नियोजनावर मोठे प्रश्नचिन्ह उपस्थित केले आहे.</p><p><br></p><p><strong>दीड लाख लोकसंख्या असलेला 'कुरासाओ'</strong></p><p>कुरासाओ हा जगातील इतका लहान देश आहे की, तुम्ही अवघ्या 50 मिनिटांत चालत या देशाच्या एका टोकापासून दुसऱ्या टोकापर्यंत जाऊ शकता आणि देश संपेल. या संपूर्ण देशाची एकूण लोकसंख्या केवळ दीड लाखांच्या आसपास आहे. जर या देशातील सर्वच्या सर्व नागरिक एकत्र येऊन फुटबॉल सामना पाहण्यासाठी गेले, तरी जगातील एखादे मोठे स्टेडियम पूर्णपणे भरू शकणार नाही, एवढी कमी तिथली लोकसंख्या आहे.</p><p><br></p><p>परंतु, असे असूनही या लहान देशाने फुटबॉलच्या जागतिक पटलावर चमत्कार करून दाखवला असून त्यांनी फिफा वर्ल्ड कपच्या पात्रता फेरीत उत्कृष्ट कामगिरी केली आहे. केवळ दीड लाख लोकसंख्या असलेल्या देशातून आंतरराष्ट्रीय दर्जाचे 11 खेळाडू तयार होऊ शकतात, तर 140 कोटी लोकसंख्या असलेल्या भारताला आंतरराष्ट्रीय पातळीवर खेळणारे 11 खेळाडू का मिळत नाहीत? असा सवाल आता सोशल मीडिया आणि क्रीडा विश्वात विचारला जात आहे.</p><p><br></p><p><strong>भारतात खेळाडूंपेक्षा प्रसिद्धीवरच अधिक खर्च?</strong></p><p>अर्जेंटिनाचा महान फुटबॉलपटू लिओनेल मेस्सी जेव्हा भारतात आला होता, तेव्हा त्याच्या दौऱ्यावर आणि स्वागतावर तब्बल 150 कोटी रुपये खर्च करण्यात आले होते. मात्र, दुसरीकडे आपल्याच देशातील गुणवान तरुण खेळाडूंना जागतिक पातळीवर आणि वर्ल्ड कपच्या तयारीसाठी पाठवायचे असेल, तर 1 कोटी रुपयांचा निधी खर्च करतानाही उदासीनता दाखवली जाते.</p><p><br></p><p>भारतीय फुटबॉल चाहत्यांचे स्वप्न आहे की त्यांनी आयुष्यात एकदा तरी भारतीय संघाला फिफा वर्ल्ड कपमध्ये खेळताना आणि जिंकताना पाहावे. परंतु, जोपर्यंत देशांतर्गत खेळाडूंच्या मूलभूत सुविधांवर आणि त्यांच्या प्रशिक्षणावर योग्य प्रमाणात खर्च केला जात नाही, तोपर्यंत हे स्वप्न अपूर्णच राहील. परदेशी खेळाडूंच्या प्रसिद्धीवर कोट्यवधी रुपये उधळण्यापेक्षा, तोच पैसा जर भारतातील तळागाळातील खेळाडूंना पुढे आणण्यासाठी आणि त्यांच्या सोयी-सुविधांसाठी खर्च केला, तर भारतही नक्कीच फुटबॉल विश्वात इतिहास रचू शकतो, हेच या उदाहरणातून स्पष्ट होते.</p><p><br></p><p><strong>क्रिकेट विरुद्ध फुटबॉल</strong></p><p>भारतात फुटबॉलचा विकास न होण्यामागचे सर्वात मोठे कारण म्हणजे पायाभूत सुविधांची (Infrastructure) कमतरता. आज इंडियन क्रिकेट बोर्डचे (BCCI) बजेट तब्बल 20,686 कोटी रुपये आहे, तर दुसरीकडे इंडियन फुटबॉलचे बजेट अवघे 200 कोटी रुपये आहे. इतक्या कमी बजेटमध्ये आंतरराष्ट्रीय दर्जाच्या पायाभूत सुविधा निर्माण करणे आणि दर्जेदार खेळाडू शोधून त्यांना प्रशिक्षण देणे अशक्यप्राय होऊन बसते.</p>","Category":"news-1781940196300.html","Slug":"Published","Status":"","rowIndex":12},{"News ID":"news-1781932360987","तारीख":"20/6/2026, 10:42:40","Title":"यजमान अमेरिका सलग दुसऱ्या विजयासह पुढील फेरीत; ९६ वर्षांनंतर पहिल्यांदाच असं घडलं","Featured Image":"https://vedchitrakolhapur.github.io/newsportal/assets/images/img_1781937611627.webp","Content":"<p>यजमान <strong>अमेरिकेने</strong> (USA) सिॲटल स्टेडियमवर (Seattle Stadium) झालेल्या सामन्यात <strong>ऑस्ट्रेलियावर २-० अशी मात करत</strong> फिफा विश्वचषक २०२६ च्या बाद फेरीत (Round of 32) धडक मारली आहे. सलग दुसऱ्या विजयासह बाद फेरीत प्रवेश करणाऱ्या अमेरिकेने <strong>९६ वर्षांनंतर (१९३० नंतर)</strong> पुरुषांच्या विश्वचषकात पहिल्या दोन सामन्यांत सलग विजयाची ऐतिहासिक कामगिरी केली आहे. </p><p><br></p><p><strong>या महत्त्वपूर्ण सामन्यातील ठळक बाबी खालीलप्रमाणे आहेत:</strong></p><ul><li><strong>सामन्याचा निकाल:</strong> अमेरिकेने ऑस्ट्रेलियाविरुद्धच्या 'ग्रुप डी' (Group D) सामन्यात २-० असा विजय मिळवला.</li><li><strong>गोल करणारे खेळाडू:</strong> पहिल्या हाफमध्ये ऑस्ट्रेलियाच्या कॅमेरॉन बर्गेसने (Cameron Burgess) केलेला <strong>स्वयं-गोल</strong> (Own Goal) आणि <strong>ॲलेक्स फ्रीमनचा</strong> (Alex Freeman) हेडर गोल, या कामगिरीमुळे अमेरिकेने सामन्यावर पूर्ण नियंत्रण मिळवले.</li><li><strong>ऐतिहासिक विक्रम:</strong> १९३० च्या पहिल्या फिफा विश्वचषकानंतर पहिल्यांदाच अमेरिकेच्या संघाने स्पर्धेतील सलग सुरुवातीचे दोन सामने जिंकले आहेत.</li><li><strong>पुढील फेरी:</strong> या सलग दुसऱ्या विजयामुळे अमेरिकेने ६ गुणांसह थेट बाद फेरी गाठली आहे. [<a href=\"https://timesofindia.indiatimes.com/sports/football/fifa-world-cup/usa-vs-australia-fifa-world-cup-2026-match-result-usmnt-break-96-year-record-by-securing-back-to-back-wins/articleshow/131866852.cms\" target=\"_blank\">1</a>, <a href=\"https://www.news18.com/sports/football/fifa-world-cup-2026-pochettinos-usa-secure-second-win-on-the-trot-against-aussies-ws-l-10161954.html\" target=\"_blank\">2</a>]</li></ul><p>तुम्हाला आगामी फिफा विश्वचषक सामन्यांचे वेळापत्रक, इतर संघांचे गुणतक्ता (Points Table) किंवा अमेरिकेच्या <strong>पुढील सामन्यांची माहिती</strong> हवी आहे का? </p><p><em>AI responses may include mistakes.</em></p><p><br></p>","Category":"news-1781932360987.html","Slug":"Published","Status":"","rowIndex":13}];
+        const adsConfigData = {"Footer_Ad":{"imageOrCode":"https://vedchitrakolhapur.github.io/newsportal/assets/images/img_1782285039051.webp","link":"","isActive":"No"},"Paragraph_9_InArticleAd_4":{"imageOrCode":"https://vedchitrakolhapur.github.io/newsportal/assets/images/img_1782628837441.webp","link":"","isActive":"Yes"},"Paragraph_11_InArticleAd_1":{"imageOrCode":"https://vedchitrakolhapur.github.io/newsportal/assets/images/img_1782628857696.webp","link":"","isActive":"Yes"},"Popup_Ad":{"imageOrCode":"https://vedchitrakolhapur.github.io/newsportal/assets/images/img_1782284990248.webp","link":"","isActive":"Yes"},"Paragraph_3_InArticleAd_3":{"imageOrCode":"https://vedchitrakolhapur.github.io/newsportal/assets/images/img_1782285012134.webp","link":"","isActive":"Yes"},"Paragraph_7_InArticleAd_2":{"imageOrCode":"https://vedchitrakolhapur.github.io/newsportal/assets/images/img_1782285024222.webp","link":"","isActive":"Yes"}};
+        const pollConfigData = {"isActive":"Yes","question":"यंदा आजऱ्यात पाऊस कसा राहील ?","options":"[\"दरवर्षी सारखा पाऊस पडेल\",\"मध्यम पाऊस पडेल\",\"कमी पाऊस पडेल\",\"सांगता नाही येत\",\"दुष्काळ पडेल\"]","showHome":"Yes","showArticle":"Yes","paraNum":5,"votes":{"0":3,"1":2,"2":1,"3":4,"4":1}};
+
+        
+        let bulletinPage = 1;
+        const bulletinItemsPerPage = 20;
+        
+        
+        const bulletinCategories = ["लोकल न्यूज", "अभिनंदन वार्ता", "निधन वार्ता"];
+
         window.onload = function() {
             let modal = document.getElementById('popupAdModal');
             if(modal) { setTimeout(() => { modal.style.display = 'flex'; }, 1500); }
+            
+            generateDynamicCategoriesLayout();
             generateLocalSliderHTML();
-            renderPollSystem();
         };
 
         function closePopupAd() {
@@ -301,7 +238,6 @@
             if(modal) modal.style.display = 'none';
         }
 
-         
         function toggleNavDrawer(open) {
             let overlay = document.getElementById('navDrawerOverlay');
             let drawer = document.getElementById('navDrawer');
@@ -309,12 +245,13 @@
                 overlay.style.display = 'block';
                 setTimeout(() => { overlay.style.opacity = '1'; drawer.style.right = '0'; }, 10);
             } else {
-                drawer.style.right = '-300px';
+                drawer.style.right = '-280px';
                 overlay.style.opacity = '0';
                 setTimeout(() => { overlay.style.display = 'none'; }, 300);
             }
         }
 
+        
         function generateLocalSliderHTML() {
             let slider = document.getElementById('localNewsSlider');
             if(!slider) return;
@@ -322,6 +259,8 @@
             let html = '';
             const mrMonths = ["जानेवारी", "फेब्रुवारी", "मार्च", "एप्रिल", "मे", "जून", "जुलै", "ऑगस्ट", "सप्टेंबर", "ऑक्टोबर", "नोव्हेंबर", "डिसेंबर"];
             const engMonths = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+            
+            let validDaysCount = 0;
 
             for(let i=0; i<5; i++) {
                 let d = new Date();
@@ -331,59 +270,243 @@
                 let monthIdx = d.getMonth();
                 let year = d.getFullYear();
                 
-                let mrLabel = '';
-                if(i === 0) mrLabel = 'आजच्या सर्व बातम्या';
-                else if(i === 1) mrLabel = 'कालच्या सर्व बातम्या';
-                else mrLabel = day + " " + mrMonths[monthIdx] + " च्या बातम्या";
                 
-                let displayDateStr = day + " " + mrMonths[monthIdx] + " " + year;
-                let linkUrl = "local-" + day + "-" + engMonths[monthIdx] + "-" + year + ".html";
+                let format1 = day + " " + mrMonths[monthIdx] + " " + year;
+                let format2 = day + " " + mrMonths[monthIdx] + ", " + year;
+                let padDay = day < 10 ? "0" + day : day;
+                let padMonth = (monthIdx + 1) < 10 ? "0" + (monthIdx + 1) : (monthIdx + 1);
+                let slashFormat1 = day + "/" + (monthIdx + 1) + "/" + year;
+                let slashFormat2 = padDay + "/" + padMonth + "/" + year;
 
-                html += `
-                <a href="${linkUrl}" class="slider-item">
-                    <div class="slider-item-date"><i class="far fa-newspaper"></i> ${mrLabel}</div>
-                    <div class="slider-item-click">${displayDateStr} <i class="fas fa-chevron-right"></i></div>
-                </a>`;
-            }
-            slider.innerHTML = html;
-        }
-
-        function renderPollSystem() {
-            let container = document.getElementById('homePollContainer');
-            if(!container) return;
-
-            try {
-                let pollRaw = {"isActive":"Yes","question":"यंदा आजऱ्यात पाऊस कसा राहील ?","options":"[\"दरवर्षी सारखा पाऊस पडेल\",\"मध्यम पाऊस पडेल\",\"कमी पाऊस पडेल\",\"सांगता नाही येत\",\"दुष्काळ पडेल\"]","showHome":"Yes","showArticle":"Yes","paraNum":5,"votes":{"0":3,"1":2,"2":1,"3":4,"4":1}};
-                if(!pollRaw.isActive || pollRaw.isActive !== 'Yes') return;
-
-                let question = pollRaw.question;
-                let options = JSON.parse(pollRaw.options || "[]");
-                let votesObj = pollRaw.votes || {};
                 
-                let pollKey = "voted_" + encodeURIComponent(question.substring(0,20));
-                let hasVoted = localStorage.getItem(pollKey);
+                let hasNewsForDay = masterNewsList.some(news => {
+                    let newsDateStr = (news['तारीख'] || news['tarihk'] || news['date'] || '').toString().trim();
+                    let cat = news['Category'] || '';
+                    let isLocalCat = bulletinCategories.includes(cat);
+                    
+                    if(!isLocalCat) return false;
+                    
+                    return (
+                        newsDateStr.indexOf(format1) !== -1 || 
+                        newsDateStr.indexOf(format2) !== -1 ||
+                        newsDateStr.indexOf(slashFormat1) !== -1 ||
+                        newsDateStr.indexOf(slashFormat2) !== -1
+                    );
+                });
 
-                if(hasVoted) {
-                    showPollResults(container, question, options, votesObj);
-                } else {
-                    showPollOptions(container, question, options, pollKey);
+                
+                if (hasNewsForDay) {
+                    validDaysCount++;
+                    let mrLabel = '';
+                    if(i === 0) mrLabel = 'आजच्या सर्व बातम्या';
+                    else if(i === 1) mrLabel = 'कालच्या सर्व बातम्या';
+                    else mrLabel = day + " " + mrMonths[monthIdx] + " च्या बातम्या";
+                    
+                    let displayDateStr = day + " " + mrMonths[monthIdx] + " " + year;
+                    let linkUrl = "local-" + day + "-" + engMonths[monthIdx] + "-" + year + ".html";
+
+                    html += `
+                    <a href="${linkUrl}" class="slider-item">
+                        <div class="slider-item-date"><i class="far fa-newspaper"></i> ${mrLabel}</div>
+                        <div class="slider-item-click">${displayDateStr} <i class="fas fa-chevron-right"></i></div>
+                    </a>`;
                 }
-            } catch(e) { console.error("Poll rendering error:", e); }
+            }
+            
+            if(validDaysCount > 0) {
+                slider.innerHTML = html;
+                document.getElementById('localSliderSection').style.display = 'block';
+            }
         }
 
-        function showPollOptions(container, question, options, pollKey) {
+        // Unified Categories Grid Builder Engine Layout with Dynamic Inline items insertions systems rules
+        function generateDynamicCategoriesLayout() {
+            const container = document.getElementById('dynamicCategoriesContainer');
+            if(!container) return;
+            
+            
+            let bulletinNewsList = [];
+            let separateCategoriesMap = {};
+
+            masterNewsList.forEach(news => {
+                let cat = news['Category'] || 'इतर';
+                if(bulletinCategories.includes(cat)) {
+                    bulletinNewsList.push(news);
+                } else {
+                    if(!separateCategoriesMap[cat]) separateCategoriesMap[cat] = [];
+                    separateCategoriesMap[cat].push(news);
+                }
+            });
+
+            let compiledHtml = '';
+            
+            
+            compiledHtml += `<div class="category-section" id="bulletinCategorySection">`;
+            compiledHtml += `<div class="category-header">📋 लोकल बुलेटिन (स्थानिक घडामोडी)</div>`;
+            compiledHtml += `<div class="news-grid" id="bulletinNewsGrid"></div>`;
+            compiledHtml += `
+                <div class="pagination-area">
+                    <button class="pag-btn" id="btnPrevBulletin" onclick="changeBulletinPage(-1)"><i class="fas fa-chevron-left"></i> मागचे</button>
+                    <span class="pag-info" id="bulletinPageInfo">Page 1 of 1</span>
+                    <button class="pag-btn" id="btnNextBulletin" onclick="changeBulletinPage(1)">पुढचे <i class="fas fa-chevron-right"></i></button>
+                </div>`;
+            compiledHtml += `</div>`;
+
+            // Inline Advertisement Blocks configuration setup values extractors array loops checks
+            let inArticleAdBlocks = [];
+            Object.keys(adsConfigData).forEach(key => {
+                if(key && key.startsWith('Paragraph_') && adsConfigData[key].isActive === 'Yes') {
+                    inArticleAdBlocks.push(adsConfigData[key]);
+                }
+            });
+
+            let sectionCountIndex = 0;
+
+            
+            Object.keys(separateCategoriesMap).forEach(catName => {
+                let list = separateCategoriesMap[catName] || [];
+                if(list.length === 0) return; 
+                
+                sectionCountIndex++;
+                let slicedList = list.slice(0, 6); 
+
+                compiledHtml += `<div class="category-section">`;
+                compiledHtml += `<div class="category-header">🔥 ${catName}</div>`;
+                compiledHtml += `<div class="news-grid">`;
+                
+                slicedList.forEach(news => {
+                    let imgCode = news['Featured Image'] ? `<img src="${news['Featured Image']}" class="news-img" alt="News Image" loading="lazy">` : `<div class="news-img" style="display:flex; align-items:center; justify-content:center; background:#eef1f6; color:#bbb;"><i class="fas fa-newspaper fa-2x"></i></div>`;
+                    compiledHtml += `
+                    <a href="news/${news['Slug']}" class="news-card">
+                        ${imgCode}
+                        <div class="news-content">
+                            <h3 class="news-title">${news['Title']}</h3>
+                            <div class="news-date"><i class="far fa-calendar-alt"></i> ${(news['तारीख'] || '').split(',')[0]}</div>
+                        </div>
+                    </a>`;
+                });
+                
+                compiledHtml += `</div>`; // Close grid
+                compiledHtml += `</div>`; // Close section
+
+                // Dynamic Injection Checks definitions inside alternate rows layouts logic loops
+                if(sectionCountIndex === 1 && inArticleAdBlocks.length > 0) {
+                    let targetAd = inArticleAdBlocks[0];
+                    compiledHtml += generateInPageAdHtmlMarkupString(targetAd);
+                }
+                
+                if(sectionCountIndex === 2 && pollConfigData && pollConfigData.isActive === 'Yes' && pollConfigData.showHome === 'Yes') {
+                    compiledHtml += `<div id="dynamicHomePollBoxBlock"></div>`;
+                }
+
+                if(sectionCountIndex > 2 && sectionCountIndex % 2 === 1 && inArticleAdBlocks.length > 1) {
+                    let adIdxIndex = Math.min(Math.floor(sectionCountIndex / 2), inArticleAdBlocks.length - 1);
+                    compiledHtml += generateInPageAdHtmlMarkupString(inArticleAdBlocks[adIdxIndex]);
+                }
+            });
+
+            container.innerHTML = compiledHtml;
+
+            // Initial execution loaders call bindings runtime maps triggers setups items contexts
+            renderPaginatedBulletinGrid(bulletinNewsList);
+            if(document.getElementById('dynamicHomePollBoxBlock')) {
+                renderDynamicPollMarkupElement(document.getElementById('dynamicHomePollBoxBlock'));
+            }
+        }
+
+        function generateInPageAdHtmlMarkupString(adData) {
+            if(!adData) return '';
+            let htmlStr = `<div class="ad-banner-top">`;
+            if(adData.imageOrCode.trim().startsWith('<')) {
+                htmlStr += adData.imageOrCode;
+            } else {
+                let linkUrl = adData.link ? adData.link.trim() : '#';
+                let hasLink = adData.link && adData.link.trim() !== '';
+                let targetAttr = linkUrl.startsWith('tel:') ? '' : 'target="_blank"';
+                htmlStr += `<a href="${linkUrl}" ${hasLink ? targetAttr : 'style="cursor:default;" onclick="return false;"'}><img src="${adData.imageOrCode}" alt="Advertisement"></a>`;
+            }
+            htmlStr += `</div>`;
+            return htmlStr;
+        }
+
+        function renderPaginatedBulletinGrid(bulletinList) {
+            let grid = document.getElementById('bulletinNewsGrid');
+            if(!grid) return;
+            
+            if(bulletinList.length === 0) {
+                document.getElementById('bulletinCategorySection').style.display = 'none';
+                return;
+            }
+
+            let totalPages = Math.ceil(bulletinList.length / bulletinItemsPerPage);
+            if(bulletinPage > totalPages) bulletinPage = totalPages;
+            if(bulletinPage < 1) bulletinPage = 1;
+
+            let startIndex = (bulletinPage - 1) * bulletinItemsPerPage;
+            let endIndex = Math.min(startIndex + bulletinItemsPerPage, bulletinList.length);
+            let targetSlicedPageList = bulletinList.slice(startIndex, endIndex);
+
+            let htmlContent = '';
+            targetSlicedPageList.forEach(news => {
+                let imgCode = news['Featured Image'] ? `<img src="${news['Featured Image']}" class="news-img" alt="News Image" loading="lazy">` : `<div class="news-img" style="display:flex; align-items:center; justify-content:center; background:#eef1f6; color:#bbb;"><i class="fas fa-newspaper fa-2x"></i></div>`;
+                htmlContent += `
+                <a href="news/${news['Slug']}" class="news-card">
+                    ${imgCode}
+                    <div class="news-content">
+                        <h3 class="news-title">${news['Title']}</h3>
+                        <div class="news-date"><i class="far fa-calendar-alt"></i> ${(news['तारीख'] || '').split(',')[0]}</div>
+                    </div>
+                </a>`;
+            });
+
+            grid.innerHTML = htmlContent;
+            
+            document.getElementById('bulletinPageInfo').innerText = `Page ${bulletinPage} of ${totalPages}`;
+            document.getElementById('btnPrevBulletin').disabled = (bulletinPage === 1);
+            document.getElementById('btnNextBulletin').disabled = (bulletinPage === totalPages);
+        }
+
+        function changeBulletinPage(delta) {
+            bulletinPage += delta;
+            let bulletinList = [];
+            masterNewsList.forEach(news => {
+                if(bulletinCategories.includes(news['Category'] || '')) bulletinList.push(news);
+            });
+            renderPaginatedBulletinGrid(bulletinList);
+            document.getElementById('bulletinCategorySection').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        function renderDynamicPollMarkupElement(container) {
+            if(!container || !pollConfigData || pollConfigData.isActive !== 'Yes') return;
+            
+            container.className = "poll-box";
+            let question = pollConfigData.question;
+            let options = JSON.parse(pollConfigData.options || "[]");
+            let votesObj = pollConfigData.votes || {};
+            
+            let pollKey = "voted_" + encodeURIComponent(question.substring(0,20));
+            let hasVoted = localStorage.getItem(pollKey);
+
+            if(hasVoted) {
+                showPollResultsMarkup(container, question, options, votesObj);
+            } else {
+                showPollOptionsMarkup(container, question, options, pollKey);
+            }
+        }
+
+        function showPollOptionsMarkup(container, question, options, pollKey) {
             let html = `<div class="poll-header"><i class="fas fa-poll-h"></i> आजचा पोल</div>`;
             html += `<div class="poll-question">${question}</div>`;
             html += `<div id="pollOptionsArea">`;
             options.forEach((opt, idx) => {
-                html += `<button class="poll-opt-btn" onclick="submitVote('${opt}', ${idx}, '${pollKey}')">${opt}</button>`;
+                html += `<button class="poll-opt-btn" onclick="submitVoteHomeEngine('${opt}', ${idx}, '${pollKey}')">${opt}</button>`;
             });
             html += `</div>`;
             html += `<div id="pollLoader" class="poll-loader"><i class="fas fa-spinner fa-spin"></i> तुमची नोंद होत आहे...</div>`;
             container.innerHTML = html;
         }
 
-        async function submitVote(optionText, optIdx, pollKey) {
+        async function submitVoteHomeEngine(optionText, optIdx, pollKey) {
             document.getElementById('pollOptionsArea').style.display = 'none';
             document.getElementById('pollLoader').style.display = 'block';
 
@@ -394,7 +517,7 @@
                 if(result.status === "success") {
                     localStorage.setItem(pollKey, "true"); 
                     let updatedPoll = result.poll;
-                    showPollResults(document.getElementById('homePollContainer'), updatedPoll.question, JSON.parse(updatedPoll.options), updatedPoll.votes);
+                    showPollResultsMarkup(document.getElementById('dynamicHomePollBoxBlock'), updatedPoll.question, JSON.parse(updatedPoll.options), updatedPoll.votes);
                 } else {
                     alert("तांत्रिक अडचणीमुळे मत नोंदवले गेले नाही. पुन्हा प्रयत्न करा.");
                     document.getElementById('pollOptionsArea').style.display = 'block';
@@ -408,7 +531,7 @@
             }
         }
 
-        function showPollResults(container, question, options, votesObj) {
+        function showPollResultsMarkup(container, question, options, votesObj) {
             let totalVotes = 0;
             options.forEach((_, idx) => { totalVotes += (votesObj[idx] || 0); });
 
