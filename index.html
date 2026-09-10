@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     
-    <title>महाराष्ट्र LIVE | दैनिक वृत्त</title>
+    <title>महाराष्ट्र LIVE NEWS | दैनिक वृत्त</title>
     <meta name="description" content="महाराष्ट्रातील ताज्या आणि महत्त्वाच्या बातम्या घडामोडी.">
     <meta name="keywords" content="News, Maharashtra, Latest News">
     
@@ -131,10 +131,12 @@
     <header>
         <div class="header-container">
             <a href="index.html" class="logo-area">
-                                    <div class="logo-text-fallback">
-                        महाराष्ट्र LIVE                    </div>
-                                            <div class="slogan-text-fallback">ताज्या घडामोडींचा वेगवान आढावा</div>
-                                                </a>
+                <img id="dyn-site-logo" src="" class="site-logo-img" alt="Logo" style="display:none;">
+                <div id="dyn-site-text-container">
+                    <div class="logo-text-fallback" id="dyn-site-name">महाराष्ट्र <span>LIVE</span></div>
+                    <div class="slogan-text-fallback" id="dyn-site-slogan">ताज्या घडामोडी</div>
+                </div>
+            </a>
             
             <button class="menu-toggle-btn" onclick="toggleNavDrawer(true)" aria-label="Open Menu">
                 <i class="fas fa-bars"></i>
@@ -156,12 +158,16 @@
             <li><a href="toc.html"><i class="fas fa-file-contract"></i> Terms & Conditions</a></li>
         </ul>
         
-                    <div class="drawer-social-box">
-                <p>आमच्याशी जोडून रहा</p>
-                <div class="drawer-social-icons">
-                    <a href="https://fb.com" target="_blank" class="fb-icon"><i class="fab fa-facebook-f"></i></a>                                                            <a href="https://youtube.com" target="_blank" class="yt-icon"><i class="fab fa-youtube"></i></a>                </div>
+        <div class="drawer-social-box" id="dyn-social-box" style="display:none;">
+            <p>आमच्याशी जोडून रहा</p>
+            <div class="drawer-social-icons">
+                <a id="dyn-fb-link" href="#" target="_blank" class="fb-icon" style="display:none;"><i class="fab fa-facebook-f"></i></a>
+                <a id="dyn-tw-link" href="#" target="_blank" class="tw-icon" style="display:none;"><i class="fab fa-twitter"></i></a>
+                <a id="dyn-insta-link" href="#" target="_blank" class="insta-icon" style="display:none;"><i class="fab fa-instagram"></i></a>
+                <a id="dyn-yt-link" href="#" target="_blank" class="yt-icon" style="display:none;"><i class="fab fa-youtube"></i></a>
             </div>
-            </nav>
+        </div>
+    </nav>
 
     <div class="container">
         
@@ -204,7 +210,7 @@
             <a href="toc.html">Terms of Service</a>
         </div>
         <div class="footer-credits">
-            &copy; 2026 महाराष्ट्र LIVE | Developed by <a href="https://mbiz.in" target="_blank">mbiz.in</a>
+            &copy; 2026 <span id="dyn-footer-name">वृत्त पोर्टल</span> | Developed by <a href="https://mbiz.in" target="_blank">mbiz.in</a>
         </div>
     </footer>
 
@@ -226,6 +232,8 @@
         const bulletinCategories = ["लोकल न्यूज", "अभिनंदन वार्ता", "निधन वार्ता"];
 
         window.onload = function() {
+            fetchSiteConfigLive(); 
+            
             let modal = document.getElementById('popupAdModal');
             if(modal) { setTimeout(() => { modal.style.display = 'flex'; }, 1500); }
             
@@ -556,6 +564,43 @@
 
             html += `<div class="poll-footer">एकूण मते: ${totalVotes} | तुमचं मत नोंदवलं गेलं आहे.</div>`;
             container.innerHTML = html;
+        }
+		
+		async function fetchSiteConfigLive() {
+            try {
+                // SCRIPT_URL आधीच डिफाईन केलेला असावा, नसल्यास तुमच्या गुगल स्क्रिप्टचा Web App URL इथे टाका.
+                let response = await fetch(SCRIPT_URL + "?action=getSiteConfig");
+                let config = await response.json();
+                
+                // Logo & Name Update
+                if(config.logoUrl && config.logoUrl.trim() !== '') {
+                    document.getElementById('dyn-site-logo').src = config.logoUrl;
+                    document.getElementById('dyn-site-logo').style.display = 'block';
+                    document.getElementById('dyn-site-text-container').style.display = 'none';
+                } else {
+                    document.getElementById('dyn-site-logo').style.display = 'none';
+                    document.getElementById('dyn-site-text-container').style.display = 'block';
+                    if(config.siteName) document.getElementById('dyn-site-name').innerHTML = config.siteName;
+                    if(config.slogan) document.getElementById('dyn-site-slogan').innerHTML = config.slogan;
+                }
+                
+                // Footer Update
+                if(config.siteName) document.getElementById('dyn-footer-name').innerText = config.siteName.replace(/<\/?[^>]+(>|$)/g, "");
+
+                // Social Links Update
+                let showSocial = false;
+                if(config.fbLink) { document.getElementById('dyn-fb-link').href = config.fbLink; document.getElementById('dyn-fb-link').style.display = 'flex'; showSocial = true; }
+                if(config.twLink) { document.getElementById('dyn-tw-link').href = config.twLink; document.getElementById('dyn-tw-link').style.display = 'flex'; showSocial = true; }
+                if(config.instaLink) { document.getElementById('dyn-insta-link').href = config.instaLink; document.getElementById('dyn-insta-link').style.display = 'flex'; showSocial = true; }
+                if(config.ytLink) { document.getElementById('dyn-yt-link').href = config.ytLink; document.getElementById('dyn-yt-link').style.display = 'flex'; showSocial = true; }
+                
+                if(showSocial) {
+                    document.getElementById('dyn-social-box').style.display = 'block';
+                }
+                
+            } catch(e) {
+                console.error("Live Config Fetch Error:", e);
+            }
         }
     </script>
 </body>
