@@ -3,13 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	
+	<title id="dyn-page-title">6 सप्टेंबर 2026 च्या सर्व लोकल बातम्या घडामोडी | महाराष्ट्र LIVE</title>
+    <meta id="dyn-seo-desc" name="description" content="6 सप्टेंबर 2026 च्या भागातील संपूर्ण लोकल घडामोडी, निधन वार्ता आणि अभिनंदन वार्ता बुलेटिन.">
+    <meta id="dyn-seo-keys" name="keywords" content="News, Latest News, Local News, Marathi News">
     
-    <title>6 सप्टेंबर 2026 च्या सर्व लोकल बातम्या घडामोडी | महाराष्ट्र LIVE</title>
-    <meta name="description" content="6 सप्टेंबर 2026 च्या भागातील संपूर्ण लोकल घडामोडी, निबंध वार्ता आणि अभिनंदन वार्ता बुलेटिन.">
-    <meta name="keywords" content="News, Maharashtra, Latest News">
     
-        
-        
+    <link id="dyn-favicon1" rel="icon" type="image/x-icon" href="">
+    <link id="dyn-favicon2" rel="apple-touch-icon" href="">
+    <div id="dyn-analytics-container" style="display:none;"></div>
+    
+    
+    
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Mukta:wght@400;600;700&amp;display=swap" rel="stylesheet">
     
@@ -124,8 +129,7 @@
             
             <a href="index.html" class="logo-area">
                                     <div class="logo-text-fallback">
-                        महाराष्ट्र LIVE                    </div>
-                                            <div class="slogan-text-fallback">ताज्या घडामोडींचा वेगवान आढावा</div>
+                        महाराष्ट्र &lt;span&gt;LIVE&lt;/span&gt;                    </div>
                                                 </a>
         </div>
         
@@ -148,12 +152,16 @@
             <li><a href="toc.html"><i class="fas fa-file-contract"></i> Terms & Conditions</a></li>
         </ul>
         
-                    <div class="drawer-social-box">
-                <p>आमच्याशी जोडून रहा</p>
-                <div class="drawer-social-icons">
-                    <a href="https://fb.com" target="_blank" class="fb-icon"><i class="fab fa-facebook-f"></i></a>                                                            <a href="https://youtube.com" target="_blank" class="yt-icon"><i class="fab fa-youtube"></i></a>                </div>
+        <div class="drawer-social-box" id="dyn-social-box" style="display:none;">
+            <p>आमच्याशी जोडून रहा</p>
+            <div class="drawer-social-icons">
+                <a id="dyn-fb-link" href="#" target="_blank" class="fb-icon" style="display:none;"><i class="fab fa-facebook-f"></i></a>
+                <a id="dyn-tw-link" href="#" target="_blank" class="tw-icon" style="display:none;"><i class="fab fa-twitter"></i></a>
+                <a id="dyn-insta-link" href="#" target="_blank" class="insta-icon" style="display:none;"><i class="fab fa-instagram"></i></a>
+                <a id="dyn-yt-link" href="#" target="_blank" class="yt-icon" style="display:none;"><i class="fab fa-youtube"></i></a>
             </div>
-            </nav>
+        </div>
+    </nav>
 
     <div class="container">
         <div class="bulletin-date-title"><i class="far fa-calendar-alt"></i> लोकल बुलेटिन: 6 सप्टेंबर 2026</div>
@@ -179,7 +187,7 @@
             <a href="toc.html">Terms of Service</a>
         </div>
         <div class="footer-credits">
-            &copy; 2026 महाराष्ट्र LIVE | Developed by <a href="https://mbiz.in" target="_blank">mbiz.in</a>
+            &copy; 2026 <span id="dyn-footer-name">वृत्त पोर्टल</span> | Developed by <a href="https://mbiz.in" target="_blank">mbiz.in</a>
         </div>
     </footer>
 
@@ -200,6 +208,7 @@
 
         
         document.addEventListener("DOMContentLoaded", function() {
+		fetchSiteConfigLive(); 
             let modal = document.getElementById('hubPopupModal');
             if(modal) { setTimeout(() => { modal.style.display = 'flex'; }, 1000); }
         });
@@ -208,6 +217,66 @@
         function closeHubAd() {
             let modal = document.getElementById('hubPopupModal');
             if(modal) modal.style.display = 'none';
+        }
+		
+		async function fetchSiteConfigLive() {
+            try {
+                let response = await fetch(SCRIPT_URL + "?action=getSiteConfig");
+                let config = await response.json();
+                
+                
+                if(config.logoUrl && config.logoUrl.trim() !== '') {
+                    document.getElementById('dyn-site-logo').src = config.logoUrl;
+                    document.getElementById('dyn-site-logo').style.display = 'block';
+                    document.getElementById('dyn-site-text-container').style.display = 'none';
+                } else {
+                    document.getElementById('dyn-site-logo').style.display = 'none';
+                    document.getElementById('dyn-site-text-container').style.display = 'block';
+                    if(config.siteName) document.getElementById('dyn-site-name').innerHTML = config.siteName;
+                    if(config.slogan) document.getElementById('dyn-site-slogan').innerHTML = config.slogan;
+                }
+				
+				
+                if(config.siteName) {
+                    document.title = document.title.replace("महाराष्ट्र LIVE", config.siteName.replace(/<\/?[^>]+(>|$)/g, ""));
+                }
+				
+				
+                if(config.faviconUrl) {
+                    let fav1 = document.getElementById('dyn-favicon1');
+                    let fav2 = document.getElementById('dyn-favicon2');
+                    if (fav1) fav1.href = config.faviconUrl;
+                    if (fav2) fav2.href = config.faviconUrl;
+                }
+
+                
+                if(config.seoKeywords) {
+                    let metaKeywords = document.querySelector('meta[name="keywords"]');
+                    if(metaKeywords) metaKeywords.setAttribute("content", config.seoKeywords);
+                }
+
+                
+                if(config.analyticsMeta) {
+                    let container = document.getElementById('dyn-analytics-container');
+                    if (container) container.innerHTML = config.analyticsMeta;
+                }
+                
+                
+                if(config.siteName) document.getElementById('dyn-footer-name').innerText = config.siteName.replace(/<\/?[^>]+(>|$)/g, "");
+
+                
+                let showSocial = false;
+                if(config.fbLink) { document.getElementById('dyn-fb-link').href = config.fbLink; document.getElementById('dyn-fb-link').style.display = 'flex'; showSocial = true; }
+                if(config.twLink) { document.getElementById('dyn-tw-link').href = config.twLink; document.getElementById('dyn-tw-link').style.display = 'flex'; showSocial = true; }
+                if(config.instaLink) { document.getElementById('dyn-insta-link').href = config.instaLink; document.getElementById('dyn-insta-link').style.display = 'flex'; showSocial = true; }
+                if(config.ytLink) { document.getElementById('dyn-yt-link').href = config.ytLink; document.getElementById('dyn-yt-link').style.display = 'flex'; showSocial = true; }
+                
+                if(showSocial) {
+                    document.getElementById('dyn-social-box').style.display = 'block';
+                }
+            } catch(e) {
+                console.error("Live Config Fetch Error:", e);
+            }
         }
     </script>
 </body>
