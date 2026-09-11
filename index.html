@@ -573,26 +573,21 @@
                 let response = await fetch(SCRIPT_URL + "?action=getSiteConfig");
                 let config = await response.json();
                 
-                // Logo & Name Update
+                // Homepage Logo & Name Update
                 if(config.logoUrl && config.logoUrl.trim() !== '') {
+                    // लोगो असेल तर: Home आयकॉन लपवा आणि लोगो दाखवा
+                    document.getElementById('dyn-logo-wrapper').style.display = 'block';
                     document.getElementById('dyn-site-logo').src = config.logoUrl;
-                    document.getElementById('dyn-site-logo').style.display = 'block';
-                    document.getElementById('dyn-site-text-container').style.display = 'none';
-                    
-                    // जर लोगो असेल, तर Back/Home बटण लपवा
-                    let backBtn = document.querySelector('.back-btn');
-                    if(backBtn) backBtn.style.display = 'none';
-
+                    document.getElementById('home-icon-btn').style.display = 'none';
                 } else {
-                    document.getElementById('dyn-site-logo').style.display = 'none';
-                    document.getElementById('dyn-site-text-container').style.display = 'block';
-                    if(config.siteName) document.getElementById('dyn-site-name').innerHTML = config.siteName;
-                    if(config.slogan) document.getElementById('dyn-site-slogan').innerHTML = config.slogan;
-                    
-                    // जर लोगो नसेल, तर Back/Home बटण दाखवा
-                    let backBtn = document.querySelector('.back-btn');
-                    if(backBtn) backBtn.style.display = 'flex';
+                    // लोगो नसेल तर: Home आयकॉन दाखवा आणि लोगो लपवा
+                    document.getElementById('dyn-logo-wrapper').style.display = 'none';
+                    document.getElementById('home-icon-btn').style.display = 'flex';
                 }
+                
+                // साईटचे नाव आणि स्लोगन नेहमी दिसेल
+                if(config.siteName) document.getElementById('dyn-site-name').innerHTML = config.siteName;
+                if(config.slogan) document.getElementById('dyn-site-slogan').innerHTML = config.slogan;
 				
 				// Favicon Update
                 if(config.faviconUrl) {
