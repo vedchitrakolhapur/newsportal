@@ -173,7 +173,8 @@
         <div class="bulletin-date-title"><i class="far fa-calendar-alt"></i> लोकल बुलेटिन: 8 सप्टेंबर 2026</div>
         
                     <p style="text-align:center; padding:25px; color:#666; background:white; border-radius:8px;">या तारखेला कोणतीही लोकल बातमी उपलब्ध नाही.</p>
-            </div>
+        
+    </div>
 
     
     <footer>
@@ -233,51 +234,62 @@
             }
 
             
-            let articleContainers = document.querySelectorAll('.news-content');
+            if (activeInArticles.length === 0) {
+                let allContents = document.querySelectorAll('.news-content');
+                allContents.forEach(c => {
+                    c.innerHTML = c.innerHTML.replace(/\[AD\]/gi, '');
+                });
+                return;
+            }
+
+            
             let adIndex = 0;
 
-            articleContainers.forEach(function(container) {
-                let html = container.innerHTML;
+            
+            function getAdHtml() {
+                let currentAd = activeInArticles[adIndex % activeInArticles.length];
+                adIndex++;
                 
+                let adHtmlContent = '';
+                let linkUrl = currentAd.link ? currentAd.link.trim() : '';
+                let targetAttr = 'target="_blank"';
                 
-                let adRegex = /\[AD\]/gi; 
-                
-                
-                if (adRegex.test(html)) {
-                    html = html.replace(adRegex, function() {
-                        
-                        if (activeInArticles.length > 0) {
-                            let currentAd = activeInArticles[adIndex % activeInArticles.length];
-                            adIndex++;
-                            
-                            let adHtmlContent = '';
-                            let linkUrl = currentAd.link ? currentAd.link.trim() : '';
-                            let targetAttr = 'target="_blank"';
-                            
-                            if (linkUrl && /^\+?[0-9\s\-]{10,15}$/.test(linkUrl)) {
-                                linkUrl = 'tel:' + linkUrl.replace(/\s+/g, '');
-                            }
-                            if (linkUrl.startsWith('tel:')) {
-                                targetAttr = ''; 
-                            }
+                if (linkUrl && /^\+?[0-9\s\-]{10,15}$/.test(linkUrl)) linkUrl = 'tel:' + linkUrl.replace(/\s+/g, '');
+                if (linkUrl.startsWith('tel:')) targetAttr = ''; 
 
-                            if (currentAd.imageOrCode && currentAd.imageOrCode.trim().startsWith('<')) {
-                                adHtmlContent = currentAd.imageOrCode;
-                            } else {
-                                let hasLink = linkUrl !== '';
-                                adHtmlContent = `<a href="${hasLink ? linkUrl : '#'}" ${hasLink ? targetAttr : 'style="cursor:default;" onclick="return false;"'}><img src="${currentAd.imageOrCode}" alt="In-Article Advertisement"></a>`;
-                            }
-                            
-                            // जाहिरातीचा बॉक्स तयार करून तो [AD] च्या जागी रिटर्न करा
-                            return `<div class="inline-ad-box"><div class="ad-lbl">जाहिरात</div>${adHtmlContent}</div>`;
-                        } else {
-                            
-                            return '';
-                        }
-                    });
+                if (currentAd.imageOrCode && currentAd.imageOrCode.trim().startsWith('<')) {
+                    adHtmlContent = currentAd.imageOrCode;
+                } else {
+                    let hasLink = linkUrl !== '';
+                    adHtmlContent = `<a href="${hasLink ? linkUrl : '#'}" ${hasLink ? targetAttr : 'style="cursor:default;" onclick="return false;"'}><img src="${currentAd.imageOrCode}" alt="Advertisement"></a>`;
+                }
+                
+                return `<div class="inline-ad-box"><div class="ad-lbl">जाहिरात</div>${adHtmlContent}</div>`;
+            }
+
+            // २. सर्व बातम्यांचे कार्ड्स (News Cards) शोधा
+            let newsCards = document.querySelectorAll('.news-card');
+
+            newsCards.forEach(function(card, index) {
+                
+                let contentContainer = card.querySelector('.news-content');
+                if (contentContainer) {
+                    let html = contentContainer.innerHTML;
+                    let adRegex = /\[AD\]/gi;
                     
+                    if (adRegex.test(html)) {
+                        html = html.replace(adRegex, function() {
+                            return getAdHtml();
+                        });
+                        contentContainer.innerHTML = html;
+                    }
+                }
+
+                
+                let isCondolence = card.classList.contains('condolence-card');
+                if (!isCondolence && index < newsCards.length - 1) {
                     
-                    container.innerHTML = html;
+                    card.insertAdjacentHTML('afterend', getAdHtml());
                 }
             });
         }
