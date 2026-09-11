@@ -5,11 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     
-    <title>पूर्णपणे आहे! यामध्ये आपण आधीच सुचवलेले | महाराष्ट्र LIVE</title>
+    <title>जेव्हा तुम्ही नवीन बातम्या पब्लिश कराल, तेव्हा तुमच्या कॅटेगरी फिल्टरच्या नियमांनुसार | महाराष्ट्र LIVE</title>
     <meta name="description" content="संपूर्ण बातमी सविस्तर वाचण्यासाठी येथे क्लिक करा...">
     <meta name="keywords" content="News, Latest News, Marathi News">
     
-    <meta property="og:title" content="पूर्णपणे आहे! यामध्ये आपण आधीच सुचवलेले">
+    <meta property="og:title" content="जेव्हा तुम्ही नवीन बातम्या पब्लिश कराल, तेव्हा तुमच्या कॅटेगरी फिल्टरच्या नियमांनुसार">
     <meta property="og:type" content="article">
     <meta property="og:image" content="https://vedchitrakolhapur.github.io/newsportal/assets/images/img_1789024346677.webp">
     <meta property="og:description" content="संपूर्ण बातमी सविस्तर वाचण्यासाठी येथे क्लिक करा...">
@@ -177,7 +177,7 @@
 
     <div class="container">
         <div class="news-box">
-            <h1>पूर्णपणे आहे! यामध्ये आपण आधीच सुचवलेले</h1>
+            <h1>जेव्हा तुम्ही नवीन बातम्या पब्लिश कराल, तेव्हा तुमच्या कॅटेगरी फिल्टरच्या नियमांनुसार</h1>
             <div class="meta-info">
                 <div><i class="far fa-calendar-alt"></i> </div>
                 <div><i class="far fa-user"></i> प्रतिनिधी</div>
@@ -224,46 +224,61 @@
             };
 
             setTimeout(function() {
-                try {
-                    let adsConfig = {"Paragraph_3_InArticleAd_3":{"imageOrCode":"https://vedchitrakolhapur.github.io/newsportal/assets/images/img_1789040652410.webp","link":"","isActive":"Yes"},"Paragraph_7_InArticleAd_4":{"imageOrCode":"https://vedchitrakolhapur.github.io/newsportal/assets/images/img_1789040660510.webp","link":"","isActive":"Yes"},"Footer_Ad":{"imageOrCode":"https://vedchitrakolhapur.github.io/newsportal/assets/images/img_1789040678544.webp","link":"","isActive":"No"},"Paragraph_9_InArticleAd_2":{"imageOrCode":"https://vedchitrakolhapur.github.io/newsportal/assets/images/img_1789040634406.webp","link":"","isActive":"Yes"},"Popup_Ad":{"imageOrCode":"https://vedchitrakolhapur.github.io/newsportal/assets/images/img_1782284990248.webp","link":"","isActive":"No"},"Paragraph_11_InArticleAd_1":{"imageOrCode":"https://vedchitrakolhapur.github.io/newsportal/assets/images/img_1789040643074.webp","link":"","isActive":"Yes"}};
+                let displayContainer = document.getElementById('processedArticle');
+                
+                if (displayContainer) {
                     
-                    if (adsConfig && typeof adsConfig === 'object') {
-                        let displayContainer = document.getElementById('processedArticle');
-                        let paragraphElements = displayContainer.querySelectorAll('p');
+                    let htmlContent = displayContainer.innerHTML;
+                    let adRegex = /\[AD\]/gi; 
+                    if (adRegex.test(htmlContent)) {
                         
-                        Object.keys(adsConfig).forEach(function(key) {
-                            if (key && key.startsWith('Paragraph_')) {
-                                let adData = adsConfig[key];
-                                if (adData && adData.isActive === 'Yes') {
-                                    let targetParaNum = parseInt(key.split('_')[1]) || 3;
-                                    let adContentHtml = '';
-                                    let linkUrl = adData.link ? adData.link.trim() : '';
-                                    let targetAttr = 'target="_blank"';
-                                    
-                                    if (linkUrl && /^\+?[0-9\s\-]{10,15}$/.test(linkUrl)) linkUrl = 'tel:' + linkUrl.replace(/\s+/g, '');
-                                    if (linkUrl.startsWith('tel:')) targetAttr = ''; 
+                        displayContainer.innerHTML = htmlContent.replace(adRegex, '');
+                    }
 
-                                    if (adData.imageOrCode && adData.imageOrCode.trim().startsWith('<')) {
-                                        adContentHtml = adData.imageOrCode;
-                                    } else {
-                                        let hasLink = linkUrl !== '';
-                                        adContentHtml = `<a href="${hasLink ? linkUrl : '#'}" ${hasLink ? targetAttr : 'style="cursor:default;" onclick="return false;"'}><img src="${adData.imageOrCode}" alt="In-Article Advertisement"></a>`;
-                                    }
-                                    
-                                    let adHtmlCode = `<div class="inserted-ad"><span>जाहिरात</span>${adContentHtml}</div>`;
-                                    
-                                    if (paragraphElements.length >= targetParaNum) {
-                                        paragraphElements[targetParaNum - 1].insertAdjacentHTML('afterend', adHtmlCode);
-                                    } else if (paragraphElements.length > 0) {
-                                        displayContainer.insertAdjacentHTML('beforeend', adHtmlCode);
+                    
+                    try {
+                        let adsConfig = {"Paragraph_8_InArticleAd_4":{"imageOrCode":"https://vedchitrakolhapur.github.io/newsportal/assets/images/img_1789040643074.webp","link":"","isActive":"Yes"},"Paragraph_5_InArticleAd_3":{"imageOrCode":"https://vedchitrakolhapur.github.io/newsportal/assets/images/img_1789040634406.webp","link":"","isActive":"Yes"},"Paragraph_4_InArticleAd_2":{"imageOrCode":"https://vedchitrakolhapur.github.io/newsportal/assets/images/img_1789040660510.webp","link":"","isActive":"Yes"},"Footer_Ad":{"imageOrCode":"https://vedchitrakolhapur.github.io/newsportal/assets/images/img_1789040678544.webp","link":"","isActive":"No"},"Popup_Ad":{"imageOrCode":"https://vedchitrakolhapur.github.io/newsportal/assets/images/img_1782284990248.webp","link":"","isActive":"No"},"Paragraph_2_InArticleAd_1":{"imageOrCode":"https://vedchitrakolhapur.github.io/newsportal/assets/images/img_1789040652410.webp","link":"","isActive":"Yes"}};
+                        
+                        if (adsConfig && typeof adsConfig === 'object') {
+                            
+                            let paragraphElements = displayContainer.querySelectorAll('p');
+                            
+                            Object.keys(adsConfig).forEach(function(key) {
+                                if (key && key.startsWith('Paragraph_')) {
+                                    let adData = adsConfig[key];
+                                    if (adData && adData.isActive === 'Yes') {
+                                        let targetParaNum = parseInt(key.split('_')[1]) || 3;
+                                        let adContentHtml = '';
+                                        let linkUrl = adData.link ? adData.link.trim() : '';
+                                        let targetAttr = 'target="_blank"';
+                                        
+                                        if (linkUrl && /^\+?[0-9\s\-]{10,15}$/.test(linkUrl)) linkUrl = 'tel:' + linkUrl.replace(/\s+/g, '');
+                                        if (linkUrl.startsWith('tel:')) targetAttr = ''; 
+
+                                        if (adData.imageOrCode && adData.imageOrCode.trim().startsWith('<')) {
+                                            adContentHtml = adData.imageOrCode;
+                                        } else {
+                                            let hasLink = linkUrl !== '';
+                                            adContentHtml = `<a href="${hasLink ? linkUrl : '#'}" ${hasLink ? targetAttr : 'style="cursor:default;" onclick="return false;"'}><img src="${adData.imageOrCode}" alt="In-Article Advertisement"></a>`;
+                                        }
+                                        
+                                        let adHtmlCode = `<div class="inserted-ad"><span>जाहिरात</span>${adContentHtml}</div>`;
+                                        
+                                        if (paragraphElements.length >= targetParaNum) {
+                                            paragraphElements[targetParaNum - 1].insertAdjacentHTML('afterend', adHtmlCode);
+                                        } else if (paragraphElements.length > 0) {
+                                            displayContainer.insertAdjacentHTML('beforeend', adHtmlCode);
+                                        }
                                     }
                                 }
-                            }
-                        });
+                            });
+                        }
+                    } catch (error) {
+                        console.error("जाहिरात इन्सर्ट करताना त्रुटी:", error);
                     }
-                } catch (error) {
-                    console.error("जाहिरात इन्सर्ट करताना त्रुटी:", error);
                 }
+				
+				
 
                 // Poll Injection Logic
                 try {
