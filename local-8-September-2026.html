@@ -124,16 +124,22 @@
 <body>
 
     <header>
-        <div class="header-container header-left-box">
-            <a href="index.html" class="back-btn"><i class="fas fa-arrow-left"></i></a>
+        <div class="header-container header-left-box" style="display: flex; align-items: center; gap: 15px;">
             
-            <a href="index.html" class="logo-area">
-                                    <div class="logo-text-fallback">
-                        महाराष्ट्र &lt;span&gt;LIVE&lt;/span&gt;                    </div>
-                                                </a>
+            <a href="../index.html" class="back-btn" style="font-size: 20px; color: white; text-decoration: none; display: flex; align-items: center; justify-content: center; width: 35px; height: 35px; border-radius: 50%; background: rgba(255,255,255,0.15); transition: 0.2s;">
+                <i class="fas fa-arrow-left"></i>
+            </a>
+            
+            <a href="../index.html" class="logo-area" style="display: flex; flex-direction: column; text-decoration: none; color: white;">
+                <img id="dyn-site-logo" src="" class="site-logo-img" alt="Logo" style="display:none; max-height: 45px; width: auto; object-fit: contain; display: block;">
+                <div id="dyn-site-text-container">
+                    <div class="logo-text-fallback" id="dyn-site-name" style="font-size: 22px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; color: white;">महाराष्ट्र <span style="color: #ff9933;">LIVE</span></div>
+                    <div class="slogan-text-fallback" id="dyn-site-slogan" style="font-size: 11px; opacity: 0.85; margin-top: -2px; font-weight: 600;">ताज्या घडामोडी</div>
+                </div>
+            </a>
         </div>
         
-        <button class="menu-toggle-btn" onclick="toggleNavDrawer(true)" aria-label="Open Menu">
+        <button class="menu-toggle-btn" onclick="toggleNavDrawer(true)" aria-label="Open Menu" style="background: rgba(255,255,255,0.15); border: none; color: white; width: 42px; height: 42px; border-radius: 8px; font-size: 20px; cursor: pointer; display: flex; align-items: center; justify-content: center; transition: 0.2s;">
             <i class="fas fa-bars"></i>
         </button>
     </header>
