@@ -207,6 +207,7 @@
         
         document.addEventListener("DOMContentLoaded", function() {
 		fetchSiteConfigLive(); 
+		processAdsInArticles();
             let modal = document.getElementById('hubPopupModal');
             if(modal) { setTimeout(() => { modal.style.display = 'flex'; }, 1000); }
         });
@@ -215,6 +216,70 @@
         function closeHubAd() {
             let modal = document.getElementById('hubPopupModal');
             if(modal) modal.style.display = 'none';
+        }
+		
+		function processAdsInArticles() {
+            
+            let adsConfig = {"Paragraph_8_InArticleAd_4":{"imageOrCode":"https://vedchitrakolhapur.github.io/newsportal/assets/images/img_1789040643074.webp","link":"","isActive":"Yes"},"Paragraph_5_InArticleAd_3":{"imageOrCode":"https://vedchitrakolhapur.github.io/newsportal/assets/images/img_1789040634406.webp","link":"","isActive":"Yes"},"Paragraph_4_InArticleAd_2":{"imageOrCode":"https://vedchitrakolhapur.github.io/newsportal/assets/images/img_1789040660510.webp","link":"","isActive":"Yes"},"Footer_Ad":{"imageOrCode":"https://vedchitrakolhapur.github.io/newsportal/assets/images/img_1789040678544.webp","link":"","isActive":"No"},"Popup_Ad":{"imageOrCode":"https://vedchitrakolhapur.github.io/newsportal/assets/images/img_1782284990248.webp","link":"","isActive":"No"},"Paragraph_2_InArticleAd_1":{"imageOrCode":"https://vedchitrakolhapur.github.io/newsportal/assets/images/img_1789040652410.webp","link":"","isActive":"Yes"}};
+            let activeInArticles = [];
+            
+            
+            if (adsConfig && typeof adsConfig === 'object') {
+                Object.keys(adsConfig).forEach(function(key) {
+                    if (key.startsWith('Paragraph_') && adsConfig[key].isActive === 'Yes') {
+                        activeInArticles.push(adsConfig[key]);
+                    }
+                });
+            }
+
+            
+            let articleContainers = document.querySelectorAll('.news-content');
+            let adIndex = 0;
+
+            articleContainers.forEach(function(container) {
+                let html = container.innerHTML;
+                
+                
+                let adRegex = /\[AD\]/gi; 
+                
+                
+                if (adRegex.test(html)) {
+                    html = html.replace(adRegex, function() {
+                        
+                        if (activeInArticles.length > 0) {
+                            let currentAd = activeInArticles[adIndex % activeInArticles.length];
+                            adIndex++;
+                            
+                            let adHtmlContent = '';
+                            let linkUrl = currentAd.link ? currentAd.link.trim() : '';
+                            let targetAttr = 'target="_blank"';
+                            
+                            if (linkUrl && /^\+?[0-9\s\-]{10,15}$/.test(linkUrl)) {
+                                linkUrl = 'tel:' + linkUrl.replace(/\s+/g, '');
+                            }
+                            if (linkUrl.startsWith('tel:')) {
+                                targetAttr = ''; 
+                            }
+
+                            if (currentAd.imageOrCode && currentAd.imageOrCode.trim().startsWith('<')) {
+                                adHtmlContent = currentAd.imageOrCode;
+                            } else {
+                                let hasLink = linkUrl !== '';
+                                adHtmlContent = `<a href="${hasLink ? linkUrl : '#'}" ${hasLink ? targetAttr : 'style="cursor:default;" onclick="return false;"'}><img src="${currentAd.imageOrCode}" alt="In-Article Advertisement"></a>`;
+                            }
+                            
+                            // जाहिरातीचा बॉक्स तयार करून तो [AD] च्या जागी रिटर्न करा
+                            return `<div class="inline-ad-box"><div class="ad-lbl">जाहिरात</div>${adHtmlContent}</div>`;
+                        } else {
+                            
+                            return '';
+                        }
+                    });
+                    
+                    
+                    container.innerHTML = html;
+                }
+            });
         }
 		
 		async function fetchSiteConfigLive() {
