@@ -4,17 +4,21 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
+    
     <title>Terms &amp; Conditions | महाराष्ट्र LIVE</title>
     <meta name="description" content="संपूर्ण बातमी सविस्तर वाचण्यासाठी येथे क्लिक करा...">
-    <meta name="keywords" content="News, Maharashtra, Latest News">
+    <meta name="keywords" content="News, Latest News, Marathi News">
     
     <meta property="og:title" content="Terms &amp; Conditions">
     <meta property="og:type" content="article">
     <meta property="og:image" content="https://via.placeholder.com/800x400?text=News&#43;Portal">
     <meta property="og:description" content="संपूर्ण बातमी सविस्तर वाचण्यासाठी येथे क्लिक करा...">
     
-        
-        
+    
+    <link id="dyn-favicon1" rel="icon" type="image/x-icon" href="">
+    <link id="dyn-favicon2" rel="apple-touch-icon" href="">
+    <div id="dyn-analytics-container"></div>
+    
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Mukta:wght@400;600;700&amp;display=swap" rel="stylesheet">
     
@@ -126,17 +130,22 @@
 <body>
 
     <header>
-        <div class="header-container header-left-box">
-            <a href="../index.html" class="back-btn"><i class="fas fa-arrow-left"></i></a>
+        <div class="header-container header-left-box" style="display: flex; align-items: center; gap: 15px;">
             
-            <a href="../index.html" class="logo-area">
-                                    <div class="logo-text-fallback">
-                        महाराष्ट्र LIVE                    </div>
-                                            <div class="slogan-text-fallback">ताज्या घडामोडींचा वेगवान आढावा</div>
-                                                </a>
+            <a href="../index.html" class="back-btn" style="font-size: 20px; color: white; text-decoration: none; display: flex; align-items: center; justify-content: center; width: 35px; height: 35px; border-radius: 50%; background: rgba(255,255,255,0.15); transition: 0.2s;">
+                <i class="fas fa-arrow-left"></i>
+            </a>
+            
+            <a href="../index.html" class="logo-area" style="display: flex; flex-direction: column; text-decoration: none; color: white;">
+                <img id="dyn-site-logo" src="" class="site-logo-img" alt="Logo" style="display:none; max-height: 45px; width: auto; object-fit: contain; display: block;">
+                <div id="dyn-site-text-container">
+                    <div class="logo-text-fallback" id="dyn-site-name" style="font-size: 22px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; color: white;">महाराष्ट्र <span style="color: #ff9933;">LIVE</span></div>
+                    <div class="slogan-text-fallback" id="dyn-site-slogan" style="font-size: 11px; opacity: 0.85; margin-top: -2px; font-weight: 600;">ताज्या घडामोडी</div>
+                </div>
+            </a>
         </div>
         
-        <button class="menu-toggle-btn" onclick="toggleNavDrawer(true)" aria-label="Open Menu">
+        <button class="menu-toggle-btn" onclick="toggleNavDrawer(true)" aria-label="Open Menu" style="background: rgba(255,255,255,0.15); border: none; color: white; width: 42px; height: 42px; border-radius: 8px; font-size: 20px; cursor: pointer; display: flex; align-items: center; justify-content: center; transition: 0.2s;">
             <i class="fas fa-bars"></i>
         </button>
     </header>
@@ -155,12 +164,16 @@
             <li><a href="../toc.html"><i class="fas fa-file-contract"></i> Terms & Conditions</a></li>
         </ul>
         
-                    <div class="drawer-social-box">
-                <p>आमच्याशी जोडून रहा</p>
-                <div class="drawer-social-icons">
-                    <a href="https://fb.com" target="_blank" class="fb-icon"><i class="fab fa-facebook-f"></i></a>                                                            <a href="https://youtube.com" target="_blank" class="yt-icon"><i class="fab fa-youtube"></i></a>                </div>
+        <div class="drawer-social-box" id="dyn-social-box" style="display:none;">
+            <p>आमच्याशी जोडून रहा</p>
+            <div class="drawer-social-icons">
+                <a id="dyn-fb-link" href="#" target="_blank" class="fb-icon" style="display:none;"><i class="fab fa-facebook-f"></i></a>
+                <a id="dyn-tw-link" href="#" target="_blank" class="tw-icon" style="display:none;"><i class="fab fa-twitter"></i></a>
+                <a id="dyn-insta-link" href="#" target="_blank" class="insta-icon" style="display:none;"><i class="fab fa-instagram"></i></a>
+                <a id="dyn-yt-link" href="#" target="_blank" class="yt-icon" style="display:none;"><i class="fab fa-youtube"></i></a>
             </div>
-            </nav>
+        </div>
+    </nav>
 
     <div class="container">
         <div class="news-box">
@@ -176,14 +189,6 @@
         
             </div>
 
-            <div id="popupAdModal" class="modal-overlay">
-            <div class="modal-content">
-                <button class="modal-close" onclick="closePopupAd()">&times;</button>
-                                    <a href="#" ZautoescZ>
-                        <img src="https://vedchitrakolhapur.github.io/newsportal/assets/images/img_1782284990248.webp" alt="Popup Advertisement">
-                    </a>
-                            </div>
-        </div>
     
     <footer>
         <div class="footer-links">
@@ -194,7 +199,7 @@
             <a href="../toc.html">Terms of Service</a>
         </div>
         <div class="footer-credits">
-            &copy; 2026 महाराष्ट्र LIVE | Developed by <a href="https://mbiz.in" target="_blank">mbiz.in</a>
+            &copy; 2026 <span id="dyn-footer-name">वृत्त पोर्टल</span> | Developed by <a href="https://mbiz.in" target="_blank">mbiz.in</a>
         </div>
     </footer>
 
@@ -202,6 +207,7 @@
         const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbyqrQGYH0o54fguVyumk-x2h9KyL5ogyRDRRcku5yDPjv4nHkBe2Pm49ofuUsNJNTsK/exec";
 
         document.addEventListener("DOMContentLoaded", function() {
+		fetchSiteConfigLive(); 
              
             window.toggleNavDrawer = function(open) {
                 let overlay = document.getElementById('navDrawerOverlay');
@@ -218,7 +224,7 @@
 
             setTimeout(function() {
                 try {
-                    let adsConfig = {"Footer_Ad":{"imageOrCode":"https://vedchitrakolhapur.github.io/newsportal/assets/images/img_1782285039051.webp","link":"","isActive":"No"},"Paragraph_9_InArticleAd_4":{"imageOrCode":"https://vedchitrakolhapur.github.io/newsportal/assets/images/img_1782628837441.webp","link":"","isActive":"Yes"},"Paragraph_11_InArticleAd_1":{"imageOrCode":"https://vedchitrakolhapur.github.io/newsportal/assets/images/img_1782628857696.webp","link":"","isActive":"Yes"},"Popup_Ad":{"imageOrCode":"https://vedchitrakolhapur.github.io/newsportal/assets/images/img_1782284990248.webp","link":"","isActive":"Yes"},"Paragraph_3_InArticleAd_3":{"imageOrCode":"https://vedchitrakolhapur.github.io/newsportal/assets/images/img_1782285012134.webp","link":"","isActive":"Yes"},"Paragraph_7_InArticleAd_2":{"imageOrCode":"https://vedchitrakolhapur.github.io/newsportal/assets/images/img_1782285024222.webp","link":"","isActive":"Yes"}};
+                    let adsConfig = {"Footer_Ad":{"imageOrCode":"https://vedchitrakolhapur.github.io/newsportal/assets/images/img_1789040678544.webp","link":"","isActive":"No"},"Paragraph_11_InArticleAd_2":{"imageOrCode":"https://vedchitrakolhapur.github.io/newsportal/assets/images/img_1789040643074.webp","link":"","isActive":"Yes"},"Popup_Ad":{"imageOrCode":"https://vedchitrakolhapur.github.io/newsportal/assets/images/img_1782284990248.webp","link":"","isActive":"No"},"Paragraph_9_InArticleAd_1":{"imageOrCode":"https://vedchitrakolhapur.github.io/newsportal/assets/images/img_1789040634406.webp","link":"","isActive":"Yes"},"Paragraph_3_InArticleAd_3":{"imageOrCode":"https://vedchitrakolhapur.github.io/newsportal/assets/images/img_1789040652410.webp","link":"","isActive":"Yes"},"Paragraph_7_InArticleAd_4":{"imageOrCode":"https://vedchitrakolhapur.github.io/newsportal/assets/images/img_1789040660510.webp","link":"","isActive":"Yes"}};
                     
                     if (adsConfig && typeof adsConfig === 'object') {
                         let displayContainer = document.getElementById('processedArticle');
@@ -368,6 +374,66 @@
 
             html += `<div class="poll-footer">एकूण मते: ${totalVotes} | तुमचं मत नोंदवलं गेलं आहे.</div>`;
             container.innerHTML = html;
+        }
+		
+		async function fetchSiteConfigLive() {
+            try {
+                let response = await fetch(SCRIPT_URL + "?action=getSiteConfig");
+                let config = await response.json();
+                
+                // Logo & Name Update
+                if(config.logoUrl && config.logoUrl.trim() !== '') {
+                    document.getElementById('dyn-site-logo').src = config.logoUrl;
+                    document.getElementById('dyn-site-logo').style.display = 'block';
+                    document.getElementById('dyn-site-text-container').style.display = 'none';
+                } else {
+                    document.getElementById('dyn-site-logo').style.display = 'none';
+                    document.getElementById('dyn-site-text-container').style.display = 'block';
+                    if(config.siteName) document.getElementById('dyn-site-name').innerHTML = config.siteName;
+                    if(config.slogan) document.getElementById('dyn-site-slogan').innerHTML = config.slogan;
+                }
+				
+				
+                if(config.siteName) {
+                    document.title = document.title.replace("महाराष्ट्र LIVE", config.siteName.replace(/<\/?[^>]+(>|$)/g, ""));
+                }
+				
+				
+                if(config.faviconUrl) {
+                    let fav1 = document.getElementById('dyn-favicon1');
+                    let fav2 = document.getElementById('dyn-favicon2');
+                    if (fav1) fav1.href = config.faviconUrl;
+                    if (fav2) fav2.href = config.faviconUrl;
+                }
+
+                
+                if(config.seoKeywords) {
+                    let metaKeywords = document.querySelector('meta[name="keywords"]');
+                    if(metaKeywords) metaKeywords.setAttribute("content", config.seoKeywords);
+                }
+
+                
+                if(config.analyticsMeta) {
+                    let container = document.getElementById('dyn-analytics-container');
+                    if (container) container.innerHTML = config.analyticsMeta;
+                }
+                
+                
+                if(config.siteName) document.getElementById('dyn-footer-name').innerText = config.siteName.replace(/<\/?[^>]+(>|$)/g, "");
+
+                
+                let showSocial = false;
+                if(config.fbLink) { document.getElementById('dyn-fb-link').href = config.fbLink; document.getElementById('dyn-fb-link').style.display = 'flex'; showSocial = true; }
+                if(config.twLink) { document.getElementById('dyn-tw-link').href = config.twLink; document.getElementById('dyn-tw-link').style.display = 'flex'; showSocial = true; }
+                if(config.instaLink) { document.getElementById('dyn-insta-link').href = config.instaLink; document.getElementById('dyn-insta-link').style.display = 'flex'; showSocial = true; }
+                if(config.ytLink) { document.getElementById('dyn-yt-link').href = config.ytLink; document.getElementById('dyn-yt-link').style.display = 'flex'; showSocial = true; }
+                
+                if(showSocial) {
+                    document.getElementById('dyn-social-box').style.display = 'block';
+                }
+            } catch(e) {
+                console.error("Live Config Fetch Error:", e);
+            }
         }
     </script>
 </body>
