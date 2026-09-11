@@ -179,7 +179,7 @@
                         <span class="time-text"><i class="far fa-clock"></i>  12:44:10</span>
                     </div>
                     
-                    <div class="news-title">वाहतुक नियमांचे उल्लंघन करणाऱ्या 11 वाहनचालकांवर कारवाई</div>
+                    <div class="news-title">वाहतुक नियमांचे उल्लंघन करणाऱ्या वाहनचालकांवर कारवाई</div>
                     
                                             <div class="news-image-wrapper">
                             <img src="https://vedchitrakolhapur.github.io/newsportal/assets/images/img_1789024442394.webp" alt="News Image">
@@ -191,20 +191,12 @@
                     
                     <div class="card-bottom">
                         <span class="time-text"><i class="fas fa-map-marker-alt"></i> मुख्य बातमी</span>
-                        <a href="https://api.whatsapp.com/send?text=*%25E0%25A4%25B5%25E0%25A4%25BE%25E0%25A4%25B9%25E0%25A4%25A4%25E0%25A5%2581%25E0%25A4%2595%2520%25E0%25A4%25A8%25E0%25A4%25BF%25E0%25A4%25AF%25E0%25A4%25AE%25E0%25A4%25BE%25E0%25A4%2582%25E0%25A4%259A%25E0%25A5%2587%2520%25E0%25A4%2589%25E0%25A4%25B2%25E0%25A5%258D%25E0%25A4%25B2%25E0%25A4%2582%25E0%25A4%2598%25E0%25A4%25A8%2520%25E0%25A4%2595%25E0%25A4%25B0%25E0%25A4%25A3%25E0%25A4%25BE%25E0%25A4%25B1%25E0%25A5%258D%25E0%25A4%25AF%25E0%25A4%25BE%252011%2520%25E0%25A4%25B5%25E0%25A4%25BE%25E0%25A4%25B9%25E0%25A4%25A8%25E0%25A4%259A%25E0%25A4%25BE%25E0%25A4%25B2%25E0%25A4%2595%25E0%25A4%25BE%25E0%25A4%2582%25E0%25A4%25B5%25E0%25A4%25B0%2520%25E0%25A4%2595%25E0%25A4%25BE%25E0%25A4%25B0%25E0%25A4%25B5%25E0%25A4%25BE%25E0%25A4%2588*%0A%0Aवाचा संपूर्ण लोकल बातमी येथे 👇%0Anews%252Fnews-1789024450960.html" target="_blank" class="share-btn">
+                        <a href="https://api.whatsapp.com/send?text=*%25E0%25A4%25B5%25E0%25A4%25BE%25E0%25A4%25B9%25E0%25A4%25A4%25E0%25A5%2581%25E0%25A4%2595%2520%25E0%25A4%25A8%25E0%25A4%25BF%25E0%25A4%25AF%25E0%25A4%25AE%25E0%25A4%25BE%25E0%25A4%2582%25E0%25A4%259A%25E0%25A5%2587%2520%25E0%25A4%2589%25E0%25A4%25B2%25E0%25A5%258D%25E0%25A4%25B2%25E0%25A4%2582%25E0%25A4%2598%25E0%25A4%25A8%2520%25E0%25A4%2595%25E0%25A4%25B0%25E0%25A4%25A3%25E0%25A4%25BE%25E0%25A4%25B1%25E0%25A5%258D%25E0%25A4%25AF%25E0%25A4%25BE%2520%25E0%25A4%25B5%25E0%25A4%25BE%25E0%25A4%25B9%25E0%25A4%25A8%25E0%25A4%259A%25E0%25A4%25BE%25E0%25A4%25B2%25E0%25A4%2595%25E0%25A4%25BE%25E0%25A4%2582%25E0%25A4%25B5%25E0%25A4%25B0%2520%25E0%25A4%2595%25E0%25A4%25BE%25E0%25A4%25B0%25E0%25A4%25B5%25E0%25A4%25BE%25E0%25A4%2588*%0A%0Aवाचा संपूर्ण लोकल बातमी येथे 👇%0Anews%252Fnews-1789024450960.html" target="_blank" class="share-btn">
                             <i class="fab fa-whatsapp"></i> शेअर करा
                         </a>
                     </div>
                 </div>
 
-                
-                                    <div class="inline-ad-box">
-                        <div class="ad-lbl">जाहिरात</div>
-                                                    <a href="#" target="_blank">
-                                <img src="https://vedchitrakolhapur.github.io/newsportal/assets/images/img_1789040660510.webp" alt="Advertisement">
-                            </a>
-                                            </div>
-                
                         
                 <div class="news-card">
                     <div class="news-meta">
@@ -230,9 +222,8 @@
                     </div>
                 </div>
 
-                
-                
-            </div>
+        
+    </div>
 
     
     <footer>
@@ -292,51 +283,62 @@
             }
 
             
-            let articleContainers = document.querySelectorAll('.news-content');
+            if (activeInArticles.length === 0) {
+                let allContents = document.querySelectorAll('.news-content');
+                allContents.forEach(c => {
+                    c.innerHTML = c.innerHTML.replace(/\[AD\]/gi, '');
+                });
+                return;
+            }
+
+            
             let adIndex = 0;
 
-            articleContainers.forEach(function(container) {
-                let html = container.innerHTML;
+            
+            function getAdHtml() {
+                let currentAd = activeInArticles[adIndex % activeInArticles.length];
+                adIndex++;
                 
+                let adHtmlContent = '';
+                let linkUrl = currentAd.link ? currentAd.link.trim() : '';
+                let targetAttr = 'target="_blank"';
                 
-                let adRegex = /\[AD\]/gi; 
-                
-                
-                if (adRegex.test(html)) {
-                    html = html.replace(adRegex, function() {
-                        
-                        if (activeInArticles.length > 0) {
-                            let currentAd = activeInArticles[adIndex % activeInArticles.length];
-                            adIndex++;
-                            
-                            let adHtmlContent = '';
-                            let linkUrl = currentAd.link ? currentAd.link.trim() : '';
-                            let targetAttr = 'target="_blank"';
-                            
-                            if (linkUrl && /^\+?[0-9\s\-]{10,15}$/.test(linkUrl)) {
-                                linkUrl = 'tel:' + linkUrl.replace(/\s+/g, '');
-                            }
-                            if (linkUrl.startsWith('tel:')) {
-                                targetAttr = ''; 
-                            }
+                if (linkUrl && /^\+?[0-9\s\-]{10,15}$/.test(linkUrl)) linkUrl = 'tel:' + linkUrl.replace(/\s+/g, '');
+                if (linkUrl.startsWith('tel:')) targetAttr = ''; 
 
-                            if (currentAd.imageOrCode && currentAd.imageOrCode.trim().startsWith('<')) {
-                                adHtmlContent = currentAd.imageOrCode;
-                            } else {
-                                let hasLink = linkUrl !== '';
-                                adHtmlContent = `<a href="${hasLink ? linkUrl : '#'}" ${hasLink ? targetAttr : 'style="cursor:default;" onclick="return false;"'}><img src="${currentAd.imageOrCode}" alt="In-Article Advertisement"></a>`;
-                            }
-                            
-                            // जाहिरातीचा बॉक्स तयार करून तो [AD] च्या जागी रिटर्न करा
-                            return `<div class="inline-ad-box"><div class="ad-lbl">जाहिरात</div>${adHtmlContent}</div>`;
-                        } else {
-                            
-                            return '';
-                        }
-                    });
+                if (currentAd.imageOrCode && currentAd.imageOrCode.trim().startsWith('<')) {
+                    adHtmlContent = currentAd.imageOrCode;
+                } else {
+                    let hasLink = linkUrl !== '';
+                    adHtmlContent = `<a href="${hasLink ? linkUrl : '#'}" ${hasLink ? targetAttr : 'style="cursor:default;" onclick="return false;"'}><img src="${currentAd.imageOrCode}" alt="Advertisement"></a>`;
+                }
+                
+                return `<div class="inline-ad-box"><div class="ad-lbl">जाहिरात</div>${adHtmlContent}</div>`;
+            }
+
+            // २. सर्व बातम्यांचे कार्ड्स (News Cards) शोधा
+            let newsCards = document.querySelectorAll('.news-card');
+
+            newsCards.forEach(function(card, index) {
+                
+                let contentContainer = card.querySelector('.news-content');
+                if (contentContainer) {
+                    let html = contentContainer.innerHTML;
+                    let adRegex = /\[AD\]/gi;
                     
+                    if (adRegex.test(html)) {
+                        html = html.replace(adRegex, function() {
+                            return getAdHtml();
+                        });
+                        contentContainer.innerHTML = html;
+                    }
+                }
+
+                
+                let isCondolence = card.classList.contains('condolence-card');
+                if (!isCondolence && index < newsCards.length - 1) {
                     
-                    container.innerHTML = html;
+                    card.insertAdjacentHTML('afterend', getAdHtml());
                 }
             });
         }
