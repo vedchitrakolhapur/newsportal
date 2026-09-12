@@ -133,12 +133,12 @@
         <div style="display: flex; justify-content: space-between; align-items: center; width: 100%;">
             <div style="display: flex; align-items: center; gap: 15px;">
                 
-                <a href="../index.html" class="back-btn" style="font-size: 18px; color: white; text-decoration: none; display: flex; align-items: center; justify-content: center; width: 36px; height: 36px; border-radius: 50%; background: rgba(255,255,255,0.15); transition: 0.2s; flex-shrink: 0;">
+                <a href="../../../../index.html" class="back-btn" style="font-size: 18px; color: white; text-decoration: none; display: flex; align-items: center; justify-content: center; width: 36px; height: 36px; border-radius: 50%; background: rgba(255,255,255,0.15); transition: 0.2s; flex-shrink: 0;">
                     <i class="fas fa-arrow-left"></i>
                 </a>
                 
                 
-                <a href="../index.html" style="display: flex; flex-direction: column; text-decoration: none; color: white;">
+                <a href="../../../../index.html" style="display: flex; flex-direction: column; text-decoration: none; color: white;">
                     <div id="dyn-site-name" style="font-size: 20px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; line-height: 1.2;">महाराष्ट्र <span style="color: #ff9933;">LIVE</span></div>
                     <div id="dyn-site-slogan" style="font-size: 11px; opacity: 0.85; line-height: 1.2;">ताज्या घडामोडी</div>
                 </a>
@@ -157,11 +157,11 @@
             <button class="drawer-close-btn" onclick="toggleNavDrawer(false)">&times;</button>
         </div>
         <ul class="drawer-menu-links">
-            <li><a href="../index.html"><i class="fas fa-home"></i> होमपेज (Home)</a></li>
-            <li><a href="../about.html"><i class="fas fa-info-circle"></i> आमच्याबद्दल (About Us)</a></li>
-            <li><a href="../contact.html"><i class="fas fa-address-book"></i> संपर्क साधा (Contact)</a></li>
-            <li><a href="../privacy.html"><i class="fas fa-user-shield"></i> Privacy Policy</a></li>
-            <li><a href="../toc.html"><i class="fas fa-file-contract"></i> Terms & Conditions</a></li>
+            <li><a href="../../../../index.html"><i class="fas fa-home"></i> होमपेज (Home)</a></li>
+            <li><a href="../../../../about.html"><i class="fas fa-info-circle"></i> आमच्याबद्दल (About Us)</a></li>
+            <li><a href="../../../../contact.html"><i class="fas fa-address-book"></i> संपर्क साधा (Contact)</a></li>
+            <li><a href="../../../../privacy.html"><i class="fas fa-user-shield"></i> Privacy Policy</a></li>
+            <li><a href="../../../../toc.html"><i class="fas fa-file-contract"></i> Terms & Conditions</a></li>
         </ul>
         
         <div class="drawer-social-box" id="dyn-social-box" style="display:none;">
@@ -193,11 +193,11 @@
     
     <footer>
         <div class="footer-links">
-            <a href="../index.html">होमपेज</a> | 
-            <a href="../about.html">आमच्याबद्दल</a> | 
-            <a href="../contact.html">संपर्क साधा</a> | 
-            <a href="../privacy.html">Privacy Policy</a> | 
-            <a href="../toc.html">Terms of Service</a>
+            <a href="../../../../index.html">होमपेज</a> | 
+            <a href="../../../../about.html">आमच्याबद्दल</a> | 
+            <a href="../../../../contact.html">संपर्क साधा</a> | 
+            <a href="../../../../privacy.html">Privacy Policy</a> | 
+            <a href="../../../../toc.html">Terms of Service</a>
         </div>
         <div class="footer-credits">
             &copy; 2026 <span id="dyn-footer-name">वृत्त पोर्टल</span> | Developed by <a href="https://mbiz.in" target="_blank">mbiz.in</a>
@@ -282,7 +282,7 @@
 
                 // Poll Injection Logic
                 try {
-                    let pollRaw = {"isActive":"Yes","question":"यंदा आजऱ्यात पाऊस कसा राहील ?","options":"[\"दरवर्षी सारखा पाऊस पडेल\",\"मध्यम पाऊस पडेल\",\"कमी पाऊस पडेल\",\"सांगता नाही येत\",\"दुष्काळ पडेल\"]","showHome":"Yes","showArticle":"Yes","paraNum":5,"votes":{"0":3,"1":3,"2":2,"3":5,"4":1}};
+                    let pollRaw = {"isActive":"Yes","question":"यंदा आजऱ्यात पाऊस कसा राहील ?","options":"[\"दरवर्षी सारखा पाऊस पडेल\",\"मध्यम पाऊस पडेल\",\"कमी पाऊस पडेल\",\"सांगता नाही येत\",\"दुष्काळ पडेल\"]","showHome":"Yes","showArticle":"Yes","paraNum":5,"votes":{"0":3,"1":4,"2":2,"3":5,"4":1}};
                     if(pollRaw && pollRaw.isActive === 'Yes' && pollRaw.showArticle === 'Yes') {
                         let displayContainer = document.getElementById('processedArticle');
                         let paragraphElements = displayContainer.querySelectorAll('p');
